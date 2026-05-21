@@ -5,6 +5,7 @@ extends Control
 #Conectar Grids
 @onready var pregunta_j1 = $Grid_Preguntas/PreguntasJ1
 @onready var pregunta_j2 = $Grid_Preguntas/PreguntasJ2
+@onready var curiosidad_j1 = $Rect_curiosidad1/Label
 #Conectar Hbox
 @onready var grid_p1 = $HBoxContainer/Grid_J1
 @onready var grid_p2 = $HBoxContainer/Grid_J2
@@ -13,7 +14,7 @@ extends Control
 # ARRAY DE PREGUNTAS
 # =====================================================
 var preguntas = []
-
+var pregunta_actual_j1 = {}
 # =====================================================
 # FUNCION READY
 # =====================================================
@@ -29,10 +30,10 @@ func _ready():
 
 func cargar_preguntas():
 	var archivo = FileAccess.open(
-	"res://Escenas/Ui_Preguntas/Preguntas/Pregtest.csv",FileAccess.READ)
+	"res://Escenas/Ui_Preguntas/Preguntas/Preguntas_Durango.csv",FileAccess.READ)
 		#Debug
 	if archivo == null:
-		print(FileAccess.file_exists("res://Escenas/Ui_Preguntas/Preguntas/Pregtest.csv"))
+		print(FileAccess.file_exists("res://Escenas/Ui_Preguntas/Preguntas/Preguntas_Durango.csv"))
 		print("NO SE PUDO ABRIR EL CSV")
 		return
 	# Saltar encabezado
@@ -47,17 +48,18 @@ func cargar_preguntas():
 			"incorrectas": [
 				fila[2],
 				fila[3],
-				fila[4]
-			]
+				fila[4]],
+				"curiosidad":fila[5]
+			
 })
 # =====================================================
 # NUEVA PREGUNTA J1
 # =====================================================
 func nueva_pregunta_j1():
-	var pregunta = preguntas.pick_random()
-	pregunta_j1.text = pregunta["pregunta"]
-	grid_p1.configurar_pregunta(pregunta)
-	
+	pregunta_actual_j1 = preguntas.pick_random()
+	pregunta_j1.text = pregunta_actual_j1["pregunta"]
+	grid_p1.configurar_pregunta(pregunta_actual_j1)
+	curiosidadbox_j1()
 # =====================================================
 # NUEVA PREGUNTA J2
 # =====================================================
@@ -65,3 +67,7 @@ func nueva_pregunta_j2():
 	var pregunta = preguntas.pick_random()
 	pregunta_j2.text = pregunta["pregunta"]
 	grid_p2.configurar_pregunta(pregunta)
+	
+func curiosidadbox_j1():
+	curiosidad_j1.text = pregunta_actual_j1["curiosidad"]
+	

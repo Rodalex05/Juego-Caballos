@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://pawota5fssk7"]
 
 [ext_resource type="Texture2D" uid="uid://b17xx84hfvx4k" path="res://sprites/Escenarios/Bg_0056_00411.png" id="1_nwsta"]
-[ext_resource type="Script" uid="uid://b2b1my8ytpkg0" path="res://Escenas/Menu_Ganador/Script/label_ganador.gd" id="2_mxx7n"]
-[ext_resource type="Theme" uid="uid://bbxupr6wek47v" path="res://Temas/Check_button.tres" id="3_leydk"]
+[ext_resource type="Theme" uid="uid://c2hav4o47l1gq" path="res://Temas/lb_creditos.tres" id="2_leydk"]
+[ext_resource type="Script" uid="uid://5kw4mkro13pf" path="res://Escenas/Menu_Ganador/Script/label_ganador2.gd" id="3_mxx7n"]
+[ext_resource type="Theme" uid="uid://cvshnhlprb4rk" path="res://Temas/Btn_Menu_principal.tres" id="3_nwsta"]
 [ext_resource type="Script" uid="uid://dt7d6b32fiusw" path="res://Escenas/Menu_Ganador/Script/btn_regresar.gd" id="4_y6oa5"]
 
 [node name="Ganador" type="Control" unique_id=437828833]
@@ -23,12 +24,12 @@ texture = ExtResource("1_nwsta")
 
 [node name="Label" type="Label" parent="." unique_id=958248619]
 layout_mode = 0
-offset_left = 150.0
-offset_top = 47.0
-offset_right = 1601.0
-offset_bottom = 363.0
-text = "Felicidades"
-script = ExtResource("2_mxx7n")
+offset_left = 89.0
+offset_top = 56.0
+offset_right = 1540.0
+offset_bottom = 741.0
+theme = ExtResource("2_leydk")
+script = ExtResource("3_mxx7n")
 
 [node name="Btn_Regresar" type="Button" parent="." unique_id=1807446327]
 layout_mode = 0
@@ -36,6 +37,6 @@ offset_left = 1229.0
 offset_top = 711.0
 offset_right = 1857.0
 offset_bottom = 937.0
-theme = ExtResource("3_leydk")
+theme = ExtResource("3_nwsta")
 text = "Regresar al menu"
 script = ExtResource("4_y6oa5")

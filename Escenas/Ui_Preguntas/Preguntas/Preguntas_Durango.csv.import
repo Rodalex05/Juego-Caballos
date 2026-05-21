@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://br4kiqimb6vsu"
+
+[deps]
+
+files=["res://Escenas/Ui_Preguntas/Preguntas/Preguntas_Durango.Correcta.translation", "res://Escenas/Ui_Preguntas/Preguntas/Preguntas_Durango.Incorrecta1.translation", "res://Escenas/Ui_Preguntas/Preguntas/Preguntas_Durango.Incorrecta2.translation", "res://Escenas/Ui_Preguntas/Preguntas/Preguntas_Durango.Incorrecta3.translation", "res://Escenas/Ui_Preguntas/Preguntas/Preguntas_Durango.Dato curioso de la pregunta.translation"]
+
+source_file="res://Escenas/Ui_Preguntas/Preguntas/Preguntas_Durango.csv"
+dest_files=["res://Escenas/Ui_Preguntas/Preguntas/Preguntas_Durango.Correcta.translation", "res://Escenas/Ui_Preguntas/Preguntas/Preguntas_Durango.Incorrecta1.translation", "res://Escenas/Ui_Preguntas/Preguntas/Preguntas_Durango.Incorrecta2.translation", "res://Escenas/Ui_Preguntas/Preguntas/Preguntas_Durango.Incorrecta3.translation", "res://Escenas/Ui_Preguntas/Preguntas/Preguntas_Durango.Dato curioso de la pregunta.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

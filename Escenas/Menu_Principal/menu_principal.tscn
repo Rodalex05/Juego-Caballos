@@ -9,7 +9,9 @@
 [ext_resource type="Script" uid="uid://c2y2tstrfgkv5" path="res://Escenas/Menu_Principal/Scripts/btn_select.gd" id="5_ciq5v"]
 [ext_resource type="PackedScene" uid="uid://conh6y0ukxgkv" path="res://Escenas/Menu_Opciones/Menu_opciones.tscn" id="6_8noi1"]
 [ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="8_ciq5v"]
-[ext_resource type="Theme" uid="uid://cjx38561hocxb" path="res://Temas/Labels.tres" id="10_6voup"]
+[ext_resource type="Theme" uid="uid://d0ww38uiany33" path="res://Temas/Labeltitulo.tres" id="10_6voup"]
+[ext_resource type="Theme" uid="uid://cjx38561hocxb" path="res://Temas/Labels.tres" id="11_x8ylp"]
+[ext_resource type="PackedScene" uid="uid://5pkpfysn4eja" path="res://Escenas/Creditos/Creditos.tscn" id="12_vl7im"]
 
 [node name="Menu_principal" type="Control" unique_id=1360911147]
 layout_mode = 3
@@ -81,7 +83,7 @@ bus = &"bus_sfx"
 stream = ExtResource("8_ciq5v")
 bus = &"bus_sfx"
 
-[node name="Label" type="Label" parent="." unique_id=1567975048]
+[node name="Lb_Titulo" type="Label" parent="." unique_id=1567975048]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -95,6 +97,29 @@ text = "GRAN DERBY DEL NORTE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label" type="Label" parent="." unique_id=1777509066]
+layout_mode = 0
+offset_left = 1353.0
+offset_top = 961.0
+offset_right = 1873.0
+offset_bottom = 1031.0
+theme = ExtResource("11_x8ylp")
+text = "v2.0 Beta — Assets visuales temporales"
+
+[node name="Btn_Creditos" type="Button" parent="." unique_id=1003466527 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 955.0
+offset_right = 399.0
+offset_bottom = 1014.0
+theme = ExtResource("1_68geh")
+text = "CREDITOS"
+script = ExtResource("3_v6jxy")
+escena_seleccion = ExtResource("12_vl7im")
+sfx_pasar = NodePath("../SFX_Hover")
+sfx_select = NodePath("../SFX_Select")
+
 [connection signal="mouse_entered" from="VBoxContainer/Btn_Iniciar" to="VBoxContainer/Btn_Iniciar" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="VBoxContainer/Btn_Opciones" to="VBoxContainer/Btn_Opciones" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="VBoxContainer/Btn_Salir" to="VBoxContainer/Btn_Salir" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Btn_Creditos" to="Btn_Creditos" method="_on_mouse_entered"]

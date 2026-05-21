@@ -1,4 +1,6 @@
 extends VBoxContainer
+@export var sfx_pasar : AudioStreamPlayer2D
+@export var sfx_select : AudioStreamPlayer2D
 # =========================
 # ARRAY DE SKINS
 # =========================
@@ -53,6 +55,7 @@ func actualizar_skin():
 # =========================================================
 # Esta función avanza a la derecha
 func siguiente_skin():
+	sfx_select.play()
 	indice += 1
 	# Si el indice supera el tamaño del array vuelve al inicio.
 	if indice >= skins.size():
@@ -61,6 +64,7 @@ func siguiente_skin():
 
 # Esta función avanza a la derecha
 func anterior_skin():
+	sfx_select.play()
 	indice -= 1
 	# Si el indice supera el tamaño del array vuelve al inicio.
 	if indice < 0:

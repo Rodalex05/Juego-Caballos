@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://co8d20rhyrmx" path="res://Escenas/Ui_Preguntas/Scripts/grid_p_2.gd" id="3_550h2"]
 [ext_resource type="AudioStream" uid="uid://cucq574l1mpa4" path="res://SFX/sfx_correct.wav" id="4_550h2"]
 [ext_resource type="AudioStream" uid="uid://cbgol20ivlokk" path="res://SFX/sfx_wrong.wav" id="5_1dic1"]
+[ext_resource type="Script" uid="uid://mibrcxy2mfya" path="res://Escenas/Ui_Preguntas/Scripts/rect_curiosidad_1.gd" id="6_nexb1"]
 
 [node name="Ui_Preguntas" type="Control" unique_id=891131748]
 layout_mode = 3
@@ -66,7 +67,7 @@ columns = 2
 script = ExtResource("2_eulf6")
 sfx_correcto = NodePath("../../SFX_Correcto")
 sfx_incorrecto = NodePath("../../SFX_Incorrecto")
-cooldown = 0.0
+cooldown = 3.0
 
 [node name="Bt_1A" type="Button" parent="HBoxContainer/Grid_J1" unique_id=1236914047]
 layout_mode = 2
@@ -96,6 +97,7 @@ columns = 2
 script = ExtResource("3_550h2")
 sfx_correcto = NodePath("../../SFX_Correcto")
 sfx_incorrecto = NodePath("../../SFX_Incorrecto")
+cooldown = 3.0
 
 [node name="Bt_2A" type="Button" parent="HBoxContainer/Grid_J2" unique_id=301723186]
 layout_mode = 2
@@ -116,3 +118,95 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="GridControlesJ1" type="GridContainer" parent="." unique_id=1930853142]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 63.0
+offset_right = 956.0
+offset_bottom = 307.0
+columns = 2
+
+[node name="Bt_1" type="Label" parent="GridControlesJ1" unique_id=130814670]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Q"
+horizontal_alignment = 2
+
+[node name="Bt_2" type="Label" parent="GridControlesJ1" unique_id=519049613]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "W"
+horizontal_alignment = 2
+
+[node name="Bt_3" type="Label" parent="GridControlesJ1" unique_id=446216161]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "A"
+horizontal_alignment = 2
+
+[node name="Bt_4" type="Label" parent="GridControlesJ1" unique_id=343716292]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "S"
+horizontal_alignment = 2
+
+[node name="GridControlesJ2" type="GridContainer" parent="." unique_id=995605215]
+layout_mode = 0
+offset_left = 965.0
+offset_top = 63.0
+offset_right = 1897.0
+offset_bottom = 307.0
+columns = 2
+
+[node name="Bt_1" type="Label" parent="GridControlesJ2" unique_id=1550880343]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "O"
+horizontal_alignment = 2
+
+[node name="Bt_2" type="Label" parent="GridControlesJ2" unique_id=1304115090]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "P"
+horizontal_alignment = 2
+
+[node name="Bt_3" type="Label" parent="GridControlesJ2" unique_id=30331497]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "K"
+horizontal_alignment = 2
+
+[node name="Bt_4" type="Label" parent="GridControlesJ2" unique_id=26330067]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "L"
+horizontal_alignment = 2
+
+[node name="Rect_curiosidad1" type="ColorRect" parent="." unique_id=1080846634]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 87.0
+offset_right = 735.0
+offset_bottom = 283.0
+color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+script = ExtResource("6_nexb1")
+
+[node name="Label" type="Label" parent="Rect_curiosidad1" unique_id=942860190]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CURIOSIDAD"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="respuesta_correcta" from="HBoxContainer/Grid_J1" to="Rect_curiosidad1" method="_on_grid_j_1_respuesta_correcta"]
+[connection signal="respuesta_incorrecta" from="HBoxContainer/Grid_J1" to="Rect_curiosidad1" method="_on_grid_j_1_respuesta_incorrecta"]

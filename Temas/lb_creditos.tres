@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://c2hav4o47l1gq"]
+
+[ext_resource type="FontFile" uid="uid://bata5wklno1h1" path="res://Fonts/MPLUSRounded1c-ExtraBold.ttf" id="1_uhssx"]
+
+[resource]
+default_font = ExtResource("1_uhssx")
+Label/font_sizes/font_size = 28
+Label/fonts/font = ExtResource("1_uhssx")

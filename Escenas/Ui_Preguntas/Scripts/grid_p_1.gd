@@ -47,6 +47,11 @@ func configurar_pregunta(datos):
 	for i in range(botones.size()):
 		botones[i].text = opciones[i]
 		botones[i].set_meta("correcto",opciones[i] == respuesta_correcta_actual)
+		if opciones[i] == respuesta_correcta_actual:
+			botones[i].add_theme_color_override("font_color", Color.GREEN)
+		else:
+			botones[i].add_theme_color_override("font_color", Color.RED)
+
 	inicio_con_delay()
 
 # =====================================================
