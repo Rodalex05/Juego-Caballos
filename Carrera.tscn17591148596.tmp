@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://bxjmkv4od84x5"]
+
+[ext_resource type="Texture2D" uid="uid://dqs41c1d3yl3l" path="res://Escenarios/illustration-banner-scene-famous-old-260nw-1787004044_jpg.png" id="1_3wwe6"]
+[ext_resource type="Script" uid="uid://dcg7im3kb472c" path="res://carrera.gd" id="1_lrhgo"]
+[ext_resource type="PackedScene" uid="uid://bg220u4h58gt4" path="res://Personajes/jugador_1.tscn" id="2_k7ab1"]
+[ext_resource type="Script" uid="uid://drsh23asvjerk" path="res://gameplay.gd" id="2_kl2f7"]
+[ext_resource type="PackedScene" uid="uid://bhnnehywpuoic" path="res://Preguntas.tscn" id="2_w8t8f"]
+[ext_resource type="AudioStream" uid="uid://cucq574l1mpa4" path="res://SFX/sfx_correct.wav" id="4_d7nhe"]
+[ext_resource type="Script" uid="uid://u1r7gmiprntv" path="res://camera_2d.gd" id="4_kl2f7"]
+[ext_resource type="PackedScene" uid="uid://d1s3ww0dhoke3" path="res://Escenas/camara_seguir.tscn" id="4_rccrn"]
+[ext_resource type="AudioStream" uid="uid://cbgol20ivlokk" path="res://SFX/sfx_wrong.wav" id="5_l0qp6"]
+[ext_resource type="AudioStream" uid="uid://dbfbcd1o2tss1" path="res://SFX/sfx_pistol_start.wav" id="7_8ghjc"]
+[ext_resource type="PackedScene" uid="uid://60225he0yuhk" path="res://meta.tscn" id="9_xvic4"]
+[ext_resource type="Script" uid="uid://8e3qieupm1q5" path="res://meta.gd" id="10_xvic4"]
+[ext_resource type="Script" uid="uid://b5bpicwsrw6yc" path="res://preguntas.gd" id="12_7xlqs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwra4"]
+size = Vector2(56, 649)
+
+[node name="Principal" type="Node2D" unique_id=2050231041]
+script = ExtResource("1_lrhgo")
+
+[node name="Gameplay" type="TileMapLayer" parent="." unique_id=1491768728 node_paths=PackedStringArray("sfx", "tocar_meta")]
+script = ExtResource("2_kl2f7")
+sfx = NodePath("AudioStreamPlayer2D")
+tocar_meta = NodePath("Meta/Area2D")
+
+[node name="Jugador_1" parent="Gameplay" unique_id=466347123 node_paths=PackedStringArray("sfx_correcto", "sfx_incorrecto") instance=ExtResource("2_k7ab1")]
+position = Vector2(232, 168)
+sfx_correcto = NodePath("Audio_Correcto")
+sfx_incorrecto = NodePath("AudioIncorrecto")
+
+[node name="Audio_Correcto" type="AudioStreamPlayer2D" parent="Gameplay/Jugador_1" unique_id=1155880936]
+stream = ExtResource("4_d7nhe")
+
+[node name="AudioIncorrecto" type="AudioStreamPlayer2D" parent="Gameplay/Jugador_1" unique_id=1046728472]
+stream = ExtResource("5_l0qp6")
+
+[node name="Camara_seguir" parent="Gameplay" unique_id=44339628 instance=ExtResource("4_rccrn")]
+position = Vector2(8, 160)
+
+[node name="Camera2D" type="Camera2D" parent="Gameplay/Camara_seguir" unique_id=1883541200 node_paths=PackedStringArray("jugador1x")]
+position = Vector2(8304, -160)
+anchor_mode = 0
+script = ExtResource("4_kl2f7")
+jugador1x = NodePath("../../Jugador_1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Gameplay" unique_id=1884824446]
+stream = ExtResource("7_8ghjc")
+
+[node name="Meta" parent="Gameplay" unique_id=408639626 instance=ExtResource("9_xvic4")]
+position = Vector2(9280, 304)
+script = ExtResource("10_xvic4")
+
+[node name="Area2D" type="Area2D" parent="Gameplay/Meta" unique_id=1606173532]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Gameplay/Meta/Area2D" unique_id=735817392]
+position = Vector2(28, 19.5)
+shape = SubResource("RectangleShape2D_wwra4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1398315513]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=89385646]
+layout_direction = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -287.0
+offset_right = 576.0
+grow_horizontal = 2
+grow_vertical = 0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=1478405622]
+handle_input_locally = false
+size = Vector2i(1152, 287)
+render_target_update_mode = 4
+
+[node name="Ui_Preguntas" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=891131748 instance=ExtResource("2_w8t8f")]
+anchors_preset = 0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = -1.0
+offset_right = 0.0
+offset_bottom = -1.0
+grow_horizontal = 1
+grow_vertical = 1
+script = ExtResource("12_7xlqs")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=219338823]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1404258159]
+motion_mirroring = Vector2(1000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1551293196]
+scale = Vector2(1.4571428, 1.4571428)
+texture = ExtResource("1_3wwe6")
+centered = false
+
+[connection signal="Ev_Fin" from="Gameplay" to="Gameplay/Jugador_1" method="_on_gameplay_ev_fin"]
+[connection signal="Ev_Fin" from="Gameplay" to="CanvasLayer/SubViewportContainer/SubViewport/Ui_Preguntas" method="_on_gameplay_ev_fin"]
+[connection signal="Ev_iniciar" from="Gameplay" to="Gameplay" method="_on_ev_iniciar"]
+[connection signal="Ev_iniciar" from="Gameplay" to="Gameplay/Jugador_1" method="_on_gameplay_ev_iniciar"]
+[connection signal="Ev_iniciar" from="Gameplay" to="Gameplay/Camara_seguir" method="_on_gameplay_ev_iniciar"]
+[connection signal="Ev_iniciar" from="Gameplay" to="Gameplay/Camara_seguir/Camera2D" method="_on_gameplay_ev_iniciar"]

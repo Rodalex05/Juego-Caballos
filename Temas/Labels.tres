@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://cjx38561hocxb"]
+
+[ext_resource type="FontFile" uid="uid://bata5wklno1h1" path="res://Fonts/MPLUSRounded1c-ExtraBold.ttf" id="1_scwmy"]
+
+[resource]
+Label/font_sizes/font_size = 26
+Label/fonts/font = ExtResource("1_scwmy")

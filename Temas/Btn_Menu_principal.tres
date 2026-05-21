@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://cvshnhlprb4rk"]
+
+[ext_resource type="FontFile" uid="uid://b6eme8fgmeqoo" path="res://Fonts/Insanibu.ttf" id="1_c8xj6"]
+
+[resource]
+Button/constants/h_separation = 527
+Button/font_sizes/font_size = 45
+Button/fonts/font = ExtResource("1_c8xj6")

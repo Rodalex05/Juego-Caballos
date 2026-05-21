@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://84hyh0ff402i"]
+
+[ext_resource type="Script" uid="uid://lbgrouu4udkw" path="res://Escenas/Jugadores/Scripts/jugador_1.gd" id="1_2yno5"]
+[ext_resource type="SpriteFrames" uid="uid://5shv8a1nhte3" path="res://Escenas/Jugadores/sf_skin2.tres" id="1_6oyah"]
+[ext_resource type="Script" uid="uid://bumrx2gnchbc0" path="res://Escenas/Jugadores/Scripts/jugador_1_animated_sprite_2d.gd" id="3_hs0cm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2yno5"]
+size = Vector2(248, 223)
+
+[node name="Jugador1" type="CharacterBody2D" unique_id=301942191]
+script = ExtResource("1_2yno5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=604795103]
+position = Vector2(-2, 1.5)
+shape = SubResource("RectangleShape2D_2yno5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=931362832]
+scale = Vector2(0.502, 0.502)
+sprite_frames = ExtResource("1_6oyah")
+animation = &"idle"
+script = ExtResource("3_hs0cm")

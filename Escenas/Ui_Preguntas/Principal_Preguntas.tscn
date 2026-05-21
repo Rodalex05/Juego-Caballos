@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://dhiofvfjbwqxb"]
+
+[ext_resource type="Script" uid="uid://o23eulq7mfto" path="res://Escenas/Ui_Preguntas/Scripts/principal.gd" id="1_wjkjn"]
+[ext_resource type="Script" uid="uid://d1sj60t2sap8r" path="res://Escenas/Ui_Preguntas/Scripts/grid_p_1.gd" id="2_eulf6"]
+[ext_resource type="Script" uid="uid://co8d20rhyrmx" path="res://Escenas/Ui_Preguntas/Scripts/grid_p_2.gd" id="3_550h2"]
+[ext_resource type="AudioStream" uid="uid://cucq574l1mpa4" path="res://SFX/sfx_correct.wav" id="4_550h2"]
+[ext_resource type="AudioStream" uid="uid://cbgol20ivlokk" path="res://SFX/sfx_wrong.wav" id="5_1dic1"]
+
+[node name="Ui_Preguntas" type="Control" unique_id=891131748]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wjkjn")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=355110182]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Grid_Preguntas" type="GridContainer" parent="." unique_id=761070240]
+layout_mode = 1
+offset_right = 1920.0
+offset_bottom = 63.0
+columns = 2
+
+[node name="PreguntasJ1" type="Label" parent="Grid_Preguntas" unique_id=1051279180]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pregunta 1"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="PreguntasJ2" type="Label" parent="Grid_Preguntas" unique_id=2058372508]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pregunta 2"
+horizontal_alignment = 1
+
+[node name="SFX_Correcto" type="AudioStreamPlayer" parent="." unique_id=1618648543]
+stream = ExtResource("4_550h2")
+bus = &"bus_sfx"
+
+[node name="SFX_Incorrecto" type="AudioStreamPlayer" parent="." unique_id=2083071183]
+stream = ExtResource("5_1dic1")
+bus = &"bus_sfx"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=374018158]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 62.0
+offset_right = 1902.0
+offset_bottom = 311.0
+
+[node name="Grid_J1" type="GridContainer" parent="HBoxContainer" unique_id=141543161 node_paths=PackedStringArray("sfx_correcto", "sfx_incorrecto")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+script = ExtResource("2_eulf6")
+sfx_correcto = NodePath("../../SFX_Correcto")
+sfx_incorrecto = NodePath("../../SFX_Incorrecto")
+cooldown = 0.0
+
+[node name="Bt_1A" type="Button" parent="HBoxContainer/Grid_J1" unique_id=1236914047]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Bt_1B" type="Button" parent="HBoxContainer/Grid_J1" unique_id=725189398]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Bt_1C" type="Button" parent="HBoxContainer/Grid_J1" unique_id=762785310]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Bt_1D" type="Button" parent="HBoxContainer/Grid_J1" unique_id=462766526]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Grid_J2" type="GridContainer" parent="HBoxContainer" unique_id=2088469493 node_paths=PackedStringArray("sfx_correcto", "sfx_incorrecto")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+script = ExtResource("3_550h2")
+sfx_correcto = NodePath("../../SFX_Correcto")
+sfx_incorrecto = NodePath("../../SFX_Incorrecto")
+
+[node name="Bt_2A" type="Button" parent="HBoxContainer/Grid_J2" unique_id=301723186]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Bt_2B" type="Button" parent="HBoxContainer/Grid_J2" unique_id=1978328901]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Bt_2C" type="Button" parent="HBoxContainer/Grid_J2" unique_id=1123251723]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Bt_2D" type="Button" parent="HBoxContainer/Grid_J2" unique_id=1011734834]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://dpuc2jkraoxjb"]
+
+[ext_resource type="Texture2D" uid="uid://drdf8knmvvbaq" path="res://sprites/Escenarios/Fondo.jpg" id="1_02hrk"]
+[ext_resource type="Theme" uid="uid://cvshnhlprb4rk" path="res://Temas/Btn_Menu_principal.tres" id="1_68geh"]
+[ext_resource type="Script" uid="uid://bno1c2libs5l" path="res://Escenas/Menu_Principal/Scripts/btn_iniciar.gd" id="3_v6jxy"]
+[ext_resource type="PackedScene" uid="uid://cy3ksrhiiyptn" path="res://Escenas/Menu_Seleccion/Menu_seleccion.tscn" id="4_a8cmb"]
+[ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="4_gkowq"]
+[ext_resource type="Script" uid="uid://mks8ed028c0s" path="res://Escenas/Menu_Principal/Scripts/btn_salir.gd" id="4_xfnao"]
+[ext_resource type="Script" uid="uid://c2y2tstrfgkv5" path="res://Escenas/Menu_Principal/Scripts/btn_select.gd" id="5_ciq5v"]
+[ext_resource type="PackedScene" uid="uid://conh6y0ukxgkv" path="res://Escenas/Menu_Opciones/Menu_opciones.tscn" id="6_8noi1"]
+[ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="8_ciq5v"]
+[ext_resource type="Theme" uid="uid://cjx38561hocxb" path="res://Temas/Labels.tres" id="10_6voup"]
+
+[node name="Menu_principal" type="Control" unique_id=1360911147]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1679886066]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(1305.38, 0)
+autoscroll = Vector2(100, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1210591762]
+position = Vector2(-249.47063, 3.000002)
+scale = Vector2(1.391135, 1.1153061)
+texture = ExtResource("1_02hrk")
+centered = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1222621503]
+custom_minimum_size = Vector2(1.405, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -179.5
+offset_top = -89.0
+offset_right = 179.5
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Btn_Iniciar" type="Button" parent="VBoxContainer" unique_id=1062678549 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+layout_mode = 2
+theme = ExtResource("1_68geh")
+text = "JUGAR"
+script = ExtResource("3_v6jxy")
+escena_seleccion = ExtResource("4_a8cmb")
+sfx_pasar = NodePath("../../SFX_Hover")
+sfx_select = NodePath("../../SFX_Select")
+
+[node name="Btn_Opciones" type="Button" parent="VBoxContainer" unique_id=528815026 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+layout_mode = 2
+theme = ExtResource("1_68geh")
+text = "Opciones"
+script = ExtResource("5_ciq5v")
+sfx_pasar = NodePath("../../SFX_Hover")
+sfx_select = NodePath("../../SFX_Select")
+escena_seleccion = ExtResource("6_8noi1")
+
+[node name="Btn_Salir" type="Button" parent="VBoxContainer" unique_id=606611095 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+layout_mode = 2
+theme = ExtResource("1_68geh")
+text = "Salir"
+script = ExtResource("4_xfnao")
+sfx_pasar = NodePath("../../SFX_Hover")
+sfx_select = NodePath("../../SFX_Select")
+
+[node name="SFX_Hover" type="AudioStreamPlayer2D" parent="." unique_id=342974015]
+stream = ExtResource("4_gkowq")
+bus = &"bus_sfx"
+
+[node name="SFX_Select" type="AudioStreamPlayer2D" parent="." unique_id=1108778765]
+stream = ExtResource("8_ciq5v")
+bus = &"bus_sfx"
+
+[node name="Label" type="Label" parent="." unique_id=1567975048]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -629.0
+offset_right = 629.0
+offset_bottom = 302.0
+grow_horizontal = 2
+theme = ExtResource("10_6voup")
+text = "GRAN DERBY DEL NORTE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="VBoxContainer/Btn_Iniciar" to="VBoxContainer/Btn_Iniciar" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/Btn_Opciones" to="VBoxContainer/Btn_Opciones" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/Btn_Salir" to="VBoxContainer/Btn_Salir" method="_on_mouse_entered"]

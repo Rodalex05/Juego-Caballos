@@ -1,0 +1,9 @@
+[gd_resource type="Theme" format=3 uid="uid://bbcybcf5miaia"]
+
+[ext_resource type="Texture2D" uid="uid://dx5de8wmr714g" path="res://sprites/gui_opciones/slide.png" id="1_y2xpe"]
+
+[resource]
+HSlider/icons/grabber = ExtResource("1_y2xpe")
+HSlider/icons/grabber_disabled = ExtResource("1_y2xpe")
+HSlider/icons/grabber_highlight = ExtResource("1_y2xpe")
+HSlider/icons/tick = ExtResource("1_y2xpe")

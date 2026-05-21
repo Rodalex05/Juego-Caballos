@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bgknnbj8sqoju"]
+
+[ext_resource type="Texture2D" uid="uid://drdf8knmvvbaq" path="res://sprites/Escenarios/Fondo.jpg" id="1_q2xqr"]
+[ext_resource type="PackedScene" uid="uid://84hyh0ff402i" path="res://Escenas/Jugadores/jugador_1.tscn" id="2_ouwuo"]
+[ext_resource type="PackedScene" uid="uid://dhiofvfjbwqxb" path="res://Escenas/Ui_Preguntas/Principal_Preguntas.tscn" id="3_6hxy1"]
+[ext_resource type="PackedScene" uid="uid://c11qu58xlkvpw" path="res://Escenas/Jugadores/jugador_2.tscn" id="4_5lh6m"]
+[ext_resource type="Script" uid="uid://cmth4eadoql07" path="res://Escenas/Estadios/Script/camera.gd" id="5_iai8o"]
+[ext_resource type="PackedScene" uid="uid://cuy8rkecrvu8j" path="res://Escenas/Estadios/Meta/Meta.tscn" id="5_u5wol"]
+
+[node name="Carrera1" type="Node2D" unique_id=251591631]
+
+[node name="Mundo" type="Node2D" parent="." unique_id=1609228695]
+unique_name_in_owner = true
+
+[node name="Parallax2D" type="Parallax2D" parent="Mundo" unique_id=1886960754]
+repeat_size = Vector2(1400, 0)
+repeat_times = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Mundo/Parallax2D" unique_id=1262831564]
+position = Vector2(768.37146, 340)
+scale = Vector2(0.9428572, 0.94285715)
+texture = ExtResource("1_q2xqr")
+
+[node name="Jugador1" parent="Mundo" unique_id=301942191 instance=ExtResource("2_ouwuo")]
+unique_name_in_owner = true
+position = Vector2(128, 295)
+
+[node name="Jugador2" parent="Mundo" unique_id=564365846 instance=ExtResource("4_5lh6m")]
+unique_name_in_owner = true
+position = Vector2(129, 551)
+
+[node name="Camera2D" type="Camera2D" parent="Mundo" unique_id=266131509]
+anchor_mode = 0
+script = ExtResource("5_iai8o")
+
+[node name="Area2D" parent="Mundo" unique_id=887343028 instance=ExtResource("5_u5wol")]
+position = Vector2(4088, 424)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1280601229]
+
+[node name="Ui_Preguntas" parent="CanvasLayer" unique_id=891131748 instance=ExtResource("3_6hxy1")]
+anchors_preset = 12
+anchor_top = 1.0
+offset_left = -15.0
+offset_top = -393.0
+offset_right = 17.0
+offset_bottom = 1.0
+grow_vertical = 0
+size_flags_horizontal = 3

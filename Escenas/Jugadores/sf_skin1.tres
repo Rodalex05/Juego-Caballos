@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dfe68handxejs"]
+
+[ext_resource type="Texture2D" uid="uid://cc3ua7qklfmsx" path="res://sprites/Caballos/Caballo1.png" id="1_6wrve"]
+[ext_resource type="Texture2D" uid="uid://p1c6hxn1dn2h" path="res://sprites/Caballos/Caballo2.png" id="2_leq3l"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6wrve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_leq3l")
+}],
+"loop": true,
+"name": &"correr",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6wrve")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
