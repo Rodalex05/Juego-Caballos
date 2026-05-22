@@ -70,15 +70,3 @@ func anterior_skin():
 	if indice < 0:
 		indice = skins.size() - 1
 	actualizar_skin()
-
-# =========================================================
-# INPUT DE TECLADO
-# =========================================================
-#Funcion Process
-func _process(delta):
-#Presionar D avanza a  la siguiente
-	if Input.is_action_just_pressed("Skin_J2_der"):
-		siguiente_skin()
-#Presionar A avanza a  la siguiente
-	if Input.is_action_just_pressed("Skin_J2_izq"):
-		anterior_skin()
