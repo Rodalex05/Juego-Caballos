@@ -6,10 +6,10 @@ uid="uid://ec7lagw4isp5"
 
 [deps]
 
-files=["res://Escenas/Ui_Preguntas/Preguntas/Pregtest.Correcta.translation", "res://Escenas/Ui_Preguntas/Preguntas/Pregtest.Incorrecta1.translation", "res://Escenas/Ui_Preguntas/Preguntas/Pregtest.Incorrecta2.translation", "res://Escenas/Ui_Preguntas/Preguntas/Pregtest.Incorrecta3.translation"]
+files=["res://Escenas/Ui_Preguntas/Preguntas/Pregtest.csv.Correcta.translation", "res://Escenas/Ui_Preguntas/Preguntas/Pregtest.Incorrecta1.translation", "res://Escenas/Ui_Preguntas/Preguntas/Pregtest.Incorrecta2.translation", "res://Escenas/Ui_Preguntas/Preguntas/Pregtest.Incorrecta3.translation"]
 
 source_file="res://Escenas/Ui_Preguntas/Preguntas/Pregtest.csv"
-dest_files=["res://Escenas/Ui_Preguntas/Preguntas/Pregtest.Correcta.translation", "res://Escenas/Ui_Preguntas/Preguntas/Pregtest.Incorrecta1.translation", "res://Escenas/Ui_Preguntas/Preguntas/Pregtest.Incorrecta2.translation", "res://Escenas/Ui_Preguntas/Preguntas/Pregtest.Incorrecta3.translation"]
+dest_files=["res://Escenas/Ui_Preguntas/Preguntas/Pregtest.csv.Correcta.translation", "res://Escenas/Ui_Preguntas/Preguntas/Pregtest.Incorrecta1.translation", "res://Escenas/Ui_Preguntas/Preguntas/Pregtest.Incorrecta2.translation", "res://Escenas/Ui_Preguntas/Preguntas/Pregtest.Incorrecta3.translation"]
 
 [params]
 

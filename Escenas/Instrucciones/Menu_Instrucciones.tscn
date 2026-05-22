@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://brs3h4mckf4bh"]
+
+[ext_resource type="Texture2D" uid="uid://b17xx84hfvx4k" path="res://sprites/Escenarios/Bg_0056_00411.png" id="1_x5i8v"]
+[ext_resource type="Theme" uid="uid://d2fachucyihf1" path="res://Temas/Lb_Instrucciones.tres" id="2_4uu7h"]
+[ext_resource type="Theme" uid="uid://cvshnhlprb4rk" path="res://Temas/Btn_Menu_principal.tres" id="3_3o6qw"]
+[ext_resource type="Script" uid="uid://chel8fiimglxi" path="res://Escenas/Instrucciones/Script/BtnInstrucciones.gd" id="5_4uu7h"]
+[ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="5_honvs"]
+[ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="6_xil8v"]
+
+[node name="Ganador" type="Control" unique_id=437828833]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=32976540]
+layout_mode = 0
+offset_left = -226.0
+offset_top = -10.0
+offset_right = 1980.0
+offset_bottom = 1081.0
+texture = ExtResource("1_x5i8v")
+
+[node name="Label" type="Label" parent="." unique_id=958248619]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 47.0
+offset_right = 1967.0
+offset_bottom = 646.0
+theme = ExtResource("2_4uu7h")
+text = "Instrucciones:
+Contesta la pregunta correcta para avanzar!
+El que llegue primero gana!
+Controles Jugador 1:
+Q,W,A,S
+Controles Jugador 1:
+O,P,K,L"
+
+[node name="Btn_Siguiente" type="Button" parent="." unique_id=1807446327 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+layout_mode = 0
+offset_left = 1232.0
+offset_top = 762.0
+offset_right = 1860.0
+offset_bottom = 988.0
+theme = ExtResource("3_3o6qw")
+text = "Siguiente"
+script = ExtResource("5_4uu7h")
+sfx_pasar = NodePath("../AudioPasar")
+sfx_select = NodePath("../AudioPresionar")
+
+[node name="AudioPasar" type="AudioStreamPlayer" parent="." unique_id=1552412211]
+stream = ExtResource("5_honvs")
+
+[node name="AudioPresionar" type="AudioStreamPlayer" parent="." unique_id=144112494]
+stream = ExtResource("6_xil8v")
