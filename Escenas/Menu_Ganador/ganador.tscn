@@ -5,8 +5,11 @@
 [ext_resource type="Script" uid="uid://b2b1my8ytpkg0" path="res://Escenas/Menu_Ganador/Script/label_ganador.gd" id="2_sg06g"]
 [ext_resource type="Theme" uid="uid://cvshnhlprb4rk" path="res://Temas/Btn_Menu_principal.tres" id="3_1pxpu"]
 [ext_resource type="Script" uid="uid://dt7d6b32fiusw" path="res://Escenas/Menu_Ganador/Script/btn_regresar.gd" id="4_7f2gi"]
+[ext_resource type="Texture2D" uid="uid://b4bfr5pbb1hm" path="res://sprites/UI/BtnNormal/Btn_regresar.png" id="5_fuc76"]
 [ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="5_sg06g"]
+[ext_resource type="Texture2D" uid="uid://cta4eupqf0mjn" path="res://sprites/UI/BtnPressed/Btn_regresar.png" id="6_fuc76"]
 [ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="6_sg4b7"]
+[ext_resource type="Texture2D" uid="uid://csd0mk6n41ty" path="res://sprites/UI/Btn_Hover/Btn_regresar.png" id="7_ym412"]
 
 [node name="Ganador" type="Control" unique_id=437828833]
 layout_mode = 3
@@ -17,11 +20,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=32976540]
-layout_mode = 0
-offset_left = -226.0
-offset_top = -10.0
-offset_right = 1980.0
-offset_bottom = 1081.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_k6dkh")
 
 [node name="Label" type="Label" parent="." unique_id=958248619]
@@ -34,14 +38,16 @@ theme = ExtResource("2_sg4b7")
 text = "Felicidades"
 script = ExtResource("2_sg06g")
 
-[node name="Btn_Regresar" type="Button" parent="." unique_id=1807446327 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+[node name="Btn_Regresar" type="TextureButton" parent="." unique_id=77470475 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 0
-offset_left = 1232.0
-offset_top = 762.0
-offset_right = 1860.0
-offset_bottom = 988.0
+offset_left = 1472.0
+offset_top = 948.0
+offset_right = 1872.0
+offset_bottom = 1028.0
 theme = ExtResource("3_1pxpu")
-text = "Regresar al menu"
+texture_normal = ExtResource("5_fuc76")
+texture_pressed = ExtResource("6_fuc76")
+texture_hover = ExtResource("7_ym412")
 script = ExtResource("4_7f2gi")
 sfx_pasar = NodePath("../AudioPasar")
 sfx_select = NodePath("../AudioPresionar")

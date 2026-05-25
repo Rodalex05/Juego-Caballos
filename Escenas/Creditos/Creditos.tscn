@@ -58,10 +58,10 @@ vertical_alignment = 1
 
 [node name="Btn_Regresar" type="TextureButton" parent="." unique_id=1448178678 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 1
-offset_left = 1458.0
-offset_top = 936.0
-offset_right = 1858.0
-offset_bottom = 1016.0
+offset_left = 34.0
+offset_top = 906.0
+offset_right = 434.0
+offset_bottom = 986.0
 theme = ExtResource("3_4bbef")
 texture_normal = ExtResource("6_jpowq")
 texture_pressed = ExtResource("7_eajci")

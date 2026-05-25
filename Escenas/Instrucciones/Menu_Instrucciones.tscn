@@ -4,11 +4,15 @@
 [ext_resource type="Theme" uid="uid://d2fachucyihf1" path="res://Temas/Lb_Instrucciones.tres" id="2_4uu7h"]
 [ext_resource type="Theme" uid="uid://cvshnhlprb4rk" path="res://Temas/Btn_Menu_principal.tres" id="3_3o6qw"]
 [ext_resource type="Texture2D" uid="uid://b4bfr5pbb1hm" path="res://sprites/UI/BtnNormal/Btn_regresar.png" id="4_8nnoh"]
+[ext_resource type="Texture2D" uid="uid://bnl7ic2605s3q" path="res://sprites/UI/BtnNormal/Btn_jugar.png" id="4_ak64j"]
 [ext_resource type="Script" uid="uid://chel8fiimglxi" path="res://Escenas/Instrucciones/Script/BtnInstrucciones.gd" id="5_4uu7h"]
 [ext_resource type="Texture2D" uid="uid://cta4eupqf0mjn" path="res://sprites/UI/BtnPressed/Btn_regresar.png" id="5_cspha"]
 [ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="5_honvs"]
+[ext_resource type="Texture2D" uid="uid://bhn8iev4f5xtk" path="res://sprites/UI/BtnPressed/Btn_jugar.png" id="5_im36n"]
+[ext_resource type="Texture2D" uid="uid://bjlyxw8xdj8cm" path="res://sprites/UI/Btn_Hover/Btn_jugar.png" id="6_8i5gn"]
 [ext_resource type="Texture2D" uid="uid://csd0mk6n41ty" path="res://sprites/UI/Btn_Hover/Btn_regresar.png" id="6_f5pd6"]
 [ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="6_xil8v"]
+[ext_resource type="Script" uid="uid://be722mu7fk4ll" path="res://Escenas/Instrucciones/Script/btn_atras.gd" id="11_im36n"]
 
 [node name="Ganador" type="Control" unique_id=437828833]
 layout_mode = 3
@@ -42,16 +46,31 @@ O,P,K,L"
 
 [node name="Btn_Siguiente" type="TextureButton" parent="." unique_id=474707572 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 1
-offset_left = 1460.0
+offset_left = 1420.0
 offset_top = 908.0
-offset_right = 1860.0
+offset_right = 1820.0
+offset_bottom = 988.0
+theme = ExtResource("3_3o6qw")
+texture_normal = ExtResource("4_ak64j")
+texture_pressed = ExtResource("5_im36n")
+texture_hover = ExtResource("6_8i5gn")
+stretch_mode = 3
+script = ExtResource("5_4uu7h")
+sfx_pasar = NodePath("../AudioPasar")
+sfx_select = NodePath("../AudioPresionar")
+
+[node name="Btn_Atras" type="TextureButton" parent="." unique_id=530860135 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+layout_mode = 1
+offset_left = 100.0
+offset_top = 908.0
+offset_right = 500.0
 offset_bottom = 988.0
 theme = ExtResource("3_3o6qw")
 texture_normal = ExtResource("4_8nnoh")
 texture_pressed = ExtResource("5_cspha")
 texture_hover = ExtResource("6_f5pd6")
 stretch_mode = 3
-script = ExtResource("5_4uu7h")
+script = ExtResource("11_im36n")
 sfx_pasar = NodePath("../AudioPasar")
 sfx_select = NodePath("../AudioPresionar")
 
@@ -60,3 +79,6 @@ stream = ExtResource("5_honvs")
 
 [node name="AudioPresionar" type="AudioStreamPlayer" parent="." unique_id=144112494]
 stream = ExtResource("6_xil8v")
+
+[connection signal="mouse_entered" from="Btn_Siguiente" to="Btn_Siguiente" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Btn_Atras" to="Btn_Atras" method="_on_mouse_entered"]

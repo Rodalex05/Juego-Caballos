@@ -39,6 +39,13 @@ func _ready():
 	# Conectar botones a funciones
 	$HBoxContainer/BotonIzquierda.pressed.connect(anterior_skin)
 	$HBoxContainer/BotonDerecha.pressed.connect(siguiente_skin)
+	
+func _process(delta):
+	if Input.is_action_just_pressed("Skin_J1_izq"):
+		anterior_skin()
+	if Input.is_action_just_pressed("Skin_J1_der"):
+		siguiente_skin()
+
 
 # =========================================================
 # ACTUALIZAR SKIN

@@ -60,10 +60,8 @@ script = ExtResource("1_ik0cr")
 velocidadtm = 0.15
 
 [node name="Parallax2D" type="Parallax2D" parent="Fondo" unique_id=1679886066]
-scroll_scale = Vector2(0.2, 0.2)
-repeat_size = Vector2(2300, 0)
+repeat_size = Vector2(4760, 0)
 autoscroll = Vector2(50, 0)
-repeat_times = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Fondo/Parallax2D" unique_id=1210591762]
 scale = Vector2(1.5288327, 1.5288326)
@@ -71,10 +69,8 @@ texture = ExtResource("1_2577a")
 centered = false
 
 [node name="Parallax2D2" type="Parallax2D" parent="Fondo" unique_id=2107734193]
-scroll_scale = Vector2(0.2, 0.2)
-repeat_size = Vector2(1305.38, 0)
-autoscroll = Vector2(100, 0)
-repeat_times = 2
+repeat_size = Vector2(4760, 0)
+autoscroll = Vector2(75, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Fondo/Parallax2D2" unique_id=2083092888]
 position = Vector2(-309, 727.99994)
