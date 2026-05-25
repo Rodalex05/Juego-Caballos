@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 #Variables de sonido y siguiente escena
 @export var sfx_pasar : AudioStreamPlayer2D
 @export var sfx_select : AudioStreamPlayer2D

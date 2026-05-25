@@ -1,7 +1,9 @@
 [gd_resource type="Theme" format=3 uid="uid://cjx38561hocxb"]
 
-[ext_resource type="FontFile" uid="uid://bata5wklno1h1" path="res://Fonts/MPLUSRounded1c-ExtraBold.ttf" id="1_scwmy"]
+[ext_resource type="FontFile" uid="uid://bhk87k7nt6qlh" path="res://Fonts/Pixellari.ttf" id="1_scwmy"]
 
 [resource]
-Label/font_sizes/font_size = 26
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 12
+Label/font_sizes/font_size = 35
 Label/fonts/font = ExtResource("1_scwmy")

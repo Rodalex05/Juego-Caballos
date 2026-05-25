@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 @export var sfx_pasar : AudioStreamPlayer
 @export var sfx_select : AudioStreamPlayer
 #manda al menu principal

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dpuc2jkraoxjb"]
 
-[ext_resource type="Texture2D" uid="uid://drdf8knmvvbaq" path="res://sprites/Escenarios/Fondo.jpg" id="1_02hrk"]
 [ext_resource type="Theme" uid="uid://cvshnhlprb4rk" path="res://Temas/Btn_Menu_principal.tres" id="1_68geh"]
 [ext_resource type="Texture2D" uid="uid://ck2k7r6fy8lk1" path="res://sprites/Escenarios/Fondo1.jpg" id="1_2577a"]
+[ext_resource type="Script" uid="uid://jkvvnedi4tbu" path="res://Escenas/Menu_Principal/fondo.gd" id="1_ik0cr"]
 [ext_resource type="Texture2D" uid="uid://c70atr5g3a2l5" path="res://sprites/Escenarios/Fondo2.jpg" id="2_bg3vg"]
 [ext_resource type="Script" uid="uid://ewitpcuel5fk" path="res://Escenas/Menu_Principal/Scripts/v_box_container2.gd" id="2_ildlw"]
 [ext_resource type="Script" uid="uid://c6fwfknt5wh8u" path="res://Escenas/Menu_Principal/Scripts/v_box_container1.gd" id="2_tkyyf"]
@@ -13,33 +13,36 @@
 [ext_resource type="Script" uid="uid://mks8ed028c0s" path="res://Escenas/Menu_Principal/Scripts/btn_salir.gd" id="4_xfnao"]
 [ext_resource type="Script" uid="uid://c2y2tstrfgkv5" path="res://Escenas/Menu_Principal/Scripts/btn_select.gd" id="5_ciq5v"]
 [ext_resource type="Script" uid="uid://1fap706geiq0" path="res://Escenas/Menu_Principal/Scripts/btn_multijugador.gd" id="5_ildlw"]
+[ext_resource type="Texture2D" uid="uid://bnl7ic2605s3q" path="res://sprites/UI/BtnNormal/Btn_jugar.png" id="6_ai5ji"]
 [ext_resource type="Script" uid="uid://bw2ylu5pak5y8" path="res://Escenas/Menu_Principal/Scripts/btn_regresar.gd" id="6_pvxev"]
+[ext_resource type="PackedScene" uid="uid://d16m7nhxusmng" path="res://Escenas/Menu_Opciones/Menu_Instrucciones.tscn" id="7_cjwnn"]
+[ext_resource type="Texture2D" uid="uid://bhn8iev4f5xtk" path="res://sprites/UI/BtnPressed/Btn_jugar.png" id="7_ildlw"]
 [ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="8_ciq5v"]
-[ext_resource type="Theme" uid="uid://bbxupr6wek47v" path="res://Temas/Check_button.tres" id="9_tkyyf"]
-[ext_resource type="Script" uid="uid://47sokhbhwitm" path="res://Escenas/Menu_Opciones/Scripts/check_button.gd" id="10_ildlw"]
-[ext_resource type="Script" uid="uid://df5d4sruxpmmh" path="res://Escenas/Menu_Opciones/Scripts/option_button.gd" id="11_pvxev"]
+[ext_resource type="Texture2D" uid="uid://bjlyxw8xdj8cm" path="res://sprites/UI/Btn_Hover/Btn_jugar.png" id="8_pvxev"]
+[ext_resource type="Texture2D" uid="uid://3nk38cu17peg" path="res://sprites/UI/BtnNormal/Btn_opciones.png" id="10_2577a"]
+[ext_resource type="Texture2D" uid="uid://dhsgbwlj0feo2" path="res://sprites/UI/BtnPressed/Btn_opciones.png" id="11_bg3vg"]
 [ext_resource type="Theme" uid="uid://cjx38561hocxb" path="res://Temas/Labels.tres" id="11_x8ylp"]
-[ext_resource type="Theme" uid="uid://bbcybcf5miaia" path="res://Temas/HSlider.tres" id="12_xv01n"]
-[ext_resource type="Script" uid="uid://bjwbaf104vtfh" path="res://Escenas/Menu_Opciones/Scripts/volumen_slider.gd" id="13_2577a"]
-[ext_resource type="Script" uid="uid://crh7nbxp0gcwh" path="res://Escenas/Menu_Opciones/Scripts/volumen_slider_sfx.gd" id="14_bg3vg"]
-[ext_resource type="Script" uid="uid://ch0wukqsqhodo" path="res://Escenas/Menu_Opciones/Scripts/volumen_slider_musica.gd" id="15_sxfg4"]
-[ext_resource type="Script" uid="uid://q8m7grbv27tq" path="res://Escenas/Menu_Opciones/Scripts/btn_regresar.gd" id="16_mpcx3"]
-[ext_resource type="Texture2D" uid="uid://dybqn0jl5dx6n" path="res://sprites/gui_opciones/logo.png" id="25_bg3vg"]
-
-[sub_resource type="PackedScene" id="PackedScene_vr3i4"]
-_bundled = {
-"conn_count": 6,
-"conns": PackedInt32Array(1073741841, 1073741840, 132, 131, 2, 0, 0, 1073741843, 1073741842, 134, 133, 2, 0, 0, 1073741845, 1073741844, 136, 135, 2, 0, 0, 1073741847, 1073741846, 138, 137, 2, 0, 0, 1073741849, 1073741848, 140, 139, 2, 0, 0, 1073741851, 1073741850, 142, 141, 2, 0, 0),
-"editable_instances": [],
-"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
-"names": PackedStringArray("Control", "Control", "layout_mode", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "Fondo", "Sprite2D", "position", "scale", "texture", "sfx_hover", "AudioStreamPlayer2D", "stream", "bus", "sfx_select", "AudioStreamPlayer2D", "stream", "bus", "MarginContainer", "MarginContainer", "layout_mode", "anchors_preset", "anchor_right", "offset_left", "offset_top", "offset_right", "offset_bottom", "grow_horizontal", "VBoxContainer", "GridContainer", "layout_mode", "size_flags_vertical", "columns", "LB_Pantalla", "Label", "layout_mode", "theme", "text", "CheckButton", "CheckButton", "layout_mode", "size_flags_horizontal", "size_flags_vertical", "theme", "action_mode", "script", "sfx_toggle", "LB_Resolucion", "Label", "layout_mode", "size_flags_vertical", "theme", "text", "OptionButton", "OptionButton", "layout_mode", "size_flags_vertical", "item_count", "popup/item_0/text", "popup/item_0/id", "popup/item_1/text", "popup/item_1/id", "popup/item_2/text", "popup/item_2/id", "popup/item_3/text", "popup/item_3/id", "popup/item_4/text", "popup/item_4/id", "script", "Volumen_Gral", "Label", "layout_mode", "theme", "text", "HSlider", "HSlider", "layout_mode", "size_flags_horizontal", "size_flags_vertical", "theme", "max_value", "step", "value", "script", "bus_nombre", "Volumen_SFX", "Label", "layout_mode", "theme", "text", "HSlider2", "HSlider", "layout_mode", "size_flags_horizontal", "size_flags_vertical", "theme", "max_value", "step", "value", "script", "bus_nombre", "Volumen_Musica", "Label", "layout_mode", "theme", "text", "HSlider3", "HSlider", "layout_mode", "size_flags_vertical", "theme", "max_value", "step", "value", "script", "bus_nombre", "Btn_Regresar", "Button", "layout_mode", "offset_left", "offset_top", "offset_right", "offset_bottom", "theme", "text", "script", "sfx_pasar", "sfx_select", "_on_toggled", "toggled", "_on_item_selected", "item_selected", "_on_value_changed", "value_changed", "_on_value_changed", "value_changed", "_on_value_changed", "value_changed", "_on_mouse_entered", "mouse_entered"),
-"node_count": 17,
-"node_ids": PackedInt32Array(1420720041, 116343311, 704364680, 1927069161, 923657222, 2083058417, 1274923502, 379944001, 1136188, 1562423965, 2055509660, 2103778880, 900931639, 1288488721, 297586439, 1091816809, 39264072),
-"node_paths": [NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("./MarginContainer"), NodePath("./MarginContainer/VBoxContainer"), NodePath("./MarginContainer/VBoxContainer"), NodePath("./MarginContainer/VBoxContainer"), NodePath("./MarginContainer/VBoxContainer"), NodePath("./MarginContainer/VBoxContainer"), NodePath("./MarginContainer/VBoxContainer"), NodePath("./MarginContainer/VBoxContainer"), NodePath("./MarginContainer/VBoxContainer"), NodePath("./MarginContainer/VBoxContainer"), NodePath("./MarginContainer/VBoxContainer"), NodePath("."), NodePath("MarginContainer/VBoxContainer/CheckButton"), NodePath("MarginContainer/VBoxContainer/CheckButton"), NodePath("MarginContainer/VBoxContainer/OptionButton"), NodePath("MarginContainer/VBoxContainer/OptionButton"), NodePath("MarginContainer/VBoxContainer/HSlider"), NodePath("MarginContainer/VBoxContainer/HSlider"), NodePath("MarginContainer/VBoxContainer/HSlider2"), NodePath("MarginContainer/VBoxContainer/HSlider2"), NodePath("MarginContainer/VBoxContainer/HSlider3"), NodePath("MarginContainer/VBoxContainer/HSlider3"), NodePath("Btn_Regresar"), NodePath("Btn_Regresar")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 6, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 0, 1073741824, 0, 9, 8, -1, 3, 10, 6, 11, 7, 12, 8, 0, 1073741825, 0, 14, 13, -1, 2, 15, 9, 16, 10, 0, 1073741826, 0, 18, 17, -1, 2, 19, 11, 20, 12, 0, 1073741827, 0, 22, 21, -1, 8, 23, 13, 24, 14, 25, 15, 26, 16, 27, 17, 28, 18, 29, 19, 30, 20, 0, 1073741828, 0, 32, 31, -1, 3, 33, 21, 34, 22, 35, 23, 0, 1073741829, 0, 37, 36, -1, 3, 38, 24, 39, 25, 40, 26, 0, 1073741830, 0, 42, 41, -1, 7, 43, 27, 44, 28, 45, 29, 46, 30, 47, 31, 48, 32, 1073741873, 33, 0, 1073741831, 0, 51, 50, -1, 4, 52, 34, 53, 35, 54, 36, 55, 37, 0, 1073741832, 0, 57, 56, -1, 14, 58, 38, 59, 39, 60, 40, 61, 41, 62, 42, 63, 43, 64, 44, 65, 45, 66, 46, 67, 47, 68, 48, 69, 49, 70, 50, 71, 51, 0, 1073741833, 0, 73, 72, -1, 3, 74, 52, 75, 53, 76, 54, 0, 1073741834, 0, 78, 77, -1, 9, 79, 55, 80, 56, 81, 57, 82, 58, 83, 59, 84, 60, 85, 61, 86, 62, 87, 63, 0, 1073741835, 0, 89, 88, -1, 3, 90, 64, 91, 65, 92, 66, 0, 1073741836, 0, 94, 93, -1, 9, 95, 67, 96, 68, 97, 69, 98, 70, 99, 71, 100, 72, 101, 73, 102, 74, 103, 75, 0, 1073741837, 0, 105, 104, -1, 3, 106, 76, 107, 77, 108, 78, 0, 1073741838, 0, 110, 109, -1, 8, 111, 79, 112, 80, 113, 81, 114, 82, 115, 83, 116, 84, 117, 85, 118, 86, 0, 1073741839, 0, 120, 119, -1, 10, 121, 87, 122, 88, 123, 89, 124, 90, 125, 91, 126, 92, 127, 93, 128, 94, 1073741953, 95, 1073741954, 96, 0),
-"variants": [3, 15, 1.0, 1.0, 2, 2, Vector2(958.97144, 578), Vector2(1.1714286, 1.1714286), ExtResource("1_02hrk"), ExtResource("4_gkowq"), &"bus_sfx", ExtResource("8_ciq5v"), &"bus_sfx", 1, 10, 1.0, 12.0, 140.0, -89.0, 787.0, 2, 2, 4, 2, 2, ExtResource("11_x8ylp"), "PANTALLA COMPLETA", 2, 0, 3, ExtResource("9_tkyyf"), 0, ExtResource("10_ildlw"), NodePath("../../../sfx_select"), 2, 6, ExtResource("11_x8ylp"), "RESOLUCION", 2, 3, 5, "1920x1080", 0, "1600x900", 1, "1280x720", 2, "1024x768", 3, "800x600", 4, ExtResource("11_pvxev"), 2, ExtResource("11_x8ylp"), "VOLUMEN GENERAL", 2, 9, 2, ExtResource("12_xv01n"), 1.0, 0.001, 1.0, ExtResource("13_2577a"), "Master", 2, ExtResource("11_x8ylp"), "VOLUMEN EFECTOS DE SONIDO", 2, 3, 2, ExtResource("12_xv01n"), 1.0, 0.001, 1.0, ExtResource("14_bg3vg"), "bus_sfx", 2, ExtResource("11_x8ylp"), "VOLUMEN MUSICA", 2, 1, ExtResource("12_xv01n"), 1.0, 0.001, 1.0, ExtResource("15_sxfg4"), "bus_musica", 0, 1608.0, 989.0, 1903.0, 1048.0, ExtResource("1_68geh"), "Regresar", ExtResource("16_mpcx3"), NodePath("../sfx_hover"), NodePath("../sfx_select")],
-"version": 3
-}
+[ext_resource type="Texture2D" uid="uid://c353v73k66ftf" path="res://sprites/UI/Btn_Hover/Btn_opciones.png" id="12_sxfg4"]
+[ext_resource type="Texture2D" uid="uid://d2ap52h0a8jrj" path="res://sprites/UI/BtnNormal/Btn_salir.png" id="14_mpcx3"]
+[ext_resource type="Texture2D" uid="uid://dns6mw1k40q1b" path="res://sprites/UI/BtnPressed/Btn_salir.png" id="15_vr3i4"]
+[ext_resource type="Texture2D" uid="uid://dghm35ydkgrm2" path="res://sprites/UI/Btn_Hover/Btn_salir.png" id="16_881u8"]
+[ext_resource type="Texture2D" uid="uid://rr3vmtk06gmx" path="res://sprites/UI/BtnNormal/Btn_unj1.png" id="19_cqk42"]
+[ext_resource type="Texture2D" uid="uid://dghbkm5xlyhtb" path="res://sprites/UI/Btn_Hover/Btn_unj1.png" id="20_335o5"]
+[ext_resource type="Texture2D" uid="uid://bwc4meisw8b5i" path="res://sprites/UI/BtnPressed/Btn_unj1.png" id="20_kqcm3"]
+[ext_resource type="Texture2D" uid="uid://d3pcuxxhmqxw2" path="res://sprites/UI/BtnNormal/Btn_Multi.png" id="24_i1ikw"]
+[ext_resource type="Texture2D" uid="uid://dybqn0jl5dx6n" path="res://sprites/UI/logo.png" id="25_bg3vg"]
+[ext_resource type="Texture2D" uid="uid://bpe080w425lvp" path="res://sprites/UI/BtnPressed/Btn_Multi.png" id="25_tve3h"]
+[ext_resource type="Texture2D" uid="uid://bviop451t0n4v" path="res://sprites/UI/BtnNormal/Btn_creditos.png" id="26_tcxkl"]
+[ext_resource type="Texture2D" uid="uid://dsdr87sdsgwdu" path="res://sprites/UI/Btn_Hover/Btn_Multi.png" id="26_wqihd"]
+[ext_resource type="Texture2D" uid="uid://6k2ja4if4hr0" path="res://sprites/UI/BtnPressed/Btn_creditos.png" id="27_3mwsd"]
+[ext_resource type="Texture2D" uid="uid://b5xbdi6lafgld" path="res://sprites/UI/Btn_Hover/Btn_creditos.png" id="28_cqk42"]
+[ext_resource type="Texture2D" uid="uid://b4bfr5pbb1hm" path="res://sprites/UI/BtnNormal/Btn_regresar.png" id="28_e415g"]
+[ext_resource type="Texture2D" uid="uid://cta4eupqf0mjn" path="res://sprites/UI/BtnPressed/Btn_regresar.png" id="29_hdwk8"]
+[ext_resource type="Texture2D" uid="uid://csd0mk6n41ty" path="res://sprites/UI/Btn_Hover/Btn_regresar.png" id="30_gce56"]
+[ext_resource type="AudioStream" uid="uid://c3u488abmaovm" path="res://SFX/Musica/Peggle theme tune - Joseph Mayo.mp3" id="34_3y2cs"]
+[ext_resource type="Script" uid="uid://bxn83wbqhcijq" path="res://Escenas/Menu_Principal/Scripts/musica.gd" id="35_jip0x"]
+[ext_resource type="Script" uid="uid://5f4yned8mx3g" path="res://Escenas/Menu_Principal/Scripts/btn_creditos.gd" id="38_hdwk8"]
+[ext_resource type="PackedScene" uid="uid://5pkpfysn4eja" path="res://Escenas/Creditos/Creditos.tscn" id="39_gce56"]
 
 [node name="Menu_principal" type="Control" unique_id=1360911147]
 layout_mode = 3
@@ -49,24 +52,31 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1679886066]
+[node name="Fondo" type="Control" parent="." unique_id=1409652572]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ik0cr")
+velocidadtm = 0.15
+
+[node name="Parallax2D" type="Parallax2D" parent="Fondo" unique_id=1679886066]
 scroll_scale = Vector2(0.2, 0.2)
 repeat_size = Vector2(2300, 0)
 autoscroll = Vector2(50, 0)
 repeat_times = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1210591762]
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Parallax2D" unique_id=1210591762]
 scale = Vector2(1.5288327, 1.5288326)
 texture = ExtResource("1_2577a")
 centered = false
 
-[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=2107734193]
+[node name="Parallax2D2" type="Parallax2D" parent="Fondo" unique_id=2107734193]
 scroll_scale = Vector2(0.2, 0.2)
 repeat_size = Vector2(1305.38, 0)
 autoscroll = Vector2(100, 0)
 repeat_times = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=2083092888]
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Parallax2D2" unique_id=2083092888]
 position = Vector2(-309, 727.99994)
 scale = Vector2(1.529, 1.5991381)
 texture = ExtResource("2_bg3vg")
@@ -81,39 +91,42 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -179.5
+offset_left = -199.0
 offset_top = -108.5
-offset_right = 179.5
-offset_bottom = 108.50012
+offset_right = 201.0
+offset_bottom = 121.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 script = ExtResource("2_tkyyf")
 
-[node name="Btn_Iniciar" type="Button" parent="VBoxContainer" unique_id=1062678549 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+[node name="Btn_Iniciar" type="TextureButton" parent="VBoxContainer" unique_id=1081020516 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("1_68geh")
-text = "Jugar
-"
+texture_normal = ExtResource("6_ai5ji")
+texture_pressed = ExtResource("7_ildlw")
+texture_hover = ExtResource("8_pvxev")
 script = ExtResource("3_v6jxy")
 sfx_pasar = NodePath("../../SFX_Hover")
 sfx_select = NodePath("../../SFX_Select")
 
-[node name="Btn_Opciones" type="Button" parent="VBoxContainer" unique_id=528815026 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+[node name="Btn_Opciones" type="TextureButton" parent="VBoxContainer" unique_id=1504363468 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 2
 theme = ExtResource("1_68geh")
-text = "Configuración"
+texture_normal = ExtResource("10_2577a")
+texture_pressed = ExtResource("11_bg3vg")
+texture_hover = ExtResource("12_sxfg4")
 script = ExtResource("5_ciq5v")
 sfx_pasar = NodePath("../../SFX_Hover")
 sfx_select = NodePath("../../SFX_Select")
-escena_seleccion = SubResource("PackedScene_vr3i4")
 
-[node name="Btn_Salir" type="Button" parent="VBoxContainer" unique_id=606611095 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+[node name="Btn_Salir" type="TextureButton" parent="VBoxContainer" unique_id=1636300895 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 2
 theme = ExtResource("1_68geh")
-text = "Salir
-"
+texture_normal = ExtResource("14_mpcx3")
+texture_pressed = ExtResource("15_vr3i4")
+texture_hover = ExtResource("16_881u8")
 script = ExtResource("4_xfnao")
 sfx_pasar = NodePath("../../SFX_Hover")
 sfx_select = NodePath("../../SFX_Select")
@@ -121,45 +134,42 @@ sfx_select = NodePath("../../SFX_Select")
 [node name="VBoxOp2" type="VBoxContainer" parent="." unique_id=332505580]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(1.405, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 1820.5
-offset_top = -108.5
-offset_right = 2179.499
-offset_bottom = 108.5
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 2761.0
+offset_top = 431.5
+offset_right = 3161.0
+offset_bottom = 661.5
 theme_override_constants/separation = 20
 script = ExtResource("2_ildlw")
 
-[node name="Btn_UnJ1" type="Button" parent="VBoxOp2" unique_id=1750371318 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+[node name="Btn_UnJ1" type="TextureButton" parent="VBoxOp2" unique_id=11041072 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("1_68geh")
-text = "Un Jugador
-"
+texture_normal = ExtResource("19_cqk42")
+texture_pressed = ExtResource("20_kqcm3")
+texture_hover = ExtResource("20_335o5")
 script = ExtResource("4_pvxev")
+sfx_pasar = NodePath("../../SFX_Hover")
+sfx_select = NodePath("../../SFX_Select")
+
+[node name="Btn_Multijugador" type="TextureButton" parent="VBoxOp2" unique_id=139808615 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+layout_mode = 2
+theme = ExtResource("1_68geh")
+texture_normal = ExtResource("24_i1ikw")
+texture_pressed = ExtResource("25_tve3h")
+texture_hover = ExtResource("26_wqihd")
+script = ExtResource("5_ildlw")
 escena_seleccion = ExtResource("4_ai5ji")
 sfx_pasar = NodePath("../../SFX_Hover")
 sfx_select = NodePath("../../SFX_Select")
 
-[node name="Btn_Multijugador" type="Button" parent="VBoxOp2" unique_id=1809121344 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+[node name="Btn_Regresar" type="TextureButton" parent="VBoxOp2" unique_id=1503971184 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 2
 theme = ExtResource("1_68geh")
-text = "Multijugador
-"
-script = ExtResource("5_ildlw")
-sfx_pasar = NodePath("../../SFX_Hover")
-sfx_select = NodePath("../../SFX_Select")
-
-[node name="Btn_Regresar" type="Button" parent="VBoxOp2" unique_id=9404729 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
-layout_mode = 2
-theme = ExtResource("1_68geh")
-text = "Regresar"
+texture_normal = ExtResource("28_e415g")
+texture_pressed = ExtResource("29_hdwk8")
+texture_hover = ExtResource("30_gce56")
 script = ExtResource("6_pvxev")
 sfx_pasar = NodePath("../../SFX_Hover")
 sfx_select = NodePath("../../SFX_Select")
@@ -172,37 +182,56 @@ bus = &"bus_sfx"
 stream = ExtResource("8_ciq5v")
 bus = &"bus_sfx"
 
+[node name="Musica" type="AudioStreamPlayer2D" parent="." unique_id=117939262]
+stream = ExtResource("34_3y2cs")
+bus = &"bus_musica"
+script = ExtResource("35_jip0x")
+
 [node name="Label" type="Label" parent="." unique_id=1777509066]
 layout_mode = 0
-offset_left = 1353.0
-offset_top = 961.0
-offset_right = 1873.0
-offset_bottom = 1031.0
+offset_left = 1262.0
+offset_top = 985.0
+offset_right = 1879.0
+offset_bottom = 1055.0
 theme = ExtResource("11_x8ylp")
-text = "v2.1 Beta — Assets visuales temporales"
+text = "v2.2 Beta — Assets visuales temporales"
 
-[node name="Btn_Creditos" type="Button" parent="." unique_id=1003466527]
+[node name="Btn_Creditos" type="TextureButton" parent="." unique_id=1987494293 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 0
-offset_left = 40.0
+offset_left = 32.0
 offset_top = 955.0
-offset_right = 399.0
-offset_bottom = 1014.0
+offset_right = 432.0
+offset_bottom = 1035.0
 theme = ExtResource("1_68geh")
-text = "CREDITOS"
+texture_normal = ExtResource("26_tcxkl")
+texture_pressed = ExtResource("27_3mwsd")
+texture_hover = ExtResource("28_cqk42")
+script = ExtResource("38_hdwk8")
+escena_seleccion = ExtResource("39_gce56")
+sfx_pasar = NodePath("../SFX_Hover")
+sfx_select = NodePath("../SFX_Select")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=126355196]
 layout_mode = 0
 offset_left = 555.0
-offset_top = 50.0
+offset_top = 21.0
 offset_right = 1338.7229
-offset_bottom = 415.0
+offset_bottom = 386.0
 texture = ExtResource("25_bg3vg")
 expand_mode = 1
 
-[node name="Control" type="Control" parent="." unique_id=1409652572]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Control" parent="." unique_id=1420720041 instance=ExtResource("7_cjwnn")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -900.0
+offset_top = 560.0
+offset_right = 900.0
+offset_bottom = 1360.0
 
 [connection signal="mouse_entered" from="VBoxContainer/Btn_Iniciar" to="VBoxContainer/Btn_Iniciar" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="VBoxContainer/Btn_Opciones" to="VBoxContainer/Btn_Opciones" method="_on_mouse_entered"]

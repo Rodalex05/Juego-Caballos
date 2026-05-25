@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://bbxupr6wek47v"]
 
-[ext_resource type="Texture2D" uid="uid://hsrcro8qxr3e" path="res://sprites/gui_opciones/check1.png" id="1_np5pe"]
+[ext_resource type="Texture2D" uid="uid://csvloekbm7ngh" path="res://sprites/gui_opciones/flecha_abajo.png" id="1_np5pe"]
 [ext_resource type="Texture2D" uid="uid://cakxed7vgliwn" path="res://sprites/gui_opciones/check2.png" id="2_t65j6"]
 
 [resource]

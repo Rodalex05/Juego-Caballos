@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://5pkpfysn4eja"]
 
-[ext_resource type="Texture2D" uid="uid://b17xx84hfvx4k" path="res://sprites/Escenarios/Bg_0056_00411.png" id="1_nfbil"]
+[ext_resource type="Texture2D" uid="uid://b17xx84hfvx4k" path="res://sprites/Escenarios/Fondo_static.png" id="1_nfbil"]
 [ext_resource type="Theme" uid="uid://cjx38561hocxb" path="res://Temas/Labels.tres" id="2_4bbef"]
 [ext_resource type="Theme" uid="uid://cvshnhlprb4rk" path="res://Temas/Btn_Menu_principal.tres" id="3_4bbef"]
+[ext_resource type="Script" uid="uid://xb0t88qncsnp" path="res://Escenas/Creditos/Script/Creditos.gd" id="3_747sr"]
 [ext_resource type="Script" uid="uid://dt7d6b32fiusw" path="res://Escenas/Menu_Ganador/Script/btn_regresar.gd" id="4_qc4ys"]
 [ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="5_56kt0"]
 [ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="6_747sr"]
+[ext_resource type="Texture2D" uid="uid://b4bfr5pbb1hm" path="res://sprites/UI/BtnNormal/Btn_regresar.png" id="6_jpowq"]
+[ext_resource type="Texture2D" uid="uid://dybqn0jl5dx6n" path="res://sprites/UI/logo.png" id="6_swo4t"]
+[ext_resource type="Texture2D" uid="uid://cta4eupqf0mjn" path="res://sprites/UI/BtnPressed/Btn_regresar.png" id="7_eajci"]
+[ext_resource type="Texture2D" uid="uid://csd0mk6n41ty" path="res://sprites/UI/Btn_Hover/Btn_regresar.png" id="8_br41y"]
 
 [node name="Ganador" type="Control" unique_id=437828833]
 layout_mode = 3
@@ -16,45 +21,52 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=32976540]
-layout_mode = 0
-offset_left = -226.0
-offset_top = -10.0
-offset_right = 1980.0
-offset_bottom = 1081.0
+modulate = Color(0.41568628, 0.41568628, 0.41568628, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_nfbil")
 
-[node name="Label" type="Label" parent="." unique_id=958248619]
-layout_mode = 0
-offset_left = 150.0
-offset_top = 47.0
-offset_right = 1601.0
-offset_bottom = 363.0
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1623304829]
+z_index = 1
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -540.0
+offset_bottom = 569.00037
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_747sr")
+
+[node name="logo" type="TextureRect" parent="VBoxContainer" unique_id=890704449]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_swo4t")
+
+[node name="Creditos" type="Label" parent="VBoxContainer" unique_id=958248619]
+layout_mode = 2
+size_flags_vertical = 6
 theme = ExtResource("2_4bbef")
-text = "EFECTOS DE SONIDO
-- SoundBible (https://soundbible.com/)
-- Freesound (https://freesound.org/)
+horizontal_alignment = 1
+vertical_alignment = 1
 
-Algunos recursos de audio se utilizan bajo sus respectivas licencias.
-
-
-FUENTES
-- Insaniburger — Adam Nerland
-- M PLUS Rounded — Coji Morishita, M+ Fonts Project
-
-Tipografías utilizadas bajo SIL Open Font License 1.1.
-
-
-PLACEHOLDERS Y ASSETS TEMPORALES
-Algunos assets utilizados durante el desarrollo provienen de recursos externos."
-
-[node name="Btn_Regresar" type="Button" parent="." unique_id=1807446327 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
-layout_mode = 0
-offset_left = 1351.0
-offset_top = 807.0
-offset_right = 1857.0
-offset_bottom = 937.0
+[node name="Btn_Regresar" type="TextureButton" parent="." unique_id=1448178678 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+layout_mode = 1
+offset_left = 1458.0
+offset_top = 936.0
+offset_right = 1858.0
+offset_bottom = 1016.0
 theme = ExtResource("3_4bbef")
-text = "Regresar al menu"
+texture_normal = ExtResource("6_jpowq")
+texture_pressed = ExtResource("7_eajci")
+texture_hover = ExtResource("8_br41y")
+stretch_mode = 0
 script = ExtResource("4_qc4ys")
 sfx_pasar = NodePath("../Audio_Hover")
 sfx_select = NodePath("../AudioClick")

@@ -1,0 +1,44 @@
+════════════════════
+El GRAN DERBY DEL NORTE
+════════════════════
+UN JUEGO DE
+Team Spica
+════════════════════
+PROGRAMACIÓN
+Rodrigo Alejandro Villicaña Pérez
+════════════════════
+ARTE
+Antonio López Arregoitia 
+════════════════════
+ANIMACIÓN
+Rodrigo Pérez
+Antonio López Arregoitia
+════════════════════
+MÚSICA
+Nombre del artista
+════════════════════
+EFECTOS DE SONIDO
+- SoundBible (https://soundbible.com/)
+- Freesound (https://freesound.org/)
+Algunos recursos de audio se utilizan bajo sus respectivas licencias.
+════════════════════
+FUENTES
+- Insaniburger — Adam Nerland
+- M PLUS Rounded — Coji Morishita, M+ Fonts Project
+Tipografías utilizadas bajo SIL Open Font License 1.1.
+════════════════════
+DISEÑO DE NIVELES
+Rodrigo Pérez
+════════════════════
+HERRAMIENTAS
+Godot Engine
+Aseprite
+GitHub
+════════════════════
+TESTING
+Amigos
+════════════════════
+GRACIAS POR JUGAR!
+FIN
+════════════════════
+Algunos recursos de audio se utilizan bajo sus respectivas licencias.

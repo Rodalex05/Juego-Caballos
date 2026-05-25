@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="3_4wwju"]
 [ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="4_3fgqy"]
 [ext_resource type="Script" uid="uid://dn5cil1bwtvwd" path="res://Escenas/Menu_Seleccion/Script/Bt_jugar.gd" id="4_dfvk1"]
-[ext_resource type="Texture2D" uid="uid://b17xx84hfvx4k" path="res://sprites/Escenarios/Bg_0056_00411.png" id="5_4wwju"]
+[ext_resource type="Texture2D" uid="uid://b17xx84hfvx4k" path="res://sprites/Escenarios/Fondo_static.png" id="5_4wwju"]
 [ext_resource type="Theme" uid="uid://cjx38561hocxb" path="res://Temas/Labels.tres" id="6_3fgqy"]
 [ext_resource type="Script" uid="uid://cbwsr00tjsgi5" path="res://Escenas/Menu_Seleccion/Script/v_box_skins1.gd" id="6_7d545"]
 [ext_resource type="Texture2D" uid="uid://cc3ua7qklfmsx" path="res://sprites/Caballos/Caballo1.png" id="7_vui37"]

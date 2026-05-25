@@ -1,9 +1,17 @@
 [gd_resource type="Theme" format=3 uid="uid://bbcybcf5miaia"]
 
-[ext_resource type="Texture2D" uid="uid://dx5de8wmr714g" path="res://sprites/gui_opciones/slide.png" id="1_y2xpe"]
+[ext_resource type="Texture2D" uid="uid://27teo6as7uy4" path="res://sprites/gui_opciones/Slider.png" id="1_1jpax"]
+[ext_resource type="Texture2D" uid="uid://b0jejil4oidcc" path="res://sprites/gui_opciones/Slider_selected.png" id="2_y2xpe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1jpax"]
+bg_color = Color(0.8156863, 0.81960785, 0.8352941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y2xpe"]
+border_width_top = 10
+border_color = Color(0.54901963, 0.5529412, 0.57254905, 1)
 
 [resource]
-HSlider/icons/grabber = ExtResource("1_y2xpe")
-HSlider/icons/grabber_disabled = ExtResource("1_y2xpe")
-HSlider/icons/grabber_highlight = ExtResource("1_y2xpe")
-HSlider/icons/tick = ExtResource("1_y2xpe")
+HSlider/icons/grabber = ExtResource("1_1jpax")
+HSlider/icons/grabber_highlight = ExtResource("2_y2xpe")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_1jpax")
+HSlider/styles/slider = SubResource("StyleBoxFlat_y2xpe")

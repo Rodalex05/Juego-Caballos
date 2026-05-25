@@ -9,6 +9,9 @@ func _process(delta: float) -> void:
 	pass
 
 func _izqmover():
+	$Btn_Iniciar.disabled = true
+	$Btn_Opciones.disabled = true
+	$Btn_Salir.disabled = true
 	$Btn_Iniciar._movimientoizq()
 	await get_tree().create_timer(.2).timeout
 	$Btn_Opciones._movimientoizq()
@@ -16,9 +19,14 @@ func _izqmover():
 	$Btn_Salir._movimientoizq()
 	$"../VBoxOp2"._izqmover()
 
+
 func _dermover():
 	$Btn_Iniciar._movimientoder()
 	await get_tree().create_timer(.2).timeout
 	$Btn_Opciones._movimientoder()
 	await get_tree().create_timer(.2).timeout
 	$Btn_Salir._movimientoder()
+	await get_tree().create_timer(1).timeout
+	$Btn_Iniciar.disabled = false
+	$Btn_Opciones.disabled = false
+	$Btn_Salir.disabled = false

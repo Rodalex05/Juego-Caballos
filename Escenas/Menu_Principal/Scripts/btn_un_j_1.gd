@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 #Variables de sonido y siguiente escena
 @export var escena_seleccion: PackedScene
 @export var sfx_pasar : AudioStreamPlayer2D
@@ -17,7 +17,6 @@ func _jugar():
 #Sonar si se pasa el mouse encima
 func _on_mouse_entered() -> void:
 	sfx_pasar.play()
-
 func _movimientoizq():
 	var tween: Tween = create_tween()
 	tween.tween_property(self,"position:x",position.x-2000,1).set_trans(tween.TRANS_CUBIC)
