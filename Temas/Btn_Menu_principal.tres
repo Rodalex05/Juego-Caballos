@@ -1,8 +1,0 @@
-[gd_resource type="Theme" format=3 uid="uid://cvshnhlprb4rk"]
-
-[ext_resource type="FontFile" uid="uid://wa8mpvql7hif" path="res://Fonts/Monocraft.ttc" id="1_c8xj6"]
-
-[resource]
-Button/constants/h_separation = 527
-Button/font_sizes/font_size = 45
-Button/fonts/font = ExtResource("1_c8xj6")

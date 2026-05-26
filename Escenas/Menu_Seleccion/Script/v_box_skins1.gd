@@ -45,6 +45,7 @@ func _process(delta):
 		anterior_skin()
 	if Input.is_action_just_pressed("Skin_J1_der"):
 		siguiente_skin()
+		$HBoxContainer/BotonDerecha._arriba()
 
 
 # =========================================================
@@ -68,6 +69,7 @@ func siguiente_skin():
 	if indice >= skins.size():
 		indice = 0
 	actualizar_skin()
+	$HBoxContainer/BotonDerecha._arriba()
 
 # Esta función avanza a la derecha
 func anterior_skin():

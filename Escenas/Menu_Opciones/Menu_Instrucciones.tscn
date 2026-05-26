@@ -4,15 +4,14 @@
 [ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="2_2n6rl"]
 [ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="3_go26t"]
 [ext_resource type="Theme" uid="uid://cjx38561hocxb" path="res://Temas/Labels.tres" id="4_4wgf5"]
-[ext_resource type="Theme" uid="uid://bbxupr6wek47v" path="res://Temas/Check_button.tres" id="5_ij4lo"]
+[ext_resource type="Theme" uid="uid://ssdyo8pirdx" path="res://Temas/CheckButton.tres" id="6_ij4lo"]
 [ext_resource type="Script" uid="uid://47sokhbhwitm" path="res://Escenas/Menu_Opciones/Scripts/check_button.gd" id="6_kd7wh"]
 [ext_resource type="Script" uid="uid://df5d4sruxpmmh" path="res://Escenas/Menu_Opciones/Scripts/option_button.gd" id="7_3jykw"]
-[ext_resource type="Theme" uid="uid://c55wqyfppe1bw" path="res://Temas/Options_button.tres" id="7_ij4lo"]
+[ext_resource type="Theme" uid="uid://d1dpi2qgur7q8" path="res://Temas/Optionbutton.tres" id="7_4wgf5"]
 [ext_resource type="Theme" uid="uid://bbcybcf5miaia" path="res://Temas/HSlider.tres" id="8_s0hg4"]
 [ext_resource type="Script" uid="uid://bjwbaf104vtfh" path="res://Escenas/Menu_Opciones/Scripts/volumen_slider.gd" id="9_ivyg2"]
 [ext_resource type="Script" uid="uid://crh7nbxp0gcwh" path="res://Escenas/Menu_Opciones/Scripts/volumen_slider_sfx.gd" id="10_1t8ee"]
 [ext_resource type="Script" uid="uid://ch0wukqsqhodo" path="res://Escenas/Menu_Opciones/Scripts/volumen_slider_musica.gd" id="11_ffvwx"]
-[ext_resource type="Theme" uid="uid://cvshnhlprb4rk" path="res://Temas/Btn_Menu_principal.tres" id="12_endko"]
 [ext_resource type="Texture2D" uid="uid://d0dgbn0wguiv5" path="res://sprites/gui_opciones/Btn_regresar.png" id="13_2n6rl"]
 [ext_resource type="Script" uid="uid://q8m7grbv27tq" path="res://Escenas/Menu_Opciones/Scripts/btn_regresar.gd" id="13_22qk2"]
 [ext_resource type="Texture2D" uid="uid://b45whujuxy7ed" path="res://sprites/gui_opciones/Btn_regresar2.png" id="14_4wgf5"]
@@ -89,7 +88,7 @@ text = "Pantalla completa"
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
-theme = ExtResource("5_ij4lo")
+theme = ExtResource("6_ij4lo")
 action_mode = 0
 script = ExtResource("6_kd7wh")
 sfx_toggle = NodePath("../../../sfx_select")
@@ -103,7 +102,7 @@ text = "Resolución "
 [node name="OptionButton" type="OptionButton" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1562423965]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("7_ij4lo")
+theme = ExtResource("7_4wgf5")
 selected = 0
 item_count = 5
 popup/item_0/text = "  1920x1080"
@@ -170,7 +169,6 @@ offset_left = 1387.0
 offset_top = 703.0
 offset_right = 1787.0
 offset_bottom = 783.0
-theme = ExtResource("12_endko")
 texture_normal = ExtResource("13_2n6rl")
 texture_pressed = ExtResource("14_4wgf5")
 texture_hover = ExtResource("15_ij4lo")

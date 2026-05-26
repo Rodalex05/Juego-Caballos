@@ -1,7 +1,0 @@
-[gd_resource type="Theme" format=3 uid="uid://d0ww38uiany33"]
-
-[ext_resource type="FontFile" uid="uid://b6eme8fgmeqoo" path="res://Fonts/Insanibu.ttf" id="1_lkau1"]
-
-[resource]
-Label/font_sizes/font_size = 159
-Label/fonts/font = ExtResource("1_lkau1")

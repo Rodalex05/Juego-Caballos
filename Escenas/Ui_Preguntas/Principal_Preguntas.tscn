@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://cucq574l1mpa4" path="res://SFX/sfx_correct.wav" id="4_550h2"]
 [ext_resource type="AudioStream" uid="uid://cbgol20ivlokk" path="res://SFX/sfx_wrong.wav" id="5_1dic1"]
 [ext_resource type="Script" uid="uid://mibrcxy2mfya" path="res://Escenas/Ui_Preguntas/Scripts/rect_curiosidad_1.gd" id="6_nexb1"]
+[ext_resource type="Script" uid="uid://dnub46ue2f7ks" path="res://Escenas/Menu_Seleccionv2/Script/botones.gd" id="7_64em5"]
+[ext_resource type="Theme" uid="uid://cjx38561hocxb" path="res://Temas/Labels.tres" id="8_fmjke"]
 
 [node name="Ui_Preguntas" type="Control" unique_id=891131748]
 layout_mode = 3
@@ -188,6 +190,7 @@ text = "L"
 horizontal_alignment = 2
 
 [node name="Rect_curiosidad1" type="ColorRect" parent="." unique_id=1080846634]
+visible = false
 layout_mode = 0
 offset_left = 204.0
 offset_top = 87.0
@@ -207,6 +210,42 @@ text = "CURIOSIDAD"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Botones" type="GridContainer" parent="." unique_id=727970539]
+layout_mode = 0
+offset_left = 1195.0
+offset_top = 25.0
+offset_right = 1464.0
+offset_bottom = 280.0
+columns = 2
+script = ExtResource("7_64em5")
+
+[node name="W" type="Button" parent="Botones" unique_id=926191855]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("8_fmjke")
+text = "Q"
+
+[node name="D" type="Button" parent="Botones" unique_id=2049459832]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("8_fmjke")
+text = "W"
+
+[node name="S" type="Button" parent="Botones" unique_id=778978436]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("8_fmjke")
+text = "A"
+
+[node name="A" type="Button" parent="Botones" unique_id=591409483]
+layout_mode = 2
+theme = ExtResource("8_fmjke")
+text = "S
+"
 
 [connection signal="respuesta_correcta" from="HBoxContainer/Grid_J1" to="Rect_curiosidad1" method="_on_grid_j_1_respuesta_correcta"]
 [connection signal="respuesta_incorrecta" from="HBoxContainer/Grid_J1" to="Rect_curiosidad1" method="_on_grid_j_1_respuesta_incorrecta"]

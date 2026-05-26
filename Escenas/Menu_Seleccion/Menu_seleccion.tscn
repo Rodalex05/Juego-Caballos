@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://cy3ksrhiiyptn"]
 
-[ext_resource type="Theme" uid="uid://cvshnhlprb4rk" path="res://Temas/Btn_Menu_principal.tres" id="1_qved6"]
 [ext_resource type="Script" uid="uid://b88m0ay6nbttu" path="res://Escenas/Menu_Seleccion/Script/Bt_Regresar.gd" id="2_kwj2a"]
 [ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="3_4wwju"]
 [ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="4_3fgqy"]
@@ -9,8 +8,10 @@
 [ext_resource type="Theme" uid="uid://cjx38561hocxb" path="res://Temas/Labels.tres" id="6_3fgqy"]
 [ext_resource type="Script" uid="uid://cbwsr00tjsgi5" path="res://Escenas/Menu_Seleccion/Script/v_box_skins1.gd" id="6_7d545"]
 [ext_resource type="Texture2D" uid="uid://cc3ua7qklfmsx" path="res://sprites/Caballos/Caballo1.png" id="7_vui37"]
+[ext_resource type="Script" uid="uid://dhnorpt532uq6" path="res://Escenas/Menu_Seleccion/Script/boton_derecha.gd" id="9_75xgc"]
 [ext_resource type="Script" uid="uid://brkraavqgc6de" path="res://Escenas/Menu_Seleccion/Script/v_box_skins2.gd" id="10_2u5pg"]
 [ext_resource type="Script" uid="uid://cj4ep5wrta1ul" path="res://Escenas/Menu_Seleccion/Script/J1line_edit.gd" id="10_m52rp"]
+[ext_resource type="AudioStream" uid="uid://4u7odasjebxh" path="res://Musica/Select_menu.mp3" id="12_75xgc"]
 [ext_resource type="Script" uid="uid://mxrg3glutu8e" path="res://Escenas/Menu_Seleccion/Script/J2line_edit.gd" id="12_l57yc"]
 
 [node name="Control" type="Control" unique_id=1595190421]
@@ -21,9 +22,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Fondo" type="Sprite2D" parent="." unique_id=920610373]
-position = Vector2(1092, 540.5)
-scale = Vector2(1.0693359, 1.0693359)
+[node name="Fondo" type="TextureRect" parent="." unique_id=1899545045]
+modulate = Color(0.41568628, 0.41568628, 0.41568628, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("5_4wwju")
 
 [node name="Btn_Menu" type="Button" parent="." unique_id=2014435616 node_paths=PackedStringArray("sfx_hover", "sfx_press")]
@@ -32,7 +38,6 @@ offset_left = 1318.0
 offset_top = 929.0
 offset_right = 1799.0
 offset_bottom = 1028.0
-theme = ExtResource("1_qved6")
 text = "REGRESAR AL MENU"
 script = ExtResource("2_kwj2a")
 sfx_hover = NodePath("../Sfx_hover")
@@ -44,7 +49,6 @@ offset_left = 137.0
 offset_top = 920.0
 offset_right = 618.0
 offset_bottom = 1019.0
-theme = ExtResource("1_qved6")
 text = "JUGAR
 "
 script = ExtResource("4_dfvk1")
@@ -98,8 +102,10 @@ texture = ExtResource("7_vui37")
 [node name="BotonDerecha" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=895929171]
 layout_mode = 2
 size_flags_horizontal = 3
+script = ExtResource("9_75xgc")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1596790314 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+visible = false
 layout_mode = 0
 offset_left = 1000.0
 offset_top = 228.0
@@ -156,6 +162,11 @@ offset_right = 1760.0
 offset_bottom = 215.0
 placeholder_text = "Escribe tu nombre aqui"
 script = ExtResource("12_l57yc")
+
+[node name="Musica" type="AudioStreamPlayer2D" parent="." unique_id=2063636082]
+stream = ExtResource("12_75xgc")
+autoplay = true
+bus = &"bus_musica"
 
 [connection signal="mouse_entered" from="Btn_Menu" to="Btn_Menu" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Btn_Jugar" to="Btn_Jugar" method="_on_mouse_entered"]

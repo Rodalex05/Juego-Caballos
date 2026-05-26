@@ -1,4 +1,8 @@
-[gd_resource type="Theme" format=3 uid="uid://cgcvihlfp484k"]
+[gd_resource type="Theme" format=3 uid="uid://ssdyo8pirdx"]
+
+[ext_resource type="Texture2D" uid="uid://csvloekbm7ngh" path="res://sprites/gui_opciones/flecha_abajo.png" id="1_h0qcn"]
+[ext_resource type="Texture2D" uid="uid://cakxed7vgliwn" path="res://sprites/gui_opciones/check2.png" id="2_owl0j"]
 
 [resource]
-CheckButton/font_sizes/font_size = 23
+CheckButton/icons/checked = ExtResource("1_h0qcn")
+CheckButton/icons/unchecked = ExtResource("2_owl0j")

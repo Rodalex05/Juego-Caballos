@@ -1,0 +1,11 @@
+[gd_resource type="Theme" format=3 uid="uid://d1dpi2qgur7q8"]
+
+[ext_resource type="FontFile" uid="uid://wa8mpvql7hif" path="res://Fonts/Monocraft.ttc" id="1_fserc"]
+[ext_resource type="Texture2D" uid="uid://hsrcro8qxr3e" path="res://sprites/gui_opciones/check1.png" id="2_f2476"]
+
+[resource]
+default_font = ExtResource("1_fserc")
+default_font_size = 30
+OptionButton/font_sizes/font_size = 30
+OptionButton/fonts/font = ExtResource("1_fserc")
+OptionButton/icons/arrow = ExtResource("2_f2476")

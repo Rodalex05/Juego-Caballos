@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://b17xx84hfvx4k" path="res://sprites/Escenarios/Fondo_static.png" id="1_nfbil"]
 [ext_resource type="Theme" uid="uid://cjx38561hocxb" path="res://Temas/Labels.tres" id="2_4bbef"]
-[ext_resource type="Theme" uid="uid://cvshnhlprb4rk" path="res://Temas/Btn_Menu_principal.tres" id="3_4bbef"]
 [ext_resource type="Script" uid="uid://xb0t88qncsnp" path="res://Escenas/Creditos/Script/Creditos.gd" id="3_747sr"]
 [ext_resource type="Script" uid="uid://dt7d6b32fiusw" path="res://Escenas/Menu_Ganador/Script/btn_regresar.gd" id="4_qc4ys"]
 [ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="5_56kt0"]
@@ -62,7 +61,6 @@ offset_left = 34.0
 offset_top = 906.0
 offset_right = 434.0
 offset_bottom = 986.0
-theme = ExtResource("3_4bbef")
 texture_normal = ExtResource("6_jpowq")
 texture_pressed = ExtResource("7_eajci")
 texture_hover = ExtResource("8_br41y")

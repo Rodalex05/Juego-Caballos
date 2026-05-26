@@ -1,7 +1,7 @@
 extends Button
 #Sonidos
-@export var sfx_hover : AudioStreamPlayer2D
-@export var sfx_press : AudioStreamPlayer2D
+@export var sfx_hover : AudioStreamPlayer
+@export var sfx_press : AudioStreamPlayer
 #Funcion Ready
 func _ready() -> void:
 	#Detecta si se presiono
