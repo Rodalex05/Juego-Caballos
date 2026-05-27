@@ -8,8 +8,7 @@ func _menu():
 	#Reproduce el sonido
 	sfx_select.play()
 	await get_tree().create_timer(0.2).timeout
-	get_tree().change_scene_to_file("res://Escenas/Menu_Seleccion/Menu_seleccion.tscn")
-
+	get_tree().change_scene_to_file("res://Escenas/Ingreso_Nombres/nombres_jugadores.tscn")
 #Sonar si se pasa el mouse encima
 func _on_mouse_entered() -> void:
 	sfx_pasar.play()

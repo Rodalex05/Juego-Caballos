@@ -6,7 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://cucq574l1mpa4" path="res://SFX/sfx_correct.wav" id="4_550h2"]
 [ext_resource type="AudioStream" uid="uid://cbgol20ivlokk" path="res://SFX/sfx_wrong.wav" id="5_1dic1"]
 [ext_resource type="Script" uid="uid://mibrcxy2mfya" path="res://Escenas/Ui_Preguntas/Scripts/rect_curiosidad_1.gd" id="6_nexb1"]
-[ext_resource type="Script" uid="uid://dnub46ue2f7ks" path="res://Escenas/Menu_Seleccionv2/Script/botones.gd" id="7_64em5"]
 [ext_resource type="Theme" uid="uid://cjx38561hocxb" path="res://Temas/Labels.tres" id="8_fmjke"]
 
 [node name="Ui_Preguntas" type="Control" unique_id=891131748]
@@ -218,7 +217,6 @@ offset_top = 25.0
 offset_right = 1464.0
 offset_bottom = 280.0
 columns = 2
-script = ExtResource("7_64em5")
 
 [node name="W" type="Button" parent="Botones" unique_id=926191855]
 layout_mode = 2

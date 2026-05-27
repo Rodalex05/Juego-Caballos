@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://pawota5fssk7"]
 
-[ext_resource type="Texture2D" uid="uid://b17xx84hfvx4k" path="res://sprites/Escenarios/Fondo_static.png" id="1_nwsta"]
-[ext_resource type="Theme" uid="uid://d2fachucyihf1" path="res://Temas/Lb_Instrucciones.tres" id="2_mxx7n"]
+[ext_resource type="Texture2D" uid="uid://b17xx84hfvx4k" path="res://sprites/Fondos/Fondo_static.png" id="1_nwsta"]
+[ext_resource type="Theme" path="res://Temas/Lb_Instrucciones.tres" id="2_mxx7n"]
 [ext_resource type="Script" uid="uid://5kw4mkro13pf" path="res://Escenas/Menu_Ganador/Script/label_ganador2.gd" id="3_mxx7n"]
-[ext_resource type="Theme" uid="uid://cvshnhlprb4rk" path="res://Temas/Btn_Menu_principal.tres" id="3_nwsta"]
+[ext_resource type="Theme" path="res://Temas/Btn_Menu_principal.tres" id="3_nwsta"]
 [ext_resource type="Script" uid="uid://dt7d6b32fiusw" path="res://Escenas/Menu_Ganador/Script/btn_regresar.gd" id="4_y6oa5"]
 
 [node name="Ganador" type="Control" unique_id=437828833]

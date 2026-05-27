@@ -1,30 +1,11 @@
-extends GridContainer
+extends Control
+
+@onready var selector = $"../Jugador1"
 
 
-func _ready():
+#func _ready():
 
-	$W.pressed.connect(_q)
-	$A.pressed.connect(_a)
-	$S.pressed.connect(_s)
-	$D.pressed.connect(_d)
-
-
-
-func _q():
-	Input.action_press("Boton1A")
-	Input.action_release("Boton1A")
-
-
-func _d():
-	Input.action_press("Boton1B")
-	Input.action_release("Boton1B")
-
-
-func _s():
-	Input.action_press("Boton1C")
-	Input.action_release("Boton1C")
-
-
-func _a():
-	Input.action_press("Boton1D")
-	Input.action_release("Boton1D")
+	#$A.pressed.connect(selector.mover_izquierda)
+	#$D.pressed.connect(selector.mover_derecha)
+	#$W.pressed.connect(selector.mover_arriba)
+	#$S.pressed.connect(selector.mover_abajo)

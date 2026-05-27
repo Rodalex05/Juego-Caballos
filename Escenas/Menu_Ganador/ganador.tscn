@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c1o0xv07kgyqi"]
 
-[ext_resource type="Texture2D" uid="uid://b17xx84hfvx4k" path="res://sprites/Escenarios/Fondo_static.png" id="1_k6dkh"]
-[ext_resource type="Theme" uid="uid://d2fachucyihf1" path="res://Temas/Lb_Instrucciones.tres" id="2_sg4b7"]
+[ext_resource type="Texture2D" uid="uid://b17xx84hfvx4k" path="res://sprites/Fondos/Fondo_static.png" id="1_k6dkh"]
+[ext_resource type="Theme" path="res://Temas/Lb_Instrucciones.tres" id="2_sg4b7"]
 [ext_resource type="Script" uid="uid://b2b1my8ytpkg0" path="res://Escenas/Menu_Ganador/Script/label_ganador.gd" id="2_sg06g"]
-[ext_resource type="Theme" uid="uid://cvshnhlprb4rk" path="res://Temas/Btn_Menu_principal.tres" id="3_1pxpu"]
+[ext_resource type="Theme" path="res://Temas/Btn_Menu_principal.tres" id="3_1pxpu"]
 [ext_resource type="Script" uid="uid://dt7d6b32fiusw" path="res://Escenas/Menu_Ganador/Script/btn_regresar.gd" id="4_7f2gi"]
 [ext_resource type="Texture2D" uid="uid://b4bfr5pbb1hm" path="res://sprites/UI/BtnNormal/Btn_regresar.png" id="5_fuc76"]
 [ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="5_sg06g"]

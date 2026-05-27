@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://bods3lw78hjc3"]
+
+[ext_resource type="FontFile" uid="uid://b2u7neuqihoqw" path="res://Fonts/m42.TTF" id="1_5do0o"]
+
+[resource]
+Label/constants/outline_size = 31
+Label/font_sizes/font_size = 48
+Label/fonts/font = ExtResource("1_5do0o")

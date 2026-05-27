@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://cpj5cwbjoctgh"]
+
+[ext_resource type="FontFile" uid="uid://botj265srmyt6" path="res://Fonts/GrapeSoda.ttf" id="1_jepnl"]
+
+[resource]
+Label/font_sizes/font_size = 150
+Label/fonts/font = ExtResource("1_jepnl")

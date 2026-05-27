@@ -5,7 +5,7 @@ extends TextureRect
 var bloqueado = false
 
 # 3 columnas
-var horizontal = 0
+var horizontal = 2
 
 # 5 filas
 var vertical = 0
@@ -29,7 +29,7 @@ func _ready():
 
 	posicion_inicial = cursor.position
 	_actualizar_skin()
-	$Label.text=(Nombres.nombrej1)
+	$Label.text=(Nombres.nombrej2)
 
 
 
@@ -38,16 +38,16 @@ func _process(delta):
 	if bloqueado:
 		return
 
-	if Input.is_action_just_pressed("Skin_J1_der"):
+	if Input.is_action_just_pressed("Skin_J2_der"):
 		mover_derecha()
 
-	elif Input.is_action_just_pressed("Skin_J1_izq"):
+	elif Input.is_action_just_pressed("Skin_J2_izq"):
 		mover_izquierda()
 
-	elif Input.is_action_just_pressed("Skin_J1_arriba"):
+	elif Input.is_action_just_pressed("Skin_J2_arriba"):
 		mover_arriba()
 
-	elif Input.is_action_just_pressed("Skin_J1_abajo"):
+	elif Input.is_action_just_pressed("Skin_J2_abajo"):
 		mover_abajo()
 
 	_actualizar_skin()

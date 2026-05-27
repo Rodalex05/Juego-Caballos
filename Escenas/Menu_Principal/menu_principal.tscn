@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dpuc2jkraoxjb"]
 
-[ext_resource type="Texture2D" uid="uid://ck2k7r6fy8lk1" path="res://sprites/Escenarios/Fondo1.jpg" id="1_2577a"]
+[ext_resource type="Texture2D" uid="uid://ck2k7r6fy8lk1" path="res://sprites/Fondos/Fondo1.jpg" id="1_2577a"]
 [ext_resource type="Script" uid="uid://jkvvnedi4tbu" path="res://Escenas/Menu_Principal/fondo.gd" id="1_ik0cr"]
-[ext_resource type="Texture2D" uid="uid://c70atr5g3a2l5" path="res://sprites/Escenarios/Fondo2.jpg" id="2_bg3vg"]
+[ext_resource type="Texture2D" uid="uid://c70atr5g3a2l5" path="res://sprites/Fondos/Fondo2.jpg" id="2_bg3vg"]
 [ext_resource type="Script" uid="uid://ewitpcuel5fk" path="res://Escenas/Menu_Principal/Scripts/v_box_container2.gd" id="2_ildlw"]
 [ext_resource type="Script" uid="uid://c6fwfknt5wh8u" path="res://Escenas/Menu_Principal/Scripts/v_box_container1.gd" id="2_tkyyf"]
 [ext_resource type="Script" uid="uid://bno1c2libs5l" path="res://Escenas/Menu_Principal/Scripts/btn_iniciar.gd" id="3_v6jxy"]
@@ -25,10 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://d2ap52h0a8jrj" path="res://sprites/UI/BtnNormal/Btn_salir.png" id="14_mpcx3"]
 [ext_resource type="Texture2D" uid="uid://dns6mw1k40q1b" path="res://sprites/UI/BtnPressed/Btn_salir.png" id="15_vr3i4"]
 [ext_resource type="Texture2D" uid="uid://dghm35ydkgrm2" path="res://sprites/UI/Btn_Hover/Btn_salir.png" id="16_881u8"]
-[ext_resource type="Texture2D" uid="uid://rr3vmtk06gmx" path="res://sprites/UI/BtnNormal/Btn_unj1.png" id="19_cqk42"]
-[ext_resource type="Texture2D" uid="uid://dghbkm5xlyhtb" path="res://sprites/UI/Btn_Hover/Btn_unj1.png" id="20_335o5"]
 [ext_resource type="Texture2D" uid="uid://bwc4meisw8b5i" path="res://sprites/UI/BtnPressed/Btn_unj1.png" id="20_kqcm3"]
-[ext_resource type="PackedScene" uid="uid://700coho1a6wi" path="res://Escenas/Menu_Seleccionv2/menu.tscn" id="22_jip0x"]
 [ext_resource type="Texture2D" uid="uid://d3pcuxxhmqxw2" path="res://sprites/UI/BtnNormal/Btn_Multi.png" id="24_i1ikw"]
 [ext_resource type="Texture2D" uid="uid://dybqn0jl5dx6n" path="res://sprites/UI/logo.png" id="25_bg3vg"]
 [ext_resource type="Texture2D" uid="uid://bpe080w425lvp" path="res://sprites/UI/BtnPressed/Btn_Multi.png" id="25_tve3h"]
@@ -138,11 +135,12 @@ script = ExtResource("2_ildlw")
 [node name="Btn_UnJ1" type="TextureButton" parent="VBoxOp2" unique_id=11041072 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 2
 mouse_filter = 1
-texture_normal = ExtResource("19_cqk42")
+disabled = true
+texture_normal = ExtResource("20_kqcm3")
 texture_pressed = ExtResource("20_kqcm3")
-texture_hover = ExtResource("20_335o5")
+texture_hover = ExtResource("20_kqcm3")
+texture_disabled = ExtResource("20_kqcm3")
 script = ExtResource("4_pvxev")
-escena_seleccion = ExtResource("22_jip0x")
 sfx_pasar = NodePath("../../SFX_Hover")
 sfx_select = NodePath("../../SFX_Select")
 
@@ -185,7 +183,7 @@ offset_top = 985.0
 offset_right = 1879.0
 offset_bottom = 1055.0
 theme = ExtResource("11_x8ylp")
-text = "v2.2 Beta — Assets visuales temporales"
+text = "v2.6  Beta — Assets visuales temporales"
 
 [node name="Btn_Creditos" type="TextureButton" parent="." unique_id=1987494293 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 0

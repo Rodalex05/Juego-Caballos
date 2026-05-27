@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://brs3h4mckf4bh"]
 
-[ext_resource type="Texture2D" uid="uid://b17xx84hfvx4k" path="res://sprites/Escenarios/Fondo_static.png" id="1_x5i8v"]
-[ext_resource type="FontFile" uid="uid://wa8mpvql7hif" path="res://Fonts/Monocraft.ttc" id="2_im36n"]
+[ext_resource type="Texture2D" uid="uid://b17xx84hfvx4k" path="res://sprites/Fondos/Fondo_static.png" id="1_x5i8v"]
 [ext_resource type="Texture2D" uid="uid://b4bfr5pbb1hm" path="res://sprites/UI/BtnNormal/Btn_regresar.png" id="4_8nnoh"]
 [ext_resource type="Texture2D" uid="uid://bnl7ic2605s3q" path="res://sprites/UI/BtnNormal/Btn_jugar.png" id="4_ak64j"]
 [ext_resource type="Script" uid="uid://chel8fiimglxi" path="res://Escenas/Instrucciones/Script/BtnInstrucciones.gd" id="5_4uu7h"]
@@ -21,11 +20,6 @@
 [ext_resource type="Theme" uid="uid://cdh6k37iqttam" path="res://Temas/label_instrucciones.tres" id="14_8i5gn"]
 [ext_resource type="Texture2D" uid="uid://cmtgp1k5llx01" path="res://sprites/Menu_Instrucciones/flecha.png" id="15_ffysb"]
 [ext_resource type="Script" uid="uid://c61boyk62gkng" path="res://Escenas/Instrucciones/Script/Instrucciones/instruccion_2.gd" id="18_oxiug"]
-
-[sub_resource type="Theme" id="Theme_ffysb"]
-Button/constants/h_separation = 527
-Button/font_sizes/font_size = 45
-Button/fonts/font = ExtResource("2_im36n")
 
 [node name="Ganador" type="Control" unique_id=437828833]
 layout_mode = 3
@@ -164,7 +158,6 @@ offset_left = 1420.0
 offset_top = 908.0
 offset_right = 1820.0
 offset_bottom = 988.0
-theme = SubResource("Theme_ffysb")
 texture_normal = ExtResource("4_ak64j")
 texture_pressed = ExtResource("5_im36n")
 texture_hover = ExtResource("6_8i5gn")
@@ -180,7 +173,6 @@ offset_left = 100.0
 offset_top = 908.0
 offset_right = 500.0
 offset_bottom = 988.0
-theme = SubResource("Theme_ffysb")
 texture_normal = ExtResource("4_8nnoh")
 texture_pressed = ExtResource("5_cspha")
 texture_hover = ExtResource("6_f5pd6")
