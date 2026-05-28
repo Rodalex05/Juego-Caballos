@@ -40,6 +40,8 @@ func _guardar_nombre(texto):
 	elif nombres.size() == 2:
 		Nombres.nombrej2 = texto
 		escribiendo = false
+		print(Nombres.nombrej1)
+		print(Nombres.nombrej2)
 		get_tree().change_scene_to_file("res://Escenas/Menu_Seleccionv2/menu.tscn")
 	clear()
 

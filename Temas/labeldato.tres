@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://xtl8p15si2u4"]
+
+[ext_resource type="FontFile" uid="uid://bhk87k7nt6qlh" path="res://Fonts/Pixellari.ttf" id="1_bsumw"]
+
+[resource]
+Label/font_sizes/font_size = 49
+Label/fonts/font = ExtResource("1_bsumw")

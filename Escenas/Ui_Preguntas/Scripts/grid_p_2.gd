@@ -4,28 +4,25 @@ extends GridContainer
 @export var sfx_incorrecto : AudioStreamPlayer
 
 # ======CONFIGURAR BOTONES======
-@onready var botones = [
-	$Bt_2A,
-	$Bt_2B,
-	$Bt_2C,
-	$Bt_2D
-]
+@onready var botones = [$Bt_2A,$Bt_2B,$Bt_2C,$Bt_2D]
+@onready var botonesT = [%TextBt_2A,%TextBt_2B,%TextBt_2C,%TextBt_2D]
 # ======SEÑALES ======
 signal respuesta_correcta2
 signal respuesta_incorrecta2
 
-# =========VARIABLES=========
+# ============VARIABLES============
 var puede_responder = false
 var respuesta_correcta_actual = ""
-@export var cooldown : float = 5.0 
+@export var cooldown : float = 1
 
 # ======FUNCION READY======
 func _ready():
+	# Conectar botones
 	for boton in botones:
 		boton.pressed.connect(_on_boton_pressed.bind(boton))
-		#Desactivar mouse
+		# Desactivar mouse
 		boton.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		#Desactivar visualmente
+		# Desactivar visualmente
 		boton.disabled = true
 		
 # ============RECIBIR PREGUNTA============
@@ -41,14 +38,22 @@ func configurar_pregunta(datos):
 	opciones.shuffle()
 	# Colocar textos
 	for i in range(botones.size()):
-		botones[i].text = opciones[i]
-		botones[i].set_meta("correcto",opciones[i] == respuesta_correcta_actual)
-
-	cooldown_inicio()
+		# Texto en labels
+		botonesT[i].text = opciones[i]
+		# Guardar metadata
+		botones[i].set_meta(
+			"correcto",
+			opciones[i] == respuesta_correcta_actual)
+		# Cambiar color del texto
+		if opciones[i] == respuesta_correcta_actual:
+			botonesT[i].modulate = Color.GREEN
+		else:
+			botonesT[i].modulate = Color.RED
+	inicio_con_delay()
 
 
 # ============DELAY INICIAL============
-func cooldown_inicio():
+func inicio_con_delay():
 	puede_responder = false
 	for boton in botones:
 		boton.disabled = true
@@ -56,6 +61,7 @@ func cooldown_inicio():
 	for boton in botones:
 		boton.disabled = false
 	puede_responder = true
+
 
 # ============FUNCION PROCESS============
 func _process(delta):
@@ -76,24 +82,31 @@ func _process(delta):
 # =====================================================
 # PRESIONAR BOTÓN
 # =====================================================
-
+# =====================================================
+# PRESIONAR BOTÓN
+# =====================================================
 func _on_boton_pressed(boton):
+
 	if not puede_responder:
 		return
+
 	puede_responder = false
 
 	if boton.get_meta("correcto"):
+
 		emit_signal("respuesta_correcta2")
 		sfx_correcto.play()
 
 	else:
+
 		emit_signal("respuesta_incorrecta2")
 		sfx_incorrecto.play()
-		
-	cooldown_preguntas()
+
+	esperar_siguiente_pregunta()
+
 
 # ======COOLDOWN ENTRE PREGUNTAS ======
-func cooldown_preguntas():
+func esperar_siguiente_pregunta():
 	for boton in botones:
 		boton.disabled = true
 	await get_tree().create_timer(cooldown).timeout

@@ -20,7 +20,6 @@ Nombre del artista
 EFECTOS DE SONIDO
 - SoundBible (https://soundbible.com/)
 - Freesound (https://freesound.org/)
-Algunos recursos de audio se utilizan bajo sus respectivas licencias.
 ════════════════════
 FUENTES
 - Insaniburger — Adam Nerland
@@ -32,7 +31,7 @@ Rodrigo Pérez
 ════════════════════
 HERRAMIENTAS
 Godot Engine
-Aseprite
+Piskel
 GitHub
 ════════════════════
 TESTING

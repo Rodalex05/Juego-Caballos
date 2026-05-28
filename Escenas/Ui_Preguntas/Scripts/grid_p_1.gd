@@ -1,15 +1,14 @@
 extends GridContainer
+
 #=====================VARIABLES AUDIOS========================
 @export var sfx_correcto : AudioStreamPlayer
 @export var sfx_incorrecto : AudioStreamPlayer
 
 # ======CONFIGURAR BOTONES======
-@onready var botones = [
-	$Bt_1A,
-	$Bt_1B,
-	$Bt_1C,
-	$Bt_1D
-]
+@onready var botones = [$Bt_1A,$Bt_1B,$Bt_1C,$Bt_1D]
+# Labels hijos
+@onready var botonesT = [%TextBt_1A,%TextBt_1B,%TextBt_1C,%TextBt_1D]
+
 # ============ SEÑALES============
 signal respuesta_correcta
 signal respuesta_incorrecta
@@ -17,41 +16,47 @@ signal respuesta_incorrecta
 # ============VARIABLES============
 var puede_responder = false
 var respuesta_correcta_actual = ""
-@export var cooldown : float = 5.0 
+@export var cooldown : float = 1
+
 
 # =====================================================
 # FUNCION READY
 # =====================================================
 func _ready():
-	#Conectar botones
+	# Conectar botones
 	for boton in botones:
 		boton.pressed.connect(_on_boton_pressed.bind(boton))
 		# Desactivar mouse
 		boton.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		# Desactivar visualmente
 		boton.disabled = true
+
 # =====================================================
 # RECIBIR PREGUNTA
 # =====================================================
 func configurar_pregunta(datos):
-	#Guardar respuesta correcta
+	# Guardar respuesta correcta
 	respuesta_correcta_actual = datos["correcta"]
-	#Crear opciones
+	# Crear opciones
 	var opciones = []
 	opciones.append(datos["correcta"])
 	for incorrecta in datos["incorrectas"]:
 		opciones.append(incorrecta)
-	#Revolver respuestas
+	# Revolver respuestas
 	opciones.shuffle()
-	#Colocar textos
+	# Colocar textos
 	for i in range(botones.size()):
-		botones[i].text = opciones[i]
-		botones[i].set_meta("correcto",opciones[i] == respuesta_correcta_actual)
+		# Texto en labels
+		botonesT[i].text = opciones[i]
+		# Guardar metadata
+		botones[i].set_meta(
+			"correcto",
+			opciones[i] == respuesta_correcta_actual)
+		# Cambiar color del texto
 		if opciones[i] == respuesta_correcta_actual:
-			botones[i].add_theme_color_override("font_color", Color.GREEN)
+			botonesT[i].modulate = Color.GREEN
 		else:
-			botones[i].add_theme_color_override("font_color", Color.RED)
-
+			botonesT[i].modulate = Color.RED
 	inicio_con_delay()
 
 # =====================================================
@@ -73,6 +78,7 @@ func _process(delta):
 
 	if not puede_responder:
 		return
+
 	if Input.is_action_just_pressed("Boton1A"):
 		botones[0].emit_signal("pressed")
 
@@ -89,22 +95,32 @@ func _process(delta):
 # PRESIONAR BOTÓN
 # =====================================================
 func _on_boton_pressed(boton):
+
 	if not puede_responder:
 		return
+
 	puede_responder = false
+
 	if boton.get_meta("correcto"):
+
 		emit_signal("respuesta_correcta")
 		sfx_correcto.play()
+
 	else:
+
 		emit_signal("respuesta_incorrecta")
 		sfx_incorrecto.play()
+
 	esperar_siguiente_pregunta()
 
 # =====================================================
 # ESPERAR SIGUIENTE PREGUNTA
 # =====================================================
 func esperar_siguiente_pregunta():
+
 	for boton in botones:
 		boton.disabled = true
+
 	await get_tree().create_timer(cooldown).timeout
+
 	$"../..".nueva_pregunta_j1()

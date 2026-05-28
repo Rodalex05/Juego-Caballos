@@ -14,7 +14,7 @@ func _ready():
 	# Conecta señales
 	grid_j2.respuesta_correcta2.connect(_on_respuesta_correcta2)
 	grid_j2.respuesta_incorrecta2.connect(_on_respuesta_incorrecta2)
-
+	$Label.text=Nombres.nombrej2
 # =====================================================
 # SEÑALES
 # =====================================================

@@ -1,12 +1,24 @@
 [gd_scene format=3 uid="uid://dhiofvfjbwqxb"]
 
 [ext_resource type="Script" uid="uid://o23eulq7mfto" path="res://Escenas/Ui_Preguntas/Scripts/principal.gd" id="1_wjkjn"]
+[ext_resource type="Theme" uid="uid://b5mffas04btl4" path="res://Temas/lb_Pregunta.tres" id="2_64em5"]
 [ext_resource type="Script" uid="uid://d1sj60t2sap8r" path="res://Escenas/Ui_Preguntas/Scripts/grid_p_1.gd" id="2_eulf6"]
+[ext_resource type="Texture2D" uid="uid://ptpyc7f1o4uo" path="res://sprites/Seleccion_nombres/rectangulo.png" id="2_fmjke"]
 [ext_resource type="Script" uid="uid://co8d20rhyrmx" path="res://Escenas/Ui_Preguntas/Scripts/grid_p_2.gd" id="3_550h2"]
 [ext_resource type="AudioStream" uid="uid://cucq574l1mpa4" path="res://SFX/sfx_correct.wav" id="4_550h2"]
 [ext_resource type="AudioStream" uid="uid://cbgol20ivlokk" path="res://SFX/sfx_wrong.wav" id="5_1dic1"]
+[ext_resource type="Theme" uid="uid://bgvbqx6wd4ua" path="res://Temas/botonesquestionario.tres" id="6_64em5"]
 [ext_resource type="Script" uid="uid://mibrcxy2mfya" path="res://Escenas/Ui_Preguntas/Scripts/rect_curiosidad_1.gd" id="6_nexb1"]
-[ext_resource type="Theme" uid="uid://cjx38561hocxb" path="res://Temas/Labels.tres" id="8_fmjke"]
+[ext_resource type="Texture2D" uid="uid://cwqbwo20x2sct" path="res://sprites/Ui_Preguntas/Normal/Bt1.png" id="8_3m7vl"]
+[ext_resource type="Texture2D" uid="uid://dur7d05srwx7h" path="res://sprites/Ui_Preguntas/Normal/Bt2.png" id="9_23pwe"]
+[ext_resource type="Texture2D" uid="uid://bpdi7ha7hplfj" path="res://sprites/Ui_Preguntas/disabled/Bt1.png" id="9_qn10c"]
+[ext_resource type="Texture2D" uid="uid://d3wc86hwa0ybl" path="res://sprites/Ui_Preguntas/Normal/Bt3.png" id="10_k4m31"]
+[ext_resource type="Theme" uid="uid://xtl8p15si2u4" path="res://Temas/labeldato.tres" id="10_u0fcs"]
+[ext_resource type="Texture2D" uid="uid://8vng073r5tu7" path="res://sprites/Ui_Preguntas/disabled/Bt2.png" id="11_5altt"]
+[ext_resource type="Texture2D" uid="uid://ctgyv7o84bxvd" path="res://sprites/Ui_Preguntas/Normal/Bt4.png" id="11_06xdf"]
+[ext_resource type="Texture2D" uid="uid://c0wg0t1kao3ss" path="res://sprites/Ui_Preguntas/disabled/Bt3.png" id="13_v45st"]
+[ext_resource type="Texture2D" uid="uid://b8wblo1p1g677" path="res://sprites/Ui_Preguntas/disabled/Bt4.png" id="15_o8raf"]
+[ext_resource type="Script" uid="uid://c3a4kwpaj58ou" path="res://Escenas/Ui_Preguntas/Scripts/rect_curiosidad_2.gd" id="19_5altt"]
 
 [node name="Ui_Preguntas" type="Control" unique_id=891131748]
 layout_mode = 3
@@ -17,110 +29,271 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wjkjn")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=355110182]
+[node name="Fondos" type="Control" parent="." unique_id=46455228]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
 
-[node name="Grid_Preguntas" type="GridContainer" parent="." unique_id=761070240]
+[node name="ColorRect" type="ColorRect" parent="Fondos" unique_id=1553384241]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15127608, 0.15127608, 0.15127608, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Fondos" unique_id=132765938]
+layout_mode = 0
+offset_right = 64.59459
+offset_bottom = 40.613384
+scale = Vector2(14.799999, 10.759999)
+texture = ExtResource("2_fmjke")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Fondos" unique_id=1633042037]
+layout_mode = 0
+offset_left = 955.9999
+offset_right = 1021.135
+offset_bottom = 40.613384
+scale = Vector2(14.799999, 10.759999)
+texture = ExtResource("2_fmjke")
+expand_mode = 1
+
+[node name="Grid_Preguntas" type="HBoxContainer" parent="." unique_id=1678320025]
+layout_mode = 1
+offset_top = 5.0
 offset_right = 1920.0
-offset_bottom = 63.0
-columns = 2
+offset_bottom = 129.0
 
 [node name="PreguntasJ1" type="Label" parent="Grid_Preguntas" unique_id=1051279180]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_64em5")
 text = "Pregunta 1"
 horizontal_alignment = 1
-vertical_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="PreguntasJ2" type="Label" parent="Grid_Preguntas" unique_id=2058372508]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_64em5")
 text = "Pregunta 2"
 horizontal_alignment = 1
-
-[node name="SFX_Correcto" type="AudioStreamPlayer" parent="." unique_id=1618648543]
-stream = ExtResource("4_550h2")
-bus = &"bus_sfx"
-
-[node name="SFX_Incorrecto" type="AudioStreamPlayer" parent="." unique_id=2083071183]
-stream = ExtResource("5_1dic1")
-bus = &"bus_sfx"
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=374018158]
 layout_mode = 0
-offset_left = 26.0
-offset_top = 62.0
-offset_right = 1902.0
-offset_bottom = 311.0
+offset_left = 14.0
+offset_top = 131.0
+offset_right = 1905.0
+offset_bottom = 409.0
 
 [node name="Grid_J1" type="GridContainer" parent="HBoxContainer" unique_id=141543161 node_paths=PackedStringArray("sfx_correcto", "sfx_incorrecto")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
 columns = 2
 script = ExtResource("2_eulf6")
 sfx_correcto = NodePath("../../SFX_Correcto")
 sfx_incorrecto = NodePath("../../SFX_Incorrecto")
-cooldown = 3.0
+cooldown = 5.0
 
-[node name="Bt_1A" type="Button" parent="HBoxContainer/Grid_J1" unique_id=1236914047]
+[node name="Bt_1A" type="TextureButton" parent="HBoxContainer/Grid_J1" unique_id=2098039714]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("6_64em5")
+texture_normal = ExtResource("8_3m7vl")
+texture_disabled = ExtResource("9_qn10c")
 
-[node name="Bt_1B" type="Button" parent="HBoxContainer/Grid_J1" unique_id=725189398]
+[node name="TextBt_1A" type="Label" parent="HBoxContainer/Grid_J1/Bt_1A" unique_id=1069011269]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_64em5")
+text = "Respuesta 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Bt_1B" type="TextureButton" parent="HBoxContainer/Grid_J1" unique_id=2098736255]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("6_64em5")
+texture_normal = ExtResource("9_23pwe")
+texture_disabled = ExtResource("11_5altt")
 
-[node name="Bt_1C" type="Button" parent="HBoxContainer/Grid_J1" unique_id=762785310]
+[node name="TextBt_1B" type="Label" parent="HBoxContainer/Grid_J1/Bt_1B" unique_id=88717294]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_64em5")
+text = "Respuesta 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Bt_1C" type="TextureButton" parent="HBoxContainer/Grid_J1" unique_id=530846987]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("6_64em5")
+texture_normal = ExtResource("10_k4m31")
+texture_disabled = ExtResource("13_v45st")
 
-[node name="Bt_1D" type="Button" parent="HBoxContainer/Grid_J1" unique_id=462766526]
+[node name="TextBt_1C" type="Label" parent="HBoxContainer/Grid_J1/Bt_1C" unique_id=1804331966]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_64em5")
+text = "Respuesta 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Bt_1D" type="TextureButton" parent="HBoxContainer/Grid_J1" unique_id=960193182]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("6_64em5")
+texture_normal = ExtResource("11_06xdf")
+texture_disabled = ExtResource("15_o8raf")
+
+[node name="TextBt_1D" type="Label" parent="HBoxContainer/Grid_J1/Bt_1D" unique_id=1142907059]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_64em5")
+text = "Respuesta 4"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Grid_J2" type="GridContainer" parent="HBoxContainer" unique_id=2088469493 node_paths=PackedStringArray("sfx_correcto", "sfx_incorrecto")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
 columns = 2
 script = ExtResource("3_550h2")
 sfx_correcto = NodePath("../../SFX_Correcto")
 sfx_incorrecto = NodePath("../../SFX_Incorrecto")
-cooldown = 3.0
+cooldown = 5.0
 
-[node name="Bt_2A" type="Button" parent="HBoxContainer/Grid_J2" unique_id=301723186]
+[node name="Bt_2A" type="TextureButton" parent="HBoxContainer/Grid_J2" unique_id=1326868785]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+texture_normal = ExtResource("8_3m7vl")
+texture_disabled = ExtResource("9_qn10c")
 
-[node name="Bt_2B" type="Button" parent="HBoxContainer/Grid_J2" unique_id=1978328901]
+[node name="TextBt_2A" type="Label" parent="HBoxContainer/Grid_J2/Bt_2A" unique_id=892829336]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_64em5")
+text = "Respuesta 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Bt_2B" type="TextureButton" parent="HBoxContainer/Grid_J2" unique_id=252857774]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+texture_normal = ExtResource("9_23pwe")
+texture_disabled = ExtResource("11_5altt")
 
-[node name="Bt_2C" type="Button" parent="HBoxContainer/Grid_J2" unique_id=1123251723]
+[node name="TextBt_2B" type="Label" parent="HBoxContainer/Grid_J2/Bt_2B" unique_id=1821598388]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_64em5")
+text = "Respuesta 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Bt_2C" type="TextureButton" parent="HBoxContainer/Grid_J2" unique_id=1281498076]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+texture_normal = ExtResource("10_k4m31")
+texture_disabled = ExtResource("13_v45st")
 
-[node name="Bt_2D" type="Button" parent="HBoxContainer/Grid_J2" unique_id=1011734834]
+[node name="TextBt_2C" type="Label" parent="HBoxContainer/Grid_J2/Bt_2C" unique_id=1265036691]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_64em5")
+text = "Respuesta 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Bt_2D" type="TextureButton" parent="HBoxContainer/Grid_J2" unique_id=144736399]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+texture_normal = ExtResource("11_06xdf")
+texture_disabled = ExtResource("15_o8raf")
+
+[node name="TextBt_2D" type="Label" parent="HBoxContainer/Grid_J2/Bt_2D" unique_id=539037840]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_64em5")
+text = "Respuesta 4"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="GridControlesJ1" type="GridContainer" parent="." unique_id=1930853142]
+visible = false
 layout_mode = 0
 offset_left = 24.0
 offset_top = 63.0
@@ -155,6 +328,7 @@ text = "S"
 horizontal_alignment = 2
 
 [node name="GridControlesJ2" type="GridContainer" parent="." unique_id=995605215]
+visible = false
 layout_mode = 0
 offset_left = 965.0
 offset_top = 63.0
@@ -188,14 +362,15 @@ size_flags_horizontal = 3
 text = "L"
 horizontal_alignment = 2
 
-[node name="Rect_curiosidad1" type="ColorRect" parent="." unique_id=1080846634]
+[node name="Rect_curiosidad1" type="TextureRect" parent="." unique_id=1630810019]
 visible = false
 layout_mode = 0
-offset_left = 204.0
-offset_top = 87.0
-offset_right = 735.0
-offset_bottom = 283.0
-color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+offset_left = 27.0
+offset_top = 20.0
+offset_right = 958.0
+offset_bottom = 409.0
+texture = ExtResource("2_fmjke")
+expand_mode = 1
 script = ExtResource("6_nexb1")
 
 [node name="Label" type="Label" parent="Rect_curiosidad1" unique_id=942860190]
@@ -205,45 +380,45 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("10_u0fcs")
 text = "CURIOSIDAD"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Botones" type="GridContainer" parent="." unique_id=727970539]
+[node name="Rect_curiosidad2" type="TextureRect" parent="." unique_id=1446791457]
+visible = false
 layout_mode = 0
-offset_left = 1195.0
-offset_top = 25.0
-offset_right = 1464.0
-offset_bottom = 280.0
-columns = 2
+offset_left = 974.0
+offset_top = 20.0
+offset_right = 1905.0
+offset_bottom = 409.0
+texture = ExtResource("2_fmjke")
+expand_mode = 1
+script = ExtResource("19_5altt")
 
-[node name="W" type="Button" parent="Botones" unique_id=926191855]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("8_fmjke")
-text = "Q"
+[node name="Label" type="Label" parent="Rect_curiosidad2" unique_id=1556240687]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_u0fcs")
+text = "CURIOSIDAD"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="D" type="Button" parent="Botones" unique_id=2049459832]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("8_fmjke")
-text = "W"
+[node name="SFX_Incorrecto" type="AudioStreamPlayer" parent="." unique_id=2083071183]
+stream = ExtResource("5_1dic1")
+bus = &"bus_sfx"
 
-[node name="S" type="Button" parent="Botones" unique_id=778978436]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource("8_fmjke")
-text = "A"
-
-[node name="A" type="Button" parent="Botones" unique_id=591409483]
-layout_mode = 2
-theme = ExtResource("8_fmjke")
-text = "S
-"
+[node name="SFX_Correcto" type="AudioStreamPlayer" parent="." unique_id=1618648543]
+stream = ExtResource("4_550h2")
+bus = &"bus_sfx"
 
 [connection signal="respuesta_correcta" from="HBoxContainer/Grid_J1" to="Rect_curiosidad1" method="_on_grid_j_1_respuesta_correcta"]
 [connection signal="respuesta_incorrecta" from="HBoxContainer/Grid_J1" to="Rect_curiosidad1" method="_on_grid_j_1_respuesta_incorrecta"]
+[connection signal="respuesta_correcta2" from="HBoxContainer/Grid_J2" to="Rect_curiosidad2" method="_on_grid_j_2_respuesta_correcta_2"]
+[connection signal="respuesta_incorrecta2" from="HBoxContainer/Grid_J2" to="Rect_curiosidad2" method="_on_grid_j_2_respuesta_incorrecta_2"]

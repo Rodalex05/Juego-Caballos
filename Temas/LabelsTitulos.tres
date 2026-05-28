@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://b2u7neuqihoqw" path="res://Fonts/m42.TTF" id="1_5do0o"]
 
 [resource]
+Label/colors/font_color = Color(1.4497503, 0.13538167, 0, 1)
 Label/constants/outline_size = 31
 Label/font_sizes/font_size = 48
 Label/fonts/font = ExtResource("1_5do0o")

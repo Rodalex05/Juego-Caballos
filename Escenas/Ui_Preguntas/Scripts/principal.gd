@@ -6,6 +6,7 @@ extends Control
 @onready var pregunta_j1 = $Grid_Preguntas/PreguntasJ1
 @onready var pregunta_j2 = $Grid_Preguntas/PreguntasJ2
 @onready var curiosidad_j1 = $Rect_curiosidad1/Label
+@onready var curiosidad_j2 = $Rect_curiosidad2/Label
 #Conectar Hbox
 @onready var grid_p1 = $HBoxContainer/Grid_J1
 @onready var grid_p2 = $HBoxContainer/Grid_J2
@@ -15,6 +16,7 @@ extends Control
 # =====================================================
 var preguntas = []
 var pregunta_actual_j1 = {}
+var pregunta_actual_j2 ={}
 # =====================================================
 # FUNCION READY
 # =====================================================
@@ -64,10 +66,13 @@ func nueva_pregunta_j1():
 # NUEVA PREGUNTA J2
 # =====================================================
 func nueva_pregunta_j2():
-	var pregunta = preguntas.pick_random()
-	pregunta_j2.text = pregunta["pregunta"]
-	grid_p2.configurar_pregunta(pregunta)
+	pregunta_actual_j2 = preguntas.pick_random()
+	pregunta_j2.text = pregunta_actual_j2["pregunta"]
+	grid_p2.configurar_pregunta(pregunta_actual_j2)
+	curiosidadbox_j2()
 	
 func curiosidadbox_j1():
 	curiosidad_j1.text = pregunta_actual_j1["curiosidad"]
+func curiosidadbox_j2():
+	curiosidad_j2.text = pregunta_actual_j2["curiosidad"]
 	

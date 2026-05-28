@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://b8exuingvtraa"]
+
+[ext_resource type="FontFile" uid="uid://wa8mpvql7hif" path="res://Fonts/Monocraft.ttc" id="1_6xkeb"]
+
+[resource]
+Label/constants/outline_size = 5
+Label/font_sizes/font_size = 28
+Label/fonts/font = ExtResource("1_6xkeb")

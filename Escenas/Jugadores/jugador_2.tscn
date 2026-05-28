@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://61rai1ynouid" path="res://Escenas/Jugadores/Scripts/jugador_2.gd" id="1_ximi8"]
 [ext_resource type="SpriteFrames" uid="uid://5shv8a1nhte3" path="res://Escenas/Jugadores/sf_skin2.tres" id="2_0kvpn"]
 [ext_resource type="Script" uid="uid://bjfl33e0ciluv" path="res://Escenas/Jugadores/Scripts/jugador_2_animated_sprite_2d.gd" id="3_8alcf"]
+[ext_resource type="Theme" uid="uid://b8exuingvtraa" path="res://Temas/jugadoreslabel.tres" id="4_0kvpn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2yno5"]
 size = Vector2(254, 236)
@@ -19,3 +20,27 @@ scale = Vector2(0.5019531, 0.5019531)
 sprite_frames = ExtResource("2_0kvpn")
 animation = &"idle"
 script = ExtResource("3_8alcf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1168245528]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -127.0
+offset_top = -163.0
+offset_right = 127.0
+offset_bottom = -122.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 0.3019608)
+
+[node name="Label" type="Label" parent="." unique_id=968015931]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = -168.0
+offset_right = 127.0
+offset_bottom = -118.0
+grow_horizontal = 2
+theme = ExtResource("4_0kvpn")
+text = "JUGADOR 2"
+horizontal_alignment = 1
+vertical_alignment = 1

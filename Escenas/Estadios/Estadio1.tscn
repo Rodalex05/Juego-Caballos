@@ -30,6 +30,7 @@ unique_name_in_owner = true
 position = Vector2(129, 551)
 
 [node name="Camera2D" type="Camera2D" parent="Mundo" unique_id=266131509]
+position = Vector2(20000, 0)
 anchor_mode = 0
 script = ExtResource("5_iai8o")
 
@@ -41,9 +42,6 @@ position = Vector2(4088, 424)
 [node name="Ui_Preguntas" parent="CanvasLayer" unique_id=891131748 instance=ExtResource("3_6hxy1")]
 anchors_preset = 12
 anchor_top = 1.0
-offset_left = -15.0
-offset_top = -393.0
-offset_right = 17.0
-offset_bottom = 1.0
+offset_top = -408.0
 grow_vertical = 0
 size_flags_horizontal = 3

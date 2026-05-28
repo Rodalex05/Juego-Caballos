@@ -183,7 +183,7 @@ offset_top = 985.0
 offset_right = 1879.0
 offset_bottom = 1055.0
 theme = ExtResource("11_x8ylp")
-text = "v2.6  Beta — Assets visuales temporales"
+text = "v2.9.1  Beta — Assets visuales temporales"
 
 [node name="Btn_Creditos" type="TextureButton" parent="." unique_id=1987494293 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 0

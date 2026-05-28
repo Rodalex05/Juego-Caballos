@@ -2,10 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://b17xx84hfvx4k" path="res://sprites/Fondos/Fondo_static.png" id="1_msqh8"]
 [ext_resource type="Texture2D" uid="uid://bpiosjnv0r8rl" path="res://sprites/Menu seleccion/Caballos/c1.png" id="2_22e25"]
-[ext_resource type="Texture2D" uid="uid://7pokpbu3tuxl" path="res://sprites/Menu seleccion/Caballos/cblank.png" id="2_tpdn6"]
 [ext_resource type="Texture2D" uid="uid://cc3ua7qklfmsx" path="res://sprites/Caballos/Caballo1.png" id="3_22e25"]
 [ext_resource type="Script" uid="uid://dqlwovpxdla7i" path="res://Escenas/Menu_Seleccionv2/Script/jugador_1.gd" id="3_udjnh"]
-[ext_resource type="Texture2D" uid="uid://3a0r80wlkjd7" path="res://sprites/Menu seleccion/Caballos/c2.png" id="3_w73jq"]
 [ext_resource type="Theme" uid="uid://cjx38561hocxb" path="res://Temas/Labels.tres" id="4_rh5i2"]
 [ext_resource type="Texture2D" uid="uid://c7nv2waytnqks" path="res://sprites/Menu seleccion/selectj1.png" id="5_ntw51"]
 [ext_resource type="Script" uid="uid://d0whbon1xqudr" path="res://Escenas/Menu_Seleccionv2/Script/jugador_1_selector.gd" id="5_rgb2h"]
@@ -88,48 +86,48 @@ expand_mode = 2
 
 [node name="P2" type="TextureRect" parent="GridPersonajes" unique_id=504215026]
 layout_mode = 2
-texture = ExtResource("3_w73jq")
+texture = ExtResource("2_22e25")
 
 [node name="P3" type="TextureRect" parent="GridPersonajes" unique_id=872155077]
 layout_mode = 2
-texture = ExtResource("2_tpdn6")
+texture = ExtResource("2_22e25")
 
 [node name="P4" type="TextureRect" parent="GridPersonajes" unique_id=574496270]
 layout_mode = 2
-texture = ExtResource("2_tpdn6")
+texture = ExtResource("2_22e25")
 
 [node name="P5" type="TextureRect" parent="GridPersonajes" unique_id=717440055]
 layout_mode = 2
-texture = ExtResource("2_tpdn6")
+texture = ExtResource("2_22e25")
 
 [node name="P6" type="TextureRect" parent="GridPersonajes" unique_id=684305985]
 layout_mode = 2
-texture = ExtResource("2_tpdn6")
+texture = ExtResource("2_22e25")
 
 [node name="P7" type="TextureRect" parent="GridPersonajes" unique_id=1924378969]
 layout_mode = 2
-texture = ExtResource("2_tpdn6")
+texture = ExtResource("2_22e25")
 
 [node name="P8" type="TextureRect" parent="GridPersonajes" unique_id=504235422]
 layout_mode = 2
-texture = ExtResource("2_tpdn6")
+texture = ExtResource("2_22e25")
 
 [node name="P9" type="TextureRect" parent="GridPersonajes" unique_id=1221428712]
 layout_mode = 2
-texture = ExtResource("2_tpdn6")
+texture = ExtResource("2_22e25")
 expand_mode = 2
 
 [node name="P10" type="TextureRect" parent="GridPersonajes" unique_id=1600893625]
 layout_mode = 2
-texture = ExtResource("2_tpdn6")
+texture = ExtResource("2_22e25")
 
 [node name="P11" type="TextureRect" parent="GridPersonajes" unique_id=1198030097]
 layout_mode = 2
-texture = ExtResource("2_tpdn6")
+texture = ExtResource("2_22e25")
 
 [node name="P12" type="TextureRect" parent="GridPersonajes" unique_id=1687622506]
 layout_mode = 2
-texture = ExtResource("2_tpdn6")
+texture = ExtResource("2_22e25")
 
 [node name="Jugador1" type="TextureRect" parent="." unique_id=1168259610 node_paths=PackedStringArray("presionar")]
 custom_minimum_size = Vector2(400, 849)
@@ -187,27 +185,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("8_ittlc")
 
-[node name="Label2" type="Label" parent="Jugador1" unique_id=1387007515]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -245.0
-offset_top = 201.5
-offset_right = 126.0
-offset_bottom = 387.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("4_rh5i2")
-text = "CONTROLES
-W A S D: Mover
-ENTER: Seleccionar
-ESC: Regresar"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Jugador2" type="TextureRect" parent="." unique_id=1740031002 node_paths=PackedStringArray("presionar")]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 1
@@ -226,20 +203,6 @@ flip_h = true
 script = ExtResource("8_ij6u2")
 presionar = NodePath("../Press")
 
-[node name="Label" type="Label" parent="Jugador2" unique_id=1826818905]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -77.5
-offset_right = 77.5
-offset_bottom = 36.0
-grow_horizontal = 2
-theme = ExtResource("4_rh5i2")
-text = "Jugador 2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Seleccion" type="TextureRect" parent="Jugador2" unique_id=1948788919]
 custom_minimum_size = Vector2(190, 190)
 layout_mode = 0
@@ -252,8 +215,21 @@ expand_mode = 1
 stretch_mode = 3
 script = ExtResource("10_y7gmn")
 
-[node name="Select" type="ColorRect" parent="Jugador2/Seleccion" unique_id=1204374126]
-visible = false
+[node name="Label" type="Label" parent="Jugador2" unique_id=1826818905]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.5
+offset_right = 61.5
+offset_bottom = 36.0
+grow_horizontal = 2
+theme = ExtResource("4_rh5i2")
+text = "Jugador 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Select" type="ColorRect" parent="Jugador2" unique_id=1204374126]
 modulate = Color(0.02745098, 0.20784314, 0.9607843, 0.38039216)
 layout_mode = 1
 anchors_preset = 8
@@ -261,34 +237,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -81.0
-offset_top = -84.0
-offset_right = 83.0
-offset_bottom = 80.0
+offset_left = -561.0
+offset_top = -448.5
+offset_right = -397.0
+offset_bottom = -284.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("8_ittlc")
-
-[node name="Label2" type="Label" parent="Jugador2" unique_id=1642091547]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -145.0
-offset_top = 201.5
-offset_right = 236.0
-offset_bottom = 387.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("4_rh5i2")
-text = "CONTROLES
-↑ ↓ ← → : Mover
-ENTER: Seleccionar
-BACKSPACE: Regresar"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Press" type="AudioStreamPlayer" parent="." unique_id=1341051994]
 stream = ExtResource("7_rgb2h")
@@ -305,18 +260,11 @@ bus = &"bus_musica"
 
 [node name="Btn_Menu" type="TextureButton" parent="." unique_id=1913929067 node_paths=PackedStringArray("sfx_hover", "sfx_press")]
 custom_minimum_size = Vector2(400, 80)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -460.0
-offset_top = -130.0
-offset_right = -60.0
-offset_bottom = -50.0
-grow_horizontal = 2
-grow_vertical = 0
+layout_mode = 0
+offset_left = 100.0
+offset_top = 954.0
+offset_right = 500.0
+offset_bottom = 1034.0
 texture_normal = ExtResource("13_stb0g")
 texture_pressed = ExtResource("14_xfkut")
 texture_hover = ExtResource("15_yqbld")
@@ -325,19 +273,11 @@ sfx_hover = NodePath("../Hover")
 sfx_press = NodePath("../Press")
 
 [node name="Btn_Siguiente" type="TextureButton" parent="." unique_id=1451797975 node_paths=PackedStringArray("sfx_hover", "sfx_press")]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 40.0
-offset_top = -130.0
-offset_right = 440.0
-offset_bottom = -50.0
-grow_horizontal = 2
-grow_vertical = 0
-disabled = true
+layout_mode = 0
+offset_left = 1420.0
+offset_top = 954.0
+offset_right = 1820.0
+offset_bottom = 1034.0
 texture_normal = ExtResource("19_gm4xu")
 texture_pressed = ExtResource("20_pknwe")
 texture_hover = ExtResource("21_tpdn6")

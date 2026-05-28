@@ -1,0 +1,30 @@
+[gd_resource type="Theme" format=3 uid="uid://bgvbqx6wd4ua"]
+
+[ext_resource type="FontFile" uid="uid://bhk87k7nt6qlh" path="res://Fonts/Pixellari.ttf" id="1_rph1e"]
+
+[sub_resource type="FontFile" id="FontFile_rph1e"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/14/0/ascent = 0.0
+cache/0/14/0/descent = 0.0
+cache/0/14/0/underline_position = 0.0
+cache/0/14/0/underline_thickness = 0.0
+cache/0/14/0/scale = 1.0
+
+[resource]
+default_font = SubResource("FontFile_rph1e")
+Label/constants/outline_size = 9
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_rph1e")
