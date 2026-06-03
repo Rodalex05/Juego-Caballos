@@ -5,7 +5,9 @@ extends GridContainer
 
 # ======CONFIGURAR BOTONES======
 @onready var botones = [$Bt_2A,$Bt_2B,$Bt_2C,$Bt_2D]
+# Labels hijos
 @onready var botonesT = [%TextBt_2A,%TextBt_2B,%TextBt_2C,%TextBt_2D]
+
 # ======SEÑALES ======
 signal respuesta_correcta2
 signal respuesta_incorrecta2
@@ -14,6 +16,7 @@ signal respuesta_incorrecta2
 var puede_responder = false
 var respuesta_correcta_actual = ""
 @export var cooldown : float = 1
+var inicio=false
 
 # ======FUNCION READY======
 func _ready():
@@ -49,7 +52,11 @@ func configurar_pregunta(datos):
 			botonesT[i].modulate = Color.GREEN
 		else:
 			botonesT[i].modulate = Color.RED
-	inicio_con_delay()
+	if inicio==false:
+		inicio_con_delay()
+		inicio=true
+	else:
+		delay_entre_preguntas()
 
 
 # ============DELAY INICIAL============
@@ -57,12 +64,24 @@ func inicio_con_delay():
 	puede_responder = false
 	for boton in botones:
 		boton.disabled = true
-	await get_tree().create_timer(cooldown).timeout
+	await get_tree().create_timer(5).timeout
 	for boton in botones:
 		boton.disabled = false
 	puede_responder = true
 
-
+# =====================================================
+# DELAY ENTRE PREGUNTAS
+# =====================================================
+func delay_entre_preguntas():
+	puede_responder = false
+	for boton in botones:
+		#_textoapagado()
+		boton.disabled = true
+	await get_tree().create_timer(cooldown-4).timeout
+	for boton in botones:
+		#_textoencendido()
+		boton.disabled = false
+	puede_responder = true
 # ============FUNCION PROCESS============
 func _process(delta):
 	if not puede_responder:

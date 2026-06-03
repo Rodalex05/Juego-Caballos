@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c1o0xv07kgyqi"]
 
-[ext_resource type="Texture2D" uid="uid://b17xx84hfvx4k" path="res://sprites/Fondos/Fondo_static.png" id="1_k6dkh"]
+[ext_resource type="Texture2D" uid="uid://cmg51fyr8cmu1" path="res://sprites/Ganador/Ganador_fondo.png" id="1_jjhrf"]
+[ext_resource type="Theme" uid="uid://cqiqo7algjucx" path="res://Temas/label_ganador.tres" id="2_jjhrf"]
 [ext_resource type="Script" uid="uid://b2b1my8ytpkg0" path="res://Escenas/Menu_Ganador/Script/label_ganador.gd" id="2_sg06g"]
 [ext_resource type="Script" uid="uid://dt7d6b32fiusw" path="res://Escenas/Menu_Ganador/Script/btn_regresar.gd" id="4_7f2gi"]
 [ext_resource type="Texture2D" uid="uid://b4bfr5pbb1hm" path="res://sprites/UI/BtnNormal/Btn_regresar.png" id="5_fuc76"]
@@ -8,6 +9,30 @@
 [ext_resource type="Texture2D" uid="uid://cta4eupqf0mjn" path="res://sprites/UI/BtnPressed/Btn_regresar.png" id="6_fuc76"]
 [ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="6_sg4b7"]
 [ext_resource type="Texture2D" uid="uid://csd0mk6n41ty" path="res://sprites/UI/Btn_Hover/Btn_regresar.png" id="7_ym412"]
+[ext_resource type="SpriteFrames" uid="uid://dfe68handxejs" path="res://Escenas/Jugadores/sf_skin1.tres" id="10_fuc76"]
+[ext_resource type="Texture2D" uid="uid://br6wegc6d6vha" path="res://sprites/Ganador/Confetti.png" id="11_ym412"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rda78"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1000, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = 1.0728835e-05
+angle_max = 167.00002
+gravity = Vector3(0, 98, 0)
+scale_min = 0.01
+scale_max = 0.19999999
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ym412"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1000, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = 1.0728835e-05
+angle_max = 167.00002
+gravity = Vector3(0, 98, 0)
+scale_min = 0.01
+scale_max = 0.19999999
 
 [node name="Ganador" type="Control" unique_id=437828833]
 layout_mode = 3
@@ -24,16 +49,71 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_k6dkh")
+texture = ExtResource("1_jjhrf")
 
 [node name="Label" type="Label" parent="." unique_id=958248619]
 layout_mode = 0
-offset_left = 150.0
-offset_top = 47.0
-offset_right = 1601.0
-offset_bottom = 363.0
-text = "Felicidades"
+offset_left = 691.0
+offset_top = 208.0
+offset_right = 1243.0
+offset_bottom = 451.0
+theme = ExtResource("2_jjhrf")
+text = "El Ganador es: 
+Jugador"
+horizontal_alignment = 1
 script = ExtResource("2_sg06g")
+
+[node name="AudioPasar" type="AudioStreamPlayer" parent="." unique_id=1552412211]
+stream = ExtResource("5_sg06g")
+
+[node name="AudioPresionar" type="AudioStreamPlayer" parent="." unique_id=144112494]
+stream = ExtResource("6_sg4b7")
+
+[node name="JugadorGanador" type="AnimatedSprite2D" parent="." unique_id=514450468]
+position = Vector2(953.00006, 554)
+scale = Vector2(0.5859375, 0.5859375)
+sprite_frames = ExtResource("10_fuc76")
+animation = &"correr"
+
+[node name="JugadorPerdedor" type="AnimatedSprite2D" parent="." unique_id=1085227831]
+position = Vector2(703.00006, 635)
+scale = Vector2(0.5859375, 0.5859375)
+sprite_frames = ExtResource("10_fuc76")
+animation = &"correr"
+
+[node name="Confeti" type="Control" parent="." unique_id=1166525688]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -953.0
+offset_top = -68.0
+offset_right = 970.0
+offset_bottom = 76.0
+grow_horizontal = 2
+
+[node name="Rojo" type="GPUParticles2D" parent="Confeti" unique_id=1332048194]
+modulate = Color(1, 0.050000012, 0.050000012, 1)
+position = Vector2(971.5, 9)
+amount = 50
+texture = ExtResource("11_ym412")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_rda78")
+
+[node name="Verde" type="GPUParticles2D" parent="Confeti" unique_id=1708084438]
+modulate = Color(0.028000006, 0.56, 0.0723333, 1)
+position = Vector2(971.5, 9)
+amount = 50
+texture = ExtResource("11_ym412")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_ym412")
+
+[node name="Blanco" type="GPUParticles2D" parent="Confeti" unique_id=606641109]
+position = Vector2(971.5, 9)
+amount = 50
+texture = ExtResource("11_ym412")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_rda78")
 
 [node name="Btn_Regresar" type="TextureButton" parent="." unique_id=77470475 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 0
@@ -48,8 +128,4 @@ script = ExtResource("4_7f2gi")
 sfx_pasar = NodePath("../AudioPasar")
 sfx_select = NodePath("../AudioPresionar")
 
-[node name="AudioPasar" type="AudioStreamPlayer" parent="." unique_id=1552412211]
-stream = ExtResource("5_sg06g")
-
-[node name="AudioPresionar" type="AudioStreamPlayer" parent="." unique_id=144112494]
-stream = ExtResource("6_sg4b7")
+[connection signal="mouse_entered" from="Btn_Regresar" to="Btn_Regresar" method="_on_mouse_entered"]

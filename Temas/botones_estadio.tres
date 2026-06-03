@@ -1,0 +1,11 @@
+[gd_resource type="Theme" format=3 uid="uid://c5ya14c7bckj"]
+
+[ext_resource type="FontFile" uid="uid://bhk87k7nt6qlh" path="res://Fonts/Pixellari.ttf" id="1_aatru"]
+[ext_resource type="StyleBox" uid="uid://cearopt6vb7wj" path="res://Temas/btn_pressed.tres" id="2_4t3r7"]
+
+[resource]
+Button/constants/outline_size = 20
+Button/font_sizes/font_size = 48
+Button/fonts/font = ExtResource("1_aatru")
+Button/styles/normal = ExtResource("2_4t3r7")
+Button/styles/pressed = ExtResource("2_4t3r7")

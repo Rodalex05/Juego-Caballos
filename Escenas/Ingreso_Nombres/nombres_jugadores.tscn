@@ -6,9 +6,9 @@
 [ext_resource type="FontFile" uid="uid://bhk87k7nt6qlh" path="res://Fonts/Pixellari.ttf" id="3_mvd0g"]
 [ext_resource type="Script" uid="uid://bl1eip346uivl" path="res://Escenas/Ingreso_Nombres/Scripts/line_edit.gd" id="4_ae303"]
 [ext_resource type="FontFile" uid="uid://botj265srmyt6" path="res://Fonts/GrapeSoda.ttf" id="6_b7afr"]
-[ext_resource type="Texture2D" uid="uid://b4bfr5pbb1hm" path="res://sprites/UI/BtnNormal/Btn_regresar.png" id="7_pob30"]
-[ext_resource type="Texture2D" uid="uid://cta4eupqf0mjn" path="res://sprites/UI/BtnPressed/Btn_regresar.png" id="8_sstdq"]
-[ext_resource type="Texture2D" uid="uid://csd0mk6n41ty" path="res://sprites/UI/Btn_Hover/Btn_regresar.png" id="9_014jc"]
+[ext_resource type="Texture2D" uid="uid://d2boydtctmxei" path="res://sprites/Menu seleccion/Botonmenu1.png" id="7_hnxpf"]
+[ext_resource type="Texture2D" uid="uid://c5wf8taf11n5u" path="res://sprites/Menu seleccion/Botonmenu2.png" id="8_mc7sj"]
+[ext_resource type="Texture2D" uid="uid://ccf8xujbs856e" path="res://sprites/Menu seleccion/Botonmenu3.png" id="9_0cc87"]
 [ext_resource type="Script" uid="uid://b84lx7evqkphi" path="res://Escenas/Ingreso_Nombres/Scripts/btn_regresar.gd" id="10_hnxpf"]
 [ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="11_mc7sj"]
 [ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="12_0cc87"]
@@ -141,9 +141,9 @@ offset_left = 48.0
 offset_top = 968.0
 offset_right = 450.0
 offset_bottom = 1050.0
-texture_normal = ExtResource("7_pob30")
-texture_pressed = ExtResource("8_sstdq")
-texture_hover = ExtResource("9_014jc")
+texture_normal = ExtResource("7_hnxpf")
+texture_pressed = ExtResource("8_mc7sj")
+texture_hover = ExtResource("9_0cc87")
 script = ExtResource("10_hnxpf")
 sfx_hover = NodePath("../Hover")
 sfx_press = NodePath("../Presionado")

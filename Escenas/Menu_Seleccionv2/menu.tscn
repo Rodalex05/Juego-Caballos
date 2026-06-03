@@ -33,6 +33,7 @@ script/source = "extends TextureButton
 @export var sfx_press : AudioStreamPlayer
 #Funcion Ready
 func _ready() -> void:
+	focus_mode = Control.FOCUS_NONE
 	#Detecta si se presiono
 	pressed.connect(_menu)
 	#Funcion que lleva al menu
@@ -337,7 +338,6 @@ offset_right = 440.0
 offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
-disabled = true
 texture_normal = ExtResource("19_gm4xu")
 texture_pressed = ExtResource("20_pknwe")
 texture_hover = ExtResource("21_tpdn6")

@@ -15,3 +15,4 @@ var skins_animadas = [
 
 var skin_j1 = 0
 var skin_j2 = 0
+var skin_1lugar =0

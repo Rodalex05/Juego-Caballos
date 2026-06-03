@@ -33,11 +33,6 @@ func _ready():
 func cargar_preguntas():
 	var archivo = FileAccess.open(
 	"res://Escenas/Ui_Preguntas/Preguntas/Preguntas_Durango.csv",FileAccess.READ)
-		#Debug
-	if archivo == null:
-		print(FileAccess.file_exists("res://Escenas/Ui_Preguntas/Preguntas/Preguntas_Durango.csv"))
-		print("NO SE PUDO ABRIR EL CSV")
-		return
 	# Saltar encabezado
 	archivo.get_csv_line()
 	while !archivo.eof_reached():

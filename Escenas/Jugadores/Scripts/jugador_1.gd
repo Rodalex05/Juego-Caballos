@@ -1,6 +1,9 @@
 extends CharacterBody2D
 #Variable para editar la velocidad del caballo
 @export var velocidad = 300.0
+var mitad_y = 410
+signal acercamiento
+
 # =====================================================
 # FUNCION READY
 # =====================================================
@@ -15,7 +18,7 @@ func _ready():
 	grid_j1.respuesta_correcta.connect(_on_respuesta_correcta)
 	grid_j1.respuesta_incorrecta.connect(_on_respuesta_incorrecta)
 	$Label.text=Nombres.nombrej1
-
+	$"../AreaFinal".acercamiento.connect(_acercamiento)
 # =====================================================
 # SEÑALES
 # =====================================================
@@ -35,9 +38,18 @@ func correr():
 	# Activa movimiento
 	velocity.x = velocidad
 	#Espera 5 segundos
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(3.5).timeout
 	#Detiene el caballo
 	detener()
 	#Funcion que detiene al caballo
 func detener():
 	velocity.x = 0
+
+func _acercamiento():
+	print("diosgod")
+	var tween = create_tween()
+	tween.tween_property(self, "position:y", mitad_y, 1.0)
+	velocity.x = velocidad
+	#Espera 5 segundos
+	await get_tree().create_timer(8).timeout
+	detener()

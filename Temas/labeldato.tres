@@ -3,5 +3,6 @@
 [ext_resource type="FontFile" uid="uid://bhk87k7nt6qlh" path="res://Fonts/Pixellari.ttf" id="1_bsumw"]
 
 [resource]
+Label/constants/outline_size = 10
 Label/font_sizes/font_size = 49
 Label/fonts/font = ExtResource("1_bsumw")

@@ -1,5 +1,4 @@
 extends GridContainer
-
 #=====================VARIABLES AUDIOS========================
 @export var sfx_correcto : AudioStreamPlayer
 @export var sfx_incorrecto : AudioStreamPlayer
@@ -17,7 +16,7 @@ signal respuesta_incorrecta
 var puede_responder = false
 var respuesta_correcta_actual = ""
 @export var cooldown : float = 1
-
+var inicio=false
 
 # =====================================================
 # FUNCION READY
@@ -30,7 +29,6 @@ func _ready():
 		boton.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		# Desactivar visualmente
 		boton.disabled = true
-
 # =====================================================
 # RECIBIR PREGUNTA
 # =====================================================
@@ -57,7 +55,11 @@ func configurar_pregunta(datos):
 			botonesT[i].modulate = Color.GREEN
 		else:
 			botonesT[i].modulate = Color.RED
-	inicio_con_delay()
+	if inicio==false:
+		inicio_con_delay()
+		inicio=true
+	else:
+		delay_entre_preguntas()
 
 # =====================================================
 # DELAY INICIAL
@@ -65,9 +67,27 @@ func configurar_pregunta(datos):
 func inicio_con_delay():
 	puede_responder = false
 	for boton in botones:
+		_textoapagado()
 		boton.disabled = true
-	await get_tree().create_timer(cooldown).timeout
+	await get_tree().create_timer(5).timeout
 	for boton in botones:
+		_textoencendido()
+		boton.disabled = false
+	puede_responder = true
+	$"../../TextureRect3".visible=false
+	$"../../TextureRect4".visible=false
+
+# =====================================================
+# DELAY ENTRE PREGUNTAS
+# =====================================================
+func delay_entre_preguntas():
+	puede_responder = false
+	for boton in botones:
+		_textoapagado()
+		boton.disabled = true
+	await get_tree().create_timer(cooldown-4).timeout
+	for boton in botones:
+		_textoencendido()
 		boton.disabled = false
 	puede_responder = true
 
@@ -117,10 +137,19 @@ func _on_boton_pressed(boton):
 # ESPERAR SIGUIENTE PREGUNTA
 # =====================================================
 func esperar_siguiente_pregunta():
-
 	for boton in botones:
 		boton.disabled = true
 
 	await get_tree().create_timer(cooldown).timeout
 
 	$"../..".nueva_pregunta_j1()
+
+# =====================================================
+# TEXTOS ENCENDIOS O APAGADOS
+# =====================================================
+func _textoapagado():
+	for i in range(botones.size()):
+		botonesT[i].modulate = Color("00000043")
+func _textoencendido():
+	for i in range(botones.size()):
+		botonesT[i].modulate = Color.WHITE
