@@ -8,13 +8,13 @@ func _on_pressed() -> void:
 	$"..".actualizar_cinta()
 	if Fondos.Fondo_jugar == 0:
 		$"../Mapa".texture = load("res://sprites/Seleccion_estadio/mapa1.png")
-		$"../Estadio_nombre".text=("Zacatecas")
+		$"../Estadio_nombre".text=("Ciudad de Zacatecas")
 	elif Fondos.Fondo_jugar == 1:
 		$"../Mapa".texture = load("res://sprites/Seleccion_estadio/mapa2.png")
-		$"../Estadio_nombre".text=("Durango")
+		$"../Estadio_nombre".text=("Paseo Del Viejo Oeste")
 	if Fondos.Fondo_jugar == 2:
 		$"../Mapa".texture = load("res://sprites/Seleccion_estadio/mapa3.png")
-		$"../Estadio_nombre".text=("Coahuila")
+		$"../Estadio_nombre".text=("Museo del Desierto")
 	elif Fondos.Fondo_jugar == 3:
 		$"../Mapa".texture = load("res://sprites/Seleccion_estadio/mapa4.png")
 		$"../Estadio_nombre".text=("Aleatorio")

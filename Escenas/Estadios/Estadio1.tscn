@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bgknnbj8sqoju"]
 
-[ext_resource type="Texture2D" uid="uid://drdf8knmvvbaq" path="res://sprites/Escenarios/Fondo.jpg" id="1_q2xqr"]
+[ext_resource type="Texture2D" uid="uid://dday2yvm75ypj" path="res://sprites/Fondos/Jugables/Zacatetas.jpeg" id="1_bwi8r"]
 [ext_resource type="PackedScene" uid="uid://84hyh0ff402i" path="res://Escenas/Jugadores/jugador_1.tscn" id="2_ouwuo"]
 [ext_resource type="Script" uid="uid://mydin3akgxfs" path="res://Escenas/Estadios/Script/Fondo.gd" id="2_uhc3u"]
 [ext_resource type="PackedScene" uid="uid://dhiofvfjbwqxb" path="res://Escenas/Ui_Preguntas/Principal_Preguntas.tscn" id="3_6hxy1"]
@@ -23,32 +23,34 @@ size = Vector2(191.26563, 1005)
 unique_name_in_owner = true
 
 [node name="Parallax2D" type="Parallax2D" parent="Mundo" unique_id=1886960754]
-repeat_size = Vector2(1400, 0)
-repeat_times = 3
+repeat_size = Vector2(6550, 0)
+repeat_times = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Mundo/Parallax2D" unique_id=1262831564]
-position = Vector2(768.37146, 97.56256)
-scale = Vector2(0.9428572, 1.874824)
-texture = ExtResource("1_q2xqr")
+position = Vector2(1631.9453, 112.49995)
+scale = Vector2(1.7316366, 2.1599262)
+texture = ExtResource("1_bwi8r")
 script = ExtResource("2_uhc3u")
 
 [node name="Meta" parent="Mundo" unique_id=887343028 node_paths=PackedStringArray("victoria") instance=ExtResource("5_u5wol")]
-position = Vector2(10500, 402)
+position = Vector2(10607, 600.99994)
+scale = Vector2(1.87, 1.87)
 victoria = NodePath("../../SFX/Confeti")
 
 [node name="Jugador1" parent="Mundo" unique_id=301942191 instance=ExtResource("2_ouwuo")]
 unique_name_in_owner = true
-position = Vector2(128, 295)
+position = Vector2(129, 372.755)
+collision_mask = 0
 
 [node name="Jugador2" parent="Mundo" unique_id=564365846 instance=ExtResource("4_5lh6m")]
 unique_name_in_owner = true
-position = Vector2(129, 551)
+position = Vector2(129, 550)
 
 [node name="Camera2D" type="Camera2D" parent="Mundo" unique_id=266131509 node_paths=PackedStringArray("Pistola")]
 anchor_mode = 0
 script = ExtResource("5_iai8o")
 Pistola = NodePath("../../SFX/Pistola")
-yinicial = 20000
+yinicial = 10000
 tiempoinicial = 5
 
 [node name="BarraArriba" type="ColorRect" parent="Mundo/Camera2D" unique_id=1700116918]

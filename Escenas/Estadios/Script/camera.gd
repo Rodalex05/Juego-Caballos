@@ -4,7 +4,7 @@ extends Camera2D
 @onready var j2 = %Jugador2
 @onready var barra_arriba = $BarraArriba
 @onready var barra_abajo = $BarraAbajo
-@export var yinicial=6000
+@export var yinicial=10607
 @export var tiempoinicial=0
 @export var suavizado := 5.0
 @export var offset_x := -200.0

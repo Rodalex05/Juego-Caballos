@@ -2,7 +2,8 @@ extends Node
 var fondos = [
 	preload("res://sprites/Fondos/Jugables/Zacatetas.jpeg"),
 	preload("res://sprites/Fondos/Jugables/Durango.jpeg"),
-	preload("res://sprites/Fondos/Jugables/Coahuila.png")
+	preload("res://sprites/Fondos/Jugables/Coahuila.jpg"),
+	preload("res://sprites/Fondos/Jugables/Aleatorio.jpg")
 ]
 var fondosminiatura = [
 	preload("res://sprites/Seleccion_estadio/1.png"),

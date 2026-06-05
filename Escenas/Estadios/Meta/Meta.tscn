@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c1o0xv07kgyqi" path="res://Escenas/Menu_Ganador/ganador.tscn" id="2_qi0hw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dumte"]
-size = Vector2(444, 11056)
+size = Vector2(253, 840)
 
 [node name="Area2D" type="Area2D" unique_id=887343028]
 collision_layer = 2
@@ -16,5 +16,5 @@ ganaste = ExtResource("2_qi0hw")
 texture = ExtResource("1_8cmim")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1066081292]
-position = Vector2(4, -453)
+position = Vector2(-2.5, -166)
 shape = SubResource("RectangleShape2D_dumte")

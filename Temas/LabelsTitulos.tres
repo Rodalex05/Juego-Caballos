@@ -3,7 +3,8 @@
 [ext_resource type="FontFile" uid="uid://b2u7neuqihoqw" path="res://Fonts/m42.TTF" id="1_5do0o"]
 
 [resource]
-Label/colors/font_color = Color(1.4497503, 0.13538167, 0, 1)
-Label/constants/outline_size = 31
-Label/font_sizes/font_size = 48
-Label/fonts/font = ExtResource("1_5do0o")
+RichTextLabel/colors/default_color = Color(0.84753835, 0, 0.10064194, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/outline_size = 17
+RichTextLabel/font_sizes/normal_font_size = 51
+RichTextLabel/fonts/normal_font = ExtResource("1_5do0o")

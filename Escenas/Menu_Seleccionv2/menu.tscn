@@ -346,17 +346,20 @@ script = ExtResource("22_tpdn6")
 sfx_hover = NodePath("../Hover")
 sfx_press = NodePath("../Press")
 
-[node name="Escogetupsj" type="Label" parent="." unique_id=1424718803]
+[node name="Escogetupsj" type="RichTextLabel" parent="." unique_id=941894061]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 49.0
-offset_bottom = 162.0
+offset_bottom = 174.0
 grow_horizontal = 2
 theme = ExtResource("22_pknwe")
-text = "ESCOGE A TU PERSONAJE"
+bbcode_enabled = true
+text = "
+[wave amp=10 freq=10]ESCOGE A TU PERSONAJE[/wave]
+"
+scroll_active = false
+autowrap_mode = 0
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="mouse_entered" from="Btn_Menu" to="Btn_Menu" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Btn_Siguiente" to="Btn_Siguiente" method="_on_mouse_entered"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chi6my7wbps4r"
-path="res://.godot/imported/Fondo_Fin.jpeg-87a098280f91a69e595af6825247590d.ctex"
+uid="uid://by0ur80qjm608"
+path="res://.godot/imported/Boton2.png-0c163afc2bd3cb2290b300a4d18fdb05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Fondos/Fondo_Fin.jpeg"
-dest_files=["res://.godot/imported/Fondo_Fin.jpeg-87a098280f91a69e595af6825247590d.ctex"]
+source_file="res://sprites/Seleccion_estadio/Boton2.png"
+dest_files=["res://.godot/imported/Boton2.png-0c163afc2bd3cb2290b300a4d18fdb05.ctex"]
 
 [params]
 
