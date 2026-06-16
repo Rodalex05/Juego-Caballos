@@ -22,10 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://dgb03ggeq2ha8" path="res://sprites/Menu_Instrucciones/Instruccion3.png" id="14_mo0m4"]
 [ext_resource type="Texture2D" uid="uid://cmtgp1k5llx01" path="res://sprites/Menu_Instrucciones/flecha.png" id="15_ffysb"]
 [ext_resource type="Script" uid="uid://c61boyk62gkng" path="res://Escenas/Instrucciones/Script/Instrucciones/instruccion_2.gd" id="18_oxiug"]
-[ext_resource type="Script" uid="uid://bxbq0dfn0elov" path="res://Escenas/Instrucciones/Script/btn_controles.gd" id="23_mo0m4"]
-[ext_resource type="Texture2D" uid="uid://dpdx8x35p5re" path="res://sprites/Menu_Instrucciones/Boton.png" id="23_xe3at"]
-[ext_resource type="Texture2D" uid="uid://01iq4tunw058" path="res://sprites/Menu_Instrucciones/Boton2.png" id="24_xq06n"]
-[ext_resource type="Texture2D" uid="uid://dcg6njee6klhv" path="res://sprites/Menu_Instrucciones/Boton3.png" id="25_mo8e8"]
 
 [node name="Ganador" type="Control" unique_id=437828833]
 layout_mode = 3
@@ -187,27 +183,5 @@ script = ExtResource("11_im36n")
 sfx_pasar = NodePath("../AudioPasar")
 sfx_select = NodePath("../AudioPresionar")
 
-[node name="Btn_Controles" type="TextureButton" parent="." unique_id=840911367 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -172.0
-offset_right = 200.0
-offset_bottom = -92.0
-grow_horizontal = 2
-grow_vertical = 0
-texture_normal = ExtResource("23_xe3at")
-texture_pressed = ExtResource("24_xq06n")
-texture_hover = ExtResource("25_mo8e8")
-stretch_mode = 3
-script = ExtResource("23_mo0m4")
-sfx_pasar = NodePath("../AudioPasar")
-sfx_select = NodePath("../AudioPresionar")
-
 [connection signal="mouse_entered" from="Btn_Siguiente" to="Btn_Siguiente" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Btn_Atras" to="Btn_Atras" method="_on_mouse_entered"]
-[connection signal="mouse_entered" from="Btn_Controles" to="Btn_Controles" method="_on_mouse_entered"]

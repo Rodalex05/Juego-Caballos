@@ -20,8 +20,12 @@
 [ext_resource type="FontFile" uid="uid://bhk87k7nt6qlh" path="res://Fonts/Pixellari.ttf" id="17_pvubw"]
 [ext_resource type="Script" uid="uid://ccyfcs284y426" path="res://Escenas/Menu_fondos/Scripts/btn_Jugar.gd" id="18_lap35"]
 [ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="19_lap35"]
+[ext_resource type="Texture2D" uid="uid://dpdx8x35p5re" path="res://sprites/Menu_Instrucciones/Boton.png" id="20_ekhbx"]
 [ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="20_xx3cr"]
+[ext_resource type="Texture2D" uid="uid://01iq4tunw058" path="res://sprites/Menu_Instrucciones/Boton2.png" id="21_3bwyq"]
+[ext_resource type="Texture2D" uid="uid://dcg6njee6klhv" path="res://sprites/Menu_Instrucciones/Boton3.png" id="22_hfrb8"]
 [ext_resource type="AudioStream" uid="uid://h5irwv1rhyvf" path="res://SFX/Slide.wav" id="22_xx3cr"]
+[ext_resource type="Script" uid="uid://bxbq0dfn0elov" path="res://Escenas/Instrucciones/Script/btn_controles.gd" id="23_fp16l"]
 
 [sub_resource type="Theme" id="Theme_tuj1c"]
 Label/constants/outline_size = 9
@@ -141,10 +145,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -480.0
-offset_top = -78.05493
-offset_right = -80.0
-offset_bottom = 1.9450684
+offset_left = -860.0
+offset_top = -80.33496
+offset_right = -459.99963
+offset_bottom = -0.33496094
 grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("11_vfty3")
@@ -161,10 +165,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 69.0
-offset_top = -80.05493
-offset_right = 469.0
-offset_bottom = -0.05493164
+offset_left = 460.0
+offset_top = -80.33496
+offset_right = 860.0011
+offset_bottom = -0.33496094
 grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("15_xx3cr")
@@ -186,6 +190,27 @@ text = "Ciudad de Zacatecas"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Btn_Controles" type="TextureButton" parent="Selector" unique_id=1008800322 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -80.33496
+offset_right = 200.0
+offset_bottom = -0.33496094
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("20_ekhbx")
+texture_pressed = ExtResource("21_3bwyq")
+texture_hover = ExtResource("22_hfrb8")
+stretch_mode = 3
+script = ExtResource("23_fp16l")
+sfx_pasar = NodePath("../../Hover")
+sfx_select = NodePath("../../Press")
+
 [node name="Hover" type="AudioStreamPlayer" parent="." unique_id=1792704112]
 stream = ExtResource("19_lap35")
 
@@ -201,3 +226,4 @@ stream = ExtResource("22_xx3cr")
 [connection signal="pressed" from="Selector/Btn_Derecha" to="Selector/Btn_Derecha" method="_on_pressed"]
 [connection signal="mouse_entered" from="Selector/Btn_atras" to="Selector/Btn_atras" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Selector/Btn_siguiente2" to="Selector/Btn_siguiente2" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Selector/Btn_Controles" to="Selector/Btn_Controles" method="_on_mouse_entered"]

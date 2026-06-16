@@ -8,6 +8,7 @@ var id_movimiento = 0
 # FUNCION READY
 # =====================================================
 func _ready():
+	$AnimatedSprite2D.play("idle")
 	#Espera en que cargue todo
 	await get_tree().process_frame
 	#Busca UI_Preguntas en el grupo
@@ -38,11 +39,13 @@ func correr():
 	id_movimiento += 1
 	var mi_id = id_movimiento
 	velocity.x = velocidad
+	$AnimatedSprite2D.play("correr")
 	await get_tree().create_timer(3.5).timeout
 	if mi_id == id_movimiento:
 		detener()
 func detener():
 	velocity.x = 0
+	$AnimatedSprite2D.play("idle")
 	
 func _acercamiento():
 	id_movimiento += 1

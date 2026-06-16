@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://bj3462pvhv3ak"]
+
+[ext_resource type="Script" uid="uid://b1v654u42stpk" path="res://EscenasJ1/EstadiosJ1/Script/confetti.gd" id="1_nfod3"]
+[ext_resource type="Texture2D" uid="uid://br6wegc6d6vha" path="res://sprites/Ganador/Confetti.png" id="2_locv4"]
+
+[sub_resource type="Curve" id="Curve_3l1ef"]
+_data = [Vector2(0.044368602, 0.0041782856), 0.0, 0.0, 0, 0, Vector2(1, 0.42966574), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ajxou"]
+curve = SubResource("Curve_3l1ef")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2sgx8"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 310.56
+initial_velocity_max = 419.38
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 456.83
+gravity = Vector3(0, 200, 0)
+scale_min = 0.0
+scale_max = 0.19999999
+scale_curve = SubResource("CurveTexture_ajxou")
+color = Color(1, 0.14999998, 0.14999998, 1)
+
+[sub_resource type="Curve" id="Curve_ajxou"]
+_data = [Vector2(0.044368602, 0.0041782856), 0.0, 0.0, 0, 0, Vector2(1, 0.42966574), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2sgx8"]
+curve = SubResource("Curve_ajxou")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bwi8r"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 310.56
+initial_velocity_max = 419.38
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 456.83
+gravity = Vector3(0, 200, 0)
+scale_min = 0.0
+scale_max = 0.19999999
+scale_curve = SubResource("CurveTexture_2sgx8")
+color = Color(0.09790001, 0.89, 0.21671489, 1)
+
+[sub_resource type="Curve" id="Curve_isi16"]
+_data = [Vector2(0.044368602, 0.0041782856), 0.0, 0.0, 0, 0, Vector2(1, 0.42966574), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_5mi51"]
+curve = SubResource("Curve_isi16")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j7nmm"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 310.56
+initial_velocity_max = 419.38
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 456.83
+gravity = Vector3(0, 200, 0)
+scale_min = 0.0
+scale_max = 0.19999999
+scale_curve = SubResource("CurveTexture_5mi51")
+color = Color(0.8929221, 0.9758375, 0.9999998, 1)
+
+[node name="Confetti" type="Control" unique_id=1537113107]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4692.0
+offset_top = 678.0
+offset_right = 4848.0
+offset_bottom = 765.0
+script = ExtResource("1_nfod3")
+
+[node name="Rojo" type="GPUParticles2D" parent="." unique_id=876205541]
+amount = 16
+texture = ExtResource("2_locv4")
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_2sgx8")
+
+[node name="Verde" type="GPUParticles2D" parent="." unique_id=600400302]
+amount = 16
+texture = ExtResource("2_locv4")
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_bwi8r")
+
+[node name="Azul" type="GPUParticles2D" parent="." unique_id=1107567957]
+amount = 16
+texture = ExtResource("2_locv4")
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_j7nmm")

@@ -26,9 +26,9 @@
 [ext_resource type="Texture2D" uid="uid://dns6mw1k40q1b" path="res://sprites/UI/BtnPressed/Btn_salir.png" id="15_vr3i4"]
 [ext_resource type="Texture2D" uid="uid://dghm35ydkgrm2" path="res://sprites/UI/Btn_Hover/Btn_salir.png" id="16_881u8"]
 [ext_resource type="Texture2D" uid="uid://rr3vmtk06gmx" path="res://sprites/UI/BtnNormal/Btn_unj1.png" id="18_3y2cs"]
-[ext_resource type="PackedScene" uid="uid://dca5w4un0hbg0" path="res://Escenas/Menu_fondos/fondo.tscn" id="20_gce56"]
 [ext_resource type="Texture2D" uid="uid://dghbkm5xlyhtb" path="res://sprites/UI/Btn_Hover/Btn_unj1.png" id="20_jip0x"]
 [ext_resource type="Texture2D" uid="uid://bwc4meisw8b5i" path="res://sprites/UI/BtnPressed/Btn_unj1.png" id="20_kqcm3"]
+[ext_resource type="PackedScene" uid="uid://cmegukukc4oyn" path="res://EscenasJ1/Instrucciones/Menu_Instrucciones.tscn" id="22_jip0x"]
 [ext_resource type="Texture2D" uid="uid://d3pcuxxhmqxw2" path="res://sprites/UI/BtnNormal/Btn_Multi.png" id="24_i1ikw"]
 [ext_resource type="Texture2D" uid="uid://dybqn0jl5dx6n" path="res://sprites/UI/logo.png" id="25_bg3vg"]
 [ext_resource type="Texture2D" uid="uid://bpe080w425lvp" path="res://sprites/UI/BtnPressed/Btn_Multi.png" id="25_tve3h"]
@@ -39,7 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://b4bfr5pbb1hm" path="res://sprites/UI/BtnNormal/Btn_regresar.png" id="28_e415g"]
 [ext_resource type="Texture2D" uid="uid://cta4eupqf0mjn" path="res://sprites/UI/BtnPressed/Btn_regresar.png" id="29_hdwk8"]
 [ext_resource type="Texture2D" uid="uid://csd0mk6n41ty" path="res://sprites/UI/Btn_Hover/Btn_regresar.png" id="30_gce56"]
-[ext_resource type="AudioStream" uid="uid://c3u488abmaovm" path="res://Musica/Peggle theme tune - Joseph Mayo.mp3" id="34_3y2cs"]
+[ext_resource type="AudioStream" uid="uid://o6ukhwhniryf" path="res://Musica/Menu_music.mp3" id="34_jip0x"]
 [ext_resource type="Script" uid="uid://bxn83wbqhcijq" path="res://Escenas/Menu_Principal/Scripts/musica.gd" id="35_jip0x"]
 [ext_resource type="Script" uid="uid://5f4yned8mx3g" path="res://Escenas/Menu_Principal/Scripts/btn_creditos.gd" id="38_hdwk8"]
 [ext_resource type="PackedScene" uid="uid://5pkpfysn4eja" path="res://Escenas/Creditos/Creditos.tscn" id="39_gce56"]
@@ -142,7 +142,7 @@ texture_normal = ExtResource("18_3y2cs")
 texture_pressed = ExtResource("20_kqcm3")
 texture_hover = ExtResource("20_jip0x")
 script = ExtResource("4_pvxev")
-escena_seleccion = ExtResource("20_gce56")
+escena_seleccion = ExtResource("22_jip0x")
 sfx_pasar = NodePath("../../SFX_Hover")
 sfx_select = NodePath("../../SFX_Select")
 
@@ -174,18 +174,18 @@ stream = ExtResource("8_ciq5v")
 bus = &"bus_sfx"
 
 [node name="Musica" type="AudioStreamPlayer2D" parent="." unique_id=117939262]
-stream = ExtResource("34_3y2cs")
+stream = ExtResource("34_jip0x")
 bus = &"bus_musica"
 script = ExtResource("35_jip0x")
 
 [node name="Label" type="Label" parent="." unique_id=1777509066]
 layout_mode = 0
-offset_left = 1229.0
-offset_top = 989.0
-offset_right = 1903.0
-offset_bottom = 1059.0
+offset_left = 1673.0
+offset_top = 1010.0
+offset_right = 1901.0
+offset_bottom = 1080.0
 theme = ExtResource("11_x8ylp")
-text = "v2.13.2  Beta — Assets visuales temporales"
+text = "v.1.2.2"
 
 [node name="Btn_Creditos" type="TextureButton" parent="." unique_id=1987494293 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 0

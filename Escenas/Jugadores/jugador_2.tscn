@@ -1,24 +1,27 @@
 [gd_scene format=3 uid="uid://c11qu58xlkvpw"]
 
 [ext_resource type="Script" uid="uid://61rai1ynouid" path="res://Escenas/Jugadores/Scripts/jugador_2.gd" id="1_ximi8"]
-[ext_resource type="SpriteFrames" uid="uid://5shv8a1nhte3" path="res://Escenas/Jugadores/sf_skin2.tres" id="2_0kvpn"]
+[ext_resource type="SpriteFrames" uid="uid://5shv8a1nhte3" path="res://Escenas/Jugadores/Caballos_Movimiento/sf_skin2.tres" id="2_0kvpn"]
 [ext_resource type="Script" uid="uid://bjfl33e0ciluv" path="res://Escenas/Jugadores/Scripts/jugador_2_animated_sprite_2d.gd" id="3_8alcf"]
 [ext_resource type="Theme" uid="uid://b8exuingvtraa" path="res://Temas/jugadoreslabel.tres" id="4_0kvpn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2yno5"]
-size = Vector2(254, 236)
+size = Vector2(254, 145)
 
 [node name="Jugador2" type="CharacterBody2D" unique_id=301942191]
 collision_mask = 0
 script = ExtResource("1_ximi8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=604795103]
+position = Vector2(0, -45.5)
 shape = SubResource("RectangleShape2D_2yno5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=931362832]
-scale = Vector2(0.5019531, 0.5019531)
+position = Vector2(0.99999994, -51.999996)
+scale = Vector2(3.814, 3.814)
 sprite_frames = ExtResource("2_0kvpn")
 animation = &"idle"
+frame_progress = 0.54737085
 script = ExtResource("3_8alcf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1168245528]

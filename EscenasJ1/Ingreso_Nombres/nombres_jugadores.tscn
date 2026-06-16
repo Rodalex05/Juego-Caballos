@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://dpyq5vy02ebvc"]
+
+[ext_resource type="Texture2D" uid="uid://b17xx84hfvx4k" path="res://sprites/Fondos/Fondo_static.png" id="1_palv4"]
+[ext_resource type="Texture2D" uid="uid://ptpyc7f1o4uo" path="res://sprites/Seleccion_nombres/rectangulo.png" id="2_jkajr"]
+[ext_resource type="Theme" uid="uid://hgsl6fv6xfid" path="res://EscenasJ1/Ingreso_Nombres/pizarra.tres" id="3_mpaah"]
+[ext_resource type="FontFile" uid="uid://bhk87k7nt6qlh" path="res://Fonts/Pixellari.ttf" id="4_4yj3q"]
+[ext_resource type="Script" uid="uid://deuu0cxl7kvqg" path="res://EscenasJ1/Ingreso_Nombres/Scripts/line_edit.gd" id="5_farb4"]
+[ext_resource type="FontFile" uid="uid://botj265srmyt6" path="res://Fonts/GrapeSoda.ttf" id="6_j5k5i"]
+[ext_resource type="Texture2D" uid="uid://d2boydtctmxei" path="res://sprites/Menu seleccion/Botonmenu1.png" id="7_cblm3"]
+[ext_resource type="Texture2D" uid="uid://c5wf8taf11n5u" path="res://sprites/Menu seleccion/Botonmenu2.png" id="8_efje1"]
+[ext_resource type="Texture2D" uid="uid://ccf8xujbs856e" path="res://sprites/Menu seleccion/Botonmenu3.png" id="9_2sk03"]
+[ext_resource type="Script" uid="uid://hc8qwaep1wj4" path="res://EscenasJ1/Ingreso_Nombres/Scripts/btn_regresar.gd" id="10_fh4sf"]
+[ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="11_g6646"]
+[ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="12_dernb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdumd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mvd0g"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_sdumd"]
+LineEdit/colors/font_outline_color = Color(0, 0, 1, 0)
+LineEdit/font_sizes/font_size = 63
+LineEdit/fonts/font = ExtResource("4_4yj3q")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_sdumd")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_mvd0g")
+
+[node name="NombresJugadores" type="Control" unique_id=341213656]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=188315142]
+modulate = Color(0.41568628, 0.41568628, 0.41568628, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_palv4")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=94214360]
+custom_minimum_size = Vector2(1825, 814)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -912.5
+offset_top = -407.0
+offset_right = 912.5
+offset_bottom = 407.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jkajr")
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=1720696250]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 33.0
+offset_top = -152.5
+offset_right = 1795.0
+offset_bottom = 152.5
+grow_vertical = 2
+theme = ExtResource("3_mpaah")
+text = "Ingresa tu nombre
+"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="TextureRect" unique_id=446247908]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -374.5
+offset_top = -414.0
+offset_right = 286.5
+offset_bottom = -342.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_sdumd")
+placeholder_text = "Haz click aqui"
+alignment = 1
+max_length = 10
+script = ExtResource("5_farb4")
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect/LineEdit" unique_id=1576010332]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="LabelError" type="Label" parent="TextureRect" unique_id=832349176]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -243.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_j5k5i")
+theme_override_font_sizes/font_size = 72
+horizontal_alignment = 1
+
+[node name="LabelMensaje" type="Label" parent="TextureRect" unique_id=22431052]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1032.5
+offset_top = -101.0
+offset_right = -19.0
+offset_bottom = 46.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_j5k5i")
+theme_override_font_sizes/font_size = 72
+text = "Presiona \"Enter\" cuando finalices
+"
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1718288339 node_paths=PackedStringArray("sfx_hover", "sfx_press")]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 968.0
+offset_right = 450.0
+offset_bottom = 1050.0
+texture_normal = ExtResource("7_cblm3")
+texture_pressed = ExtResource("8_efje1")
+texture_hover = ExtResource("9_2sk03")
+script = ExtResource("10_fh4sf")
+sfx_hover = NodePath("../Hover")
+sfx_press = NodePath("../Presionado")
+
+[node name="Hover" type="AudioStreamPlayer" parent="." unique_id=2076194345]
+stream = ExtResource("11_g6646")
+bus = &"bus_sfx"
+
+[node name="Presionado" type="AudioStreamPlayer" parent="." unique_id=274413260]
+stream = ExtResource("12_dernb")
+bus = &"bus_sfx"
+
+[connection signal="mouse_entered" from="TextureButton" to="TextureButton" method="_on_mouse_entered"]

@@ -29,6 +29,8 @@ SkinsGlobal="*uid://lc7vvrmqu21i"
 Nombres="*uid://bekjnqey3gw4b"
 PrimeraVez="*uid://o680fmpoww1m"
 Fondos="*uid://ukokrlsv0xm5"
+GlobalPreguntas="*uid://bxx03u15vi3ao"
+GlobalTiempo="*uid://cvg8r76r2tbq4"
 
 [display]
 
@@ -171,6 +173,7 @@ RegresarJ2={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 textures/vram_compression/import_etc2_astc=true
 2d/snap/snap_2d_transforms_to_pixel=true

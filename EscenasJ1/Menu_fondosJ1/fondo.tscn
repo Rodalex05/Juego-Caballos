@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://c7eqh07ea6epn"]
+
+[ext_resource type="Script" uid="uid://df7ujnnc4b2x1" path="res://EscenasJ1/Menu_fondosJ1/Scripts/fondo.gd" id="1_somsf"]
+[ext_resource type="Texture2D" uid="uid://dday2yvm75ypj" path="res://sprites/Fondos/Jugables/Zacatetas.jpeg" id="2_1p6ba"]
+[ext_resource type="Script" uid="uid://b12j67nlwlsi4" path="res://EscenasJ1/Menu_fondosJ1/Scripts/selector.gd" id="3_p3mnp"]
+[ext_resource type="Theme" uid="uid://c5ya14c7bckj" path="res://Temas/botones_estadio.tres" id="4_h0bp7"]
+[ext_resource type="Script" uid="uid://c2enclan3sedr" path="res://EscenasJ1/Menu_fondosJ1/Scripts/boton_atras.gd" id="5_2epky"]
+[ext_resource type="Texture2D" uid="uid://bhef6qryfh0kf" path="res://sprites/Seleccion_estadio/3.png" id="6_oecr7"]
+[ext_resource type="Texture2D" uid="uid://di5xgde6rjkrp" path="res://sprites/Seleccion_estadio/1.png" id="7_p61kk"]
+[ext_resource type="Texture2D" uid="uid://t7oacrnl5ab8" path="res://sprites/Seleccion_estadio/2.png" id="8_bm8pk"]
+[ext_resource type="Script" uid="uid://ds8vcrpgp8ehi" path="res://EscenasJ1/Menu_fondosJ1/Scripts/boton_siguiente.gd" id="9_pnfho"]
+[ext_resource type="Texture2D" uid="uid://cjn2k36i42hhn" path="res://sprites/Seleccion_estadio/mapa1.png" id="10_7fl4a"]
+[ext_resource type="Texture2D" uid="uid://b4bfr5pbb1hm" path="res://sprites/UI/BtnNormal/Btn_regresar.png" id="11_aprkm"]
+[ext_resource type="Texture2D" uid="uid://cta4eupqf0mjn" path="res://sprites/UI/BtnPressed/Btn_regresar.png" id="12_w61u1"]
+[ext_resource type="Texture2D" uid="uid://csd0mk6n41ty" path="res://sprites/UI/Btn_Hover/Btn_regresar.png" id="13_sc42f"]
+[ext_resource type="Script" uid="uid://bi0q13thaeuix" path="res://EscenasJ1/Menu_fondosJ1/Scripts/btn_atras.gd" id="14_23i13"]
+[ext_resource type="Texture2D" uid="uid://cv78jwjtpki0y" path="res://sprites/Seleccion_estadio/Boton1.png" id="15_7ngnj"]
+[ext_resource type="Texture2D" uid="uid://by0ur80qjm608" path="res://sprites/Seleccion_estadio/Boton2.png" id="16_hj7wj"]
+[ext_resource type="Texture2D" uid="uid://2he31hcvxfhv" path="res://sprites/Seleccion_estadio/Boton3.png" id="17_wsi1x"]
+[ext_resource type="Script" uid="uid://b4tm7cpcfsvwe" path="res://EscenasJ1/Menu_fondosJ1/Scripts/btn_Jugar.gd" id="18_mqmjo"]
+[ext_resource type="FontFile" uid="uid://bhk87k7nt6qlh" path="res://Fonts/Pixellari.ttf" id="19_dm3sq"]
+[ext_resource type="Texture2D" uid="uid://dpdx8x35p5re" path="res://sprites/Menu_Instrucciones/Boton.png" id="20_t1cl0"]
+[ext_resource type="Texture2D" uid="uid://01iq4tunw058" path="res://sprites/Menu_Instrucciones/Boton2.png" id="21_8xces"]
+[ext_resource type="Texture2D" uid="uid://dcg6njee6klhv" path="res://sprites/Menu_Instrucciones/Boton3.png" id="22_q71rx"]
+[ext_resource type="Script" uid="uid://bxbq0dfn0elov" path="res://Escenas/Instrucciones/Script/btn_controles.gd" id="23_bq4lc"]
+[ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="24_xvvc0"]
+[ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="25_oldl0"]
+[ext_resource type="AudioStream" uid="uid://h5irwv1rhyvf" path="res://SFX/Slide.wav" id="26_yu62a"]
+
+[sub_resource type="Theme" id="Theme_tuj1c"]
+Label/constants/outline_size = 9
+Label/font_sizes/font_size = 62
+Label/fonts/font = ExtResource("19_dm3sq")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvnmx"]
+bg_color = Color(0.078431375, 0.078431375, 0.078431375, 0.23529412)
+
+[node name="Fondo" type="Control" unique_id=1155444729]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=89540301]
+repeat_size = Vector2(7550, 0)
+autoscroll = Vector2(50, 0)
+repeat_times = 2
+script = ExtResource("1_somsf")
+
+[node name="Fondo" type="Sprite2D" parent="Parallax2D" unique_id=914154855]
+modulate = Color(0.35906908, 0.35906908, 0.35906908, 1)
+position = Vector2(2118.2026, 539)
+scale = Vector2(1.9963241, 1.9963238)
+texture = ExtResource("2_1p6ba")
+
+[node name="Selector" type="Control" parent="." unique_id=1034494035]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -46.28
+offset_bottom = -49.94507
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_p3mnp")
+
+[node name="Btn_izquierda" type="Button" parent="Selector" unique_id=2063465611 node_paths=PackedStringArray("sfx_hover", "sfx_press")]
+layout_mode = 0
+offset_left = 146.115
+offset_top = 673.0
+offset_right = 293.1148
+offset_bottom = 959.0
+theme = ExtResource("4_h0bp7")
+text = "<"
+script = ExtResource("5_2epky")
+sfx_hover = NodePath("../../Hover")
+sfx_press = NodePath("../../Slide")
+
+[node name="PreviewIzq" type="TextureRect" parent="Selector" unique_id=1031946152]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 673.0
+offset_right = 710.0
+offset_bottom = 919.0
+texture = ExtResource("6_oecr7")
+expand_mode = 2
+
+[node name="PreviewCentro" type="TextureRect" parent="Selector" unique_id=1743269892]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -449.99994
+offset_right = 250.0
+offset_bottom = -99.99988
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_p61kk")
+expand_mode = 2
+
+[node name="PreviewDer" type="TextureRect" parent="Selector" unique_id=353651294]
+layout_mode = 0
+offset_left = 1210.0
+offset_top = 673.0
+offset_right = 1561.0
+offset_bottom = 919.0
+texture = ExtResource("8_bm8pk")
+expand_mode = 2
+
+[node name="Btn_Derecha" type="Button" parent="Selector" unique_id=1470913623 node_paths=PackedStringArray("sfx_hover", "sfx_press")]
+layout_mode = 0
+offset_left = 1589.0
+offset_top = 673.0
+offset_right = 1737.0
+offset_bottom = 959.0
+theme = ExtResource("4_h0bp7")
+text = ">"
+script = ExtResource("9_pnfho")
+sfx_hover = NodePath("../../Hover")
+sfx_press = NodePath("../../Slide")
+
+[node name="Mapa" type="TextureRect" parent="Selector" unique_id=1723080017]
+custom_minimum_size = Vector2(800, 430)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -505.581
+offset_top = 68.885
+offset_right = 505.58105
+offset_bottom = 546.3451
+grow_horizontal = 2
+texture = ExtResource("10_7fl4a")
+expand_mode = 2
+
+[node name="Btn_atras" type="TextureButton" parent="Selector" unique_id=1831778196 node_paths=PackedStringArray("sfx_hover", "sfx_press")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -860.0
+offset_top = -80.33496
+offset_right = -459.99963
+offset_bottom = -0.33496094
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("11_aprkm")
+texture_pressed = ExtResource("12_w61u1")
+texture_hover = ExtResource("13_sc42f")
+script = ExtResource("14_23i13")
+sfx_hover = NodePath("../../Hover")
+sfx_press = NodePath("../../Press")
+
+[node name="Btn_siguiente2" type="TextureButton" parent="Selector" unique_id=2011657155 node_paths=PackedStringArray("sfx_hover", "sfx_press")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 460.0
+offset_top = -80.33496
+offset_right = 860.0011
+offset_bottom = -0.33496094
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("15_7ngnj")
+texture_pressed = ExtResource("16_hj7wj")
+texture_hover = ExtResource("17_wsi1x")
+script = ExtResource("18_mqmjo")
+sfx_hover = NodePath("../../Hover")
+sfx_press = NodePath("../../Press")
+
+[node name="Estadio_nombre" type="Label" parent="Selector" unique_id=1104157676]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 548.28
+offset_right = 1458.0
+offset_bottom = 620.28
+theme = SubResource("Theme_tuj1c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cvnmx")
+text = "Ciudad de Zacatecas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Btn_Controles" type="TextureButton" parent="Selector" unique_id=1008800322 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -80.33496
+offset_right = 200.0
+offset_bottom = -0.33496094
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("20_t1cl0")
+texture_pressed = ExtResource("21_8xces")
+texture_hover = ExtResource("22_q71rx")
+stretch_mode = 3
+script = ExtResource("23_bq4lc")
+sfx_pasar = NodePath("../../Hover")
+sfx_select = NodePath("../../Press")
+
+[node name="Hover" type="AudioStreamPlayer" parent="." unique_id=1792704112]
+stream = ExtResource("24_xvvc0")
+
+[node name="Press" type="AudioStreamPlayer" parent="." unique_id=1009916794]
+stream = ExtResource("25_oldl0")
+
+[node name="Slide" type="AudioStreamPlayer" parent="." unique_id=354535921]
+stream = ExtResource("26_yu62a")
+
+[connection signal="mouse_entered" from="Selector/Btn_izquierda" to="Selector/Btn_izquierda" method="_on_mouse_entered"]
+[connection signal="pressed" from="Selector/Btn_izquierda" to="Selector/Btn_izquierda" method="_on_pressed"]
+[connection signal="mouse_entered" from="Selector/Btn_Derecha" to="Selector/Btn_Derecha" method="_on_mouse_entered"]
+[connection signal="pressed" from="Selector/Btn_Derecha" to="Selector/Btn_Derecha" method="_on_pressed"]
+[connection signal="mouse_entered" from="Selector/Btn_atras" to="Selector/Btn_atras" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Selector/Btn_siguiente2" to="Selector/Btn_siguiente2" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Selector/Btn_Controles" to="Selector/Btn_Controles" method="_on_mouse_entered"]

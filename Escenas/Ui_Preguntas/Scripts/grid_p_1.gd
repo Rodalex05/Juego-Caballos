@@ -125,14 +125,16 @@ func _on_boton_pressed(boton):
 
 		emit_signal("respuesta_correcta")
 		sfx_correcto.play()
+		GlobalPreguntas.GlobalCorrectaJ1.append(1)
+
 
 	else:
 
 		emit_signal("respuesta_incorrecta")
 		sfx_incorrecto.play()
-
+		GlobalPreguntas.GlobalCorrectaJ1.append(0)
+	GlobalPreguntas.GlobalRespuestasJ1.append(respuesta_correcta_actual)
 	esperar_siguiente_pregunta()
-
 # =====================================================
 # ESPERAR SIGUIENTE PREGUNTA
 # =====================================================

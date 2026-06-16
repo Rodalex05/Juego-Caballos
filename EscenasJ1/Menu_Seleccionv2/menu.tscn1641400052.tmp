@@ -1,0 +1,200 @@
+[gd_scene format=3 uid="uid://700coho1a6wi"]
+
+[ext_resource type="Texture2D" uid="uid://b17xx84hfvx4k" path="res://sprites/Escenarios/Fondo_static.png" id="1_msqh8"]
+[ext_resource type="Texture2D" uid="uid://dixbw5grbvnk4" path="res://icono.png" id="2_y8nsr"]
+[ext_resource type="Script" uid="uid://dqlwovpxdla7i" path="res://Escenas/Menu_Seleccionv2/Script/jugador_1.gd" id="3_udjnh"]
+[ext_resource type="Theme" uid="uid://cjx38561hocxb" path="res://Temas/Labels.tres" id="4_rh5i2"]
+[ext_resource type="Script" uid="uid://d0whbon1xqudr" path="res://Escenas/Menu_Seleccionv2/Script/jugador_1_selector.gd" id="5_rgb2h"]
+[ext_resource type="Script" uid="uid://dnub46ue2f7ks" path="res://Escenas/Menu_Seleccionv2/Script/botones.gd" id="5_rh5i2"]
+[ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="7_rgb2h"]
+[ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="8_ntw51"]
+[ext_resource type="AudioStream" uid="uid://4u7odasjebxh" path="res://Musica/Select_menu.mp3" id="9_rgb2h"]
+
+[sub_resource type="GDScript" id="GDScript_ikp1a"]
+script/source = "extends Button
+#Sonidos
+@export var sfx_hover : AudioStreamPlayer
+@export var sfx_press : AudioStreamPlayer
+#Funcion Ready
+func _ready() -> void:
+	#Detecta si se presiono
+	pressed.connect(_menu)
+	#Funcion que lleva al menu
+func _menu():
+	sfx_press.play()
+	#Esperar que se reproduzca el efecto
+	await get_tree().create_timer(0.2).timeout
+	#Ir al menu
+	get_tree().change_scene_to_file(\"res://Escenas/Menu_Principal/menu_principal.tscn\")
+func _on_mouse_entered() -> void:
+	sfx_hover.play()
+"
+
+[node name="Menu" type="Control" unique_id=1717183384]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=785227767]
+modulate = Color(0.41568628, 0.41568628, 0.41568628, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_msqh8")
+
+[node name="GridPersonajes" type="GridContainer" parent="." unique_id=1883479204]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -518.0
+offset_right = 518.0
+offset_bottom = 516.0
+grow_horizontal = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 4
+
+[node name="P1" type="TextureRect" parent="GridPersonajes" unique_id=1790451141]
+layout_mode = 2
+texture = ExtResource("2_y8nsr")
+expand_mode = 2
+
+[node name="P2" type="TextureRect" parent="GridPersonajes" unique_id=504215026]
+layout_mode = 2
+texture = ExtResource("2_y8nsr")
+
+[node name="P3" type="TextureRect" parent="GridPersonajes" unique_id=872155077]
+layout_mode = 2
+texture = ExtResource("2_y8nsr")
+
+[node name="P4" type="TextureRect" parent="GridPersonajes" unique_id=574496270]
+layout_mode = 2
+texture = ExtResource("2_y8nsr")
+
+[node name="P5" type="TextureRect" parent="GridPersonajes" unique_id=717440055]
+layout_mode = 2
+texture = ExtResource("2_y8nsr")
+
+[node name="P6" type="TextureRect" parent="GridPersonajes" unique_id=684305985]
+layout_mode = 2
+texture = ExtResource("2_y8nsr")
+
+[node name="P7" type="TextureRect" parent="GridPersonajes" unique_id=1924378969]
+layout_mode = 2
+texture = ExtResource("2_y8nsr")
+
+[node name="P8" type="TextureRect" parent="GridPersonajes" unique_id=504235422]
+layout_mode = 2
+texture = ExtResource("2_y8nsr")
+
+[node name="Jugador1" type="TextureRect" parent="." unique_id=1168259610 node_paths=PackedStringArray("presionar")]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 231.0
+offset_right = 420.0
+offset_bottom = 1080.0
+script = ExtResource("3_udjnh")
+presionar = NodePath("../Press")
+
+[node name="Label" type="Label" parent="Jugador1" unique_id=1520395786]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 690.0
+offset_right = 813.0
+offset_bottom = 804.0
+theme = ExtResource("4_rh5i2")
+text = "Negrios"
+
+[node name="Seleccion" type="ColorRect" parent="Jugador1" unique_id=578765690]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 0
+offset_left = 423.0
+offset_top = -231.0
+offset_right = 679.0
+offset_bottom = 25.0
+color = Color(0.09803922, 1, 1, 0.5647059)
+script = ExtResource("5_rgb2h")
+
+[node name="Jugador2" type="ColorRect" parent="." unique_id=1069416377]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 0
+offset_left = 1500.0
+offset_top = 231.0
+offset_right = 1900.0
+offset_bottom = 1080.0
+
+[node name="Botones" type="Control" parent="." unique_id=1847786710]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_rh5i2")
+
+[node name="W" type="Button" parent="Botones" unique_id=715976856]
+layout_mode = 0
+offset_left = 997.0
+offset_top = 549.0
+offset_right = 1155.0
+offset_bottom = 707.0
+theme = ExtResource("4_rh5i2")
+text = "W"
+
+[node name="D" type="Button" parent="Botones" unique_id=1020626456]
+layout_mode = 0
+offset_left = 1192.0
+offset_top = 710.0
+offset_right = 1350.0
+offset_bottom = 868.0
+theme = ExtResource("4_rh5i2")
+text = "D"
+
+[node name="S" type="Button" parent="Botones" unique_id=1019807079]
+layout_mode = 0
+offset_left = 995.0
+offset_top = 860.0
+offset_right = 1153.0
+offset_bottom = 1018.0
+theme = ExtResource("4_rh5i2")
+text = "S"
+
+[node name="A" type="Button" parent="Botones" unique_id=1387782869]
+layout_mode = 0
+offset_left = 795.0
+offset_top = 707.0
+offset_right = 953.0
+offset_bottom = 865.0
+theme = ExtResource("4_rh5i2")
+text = "A
+"
+
+[node name="Btn_Menu" type="Button" parent="." unique_id=1026878490 node_paths=PackedStringArray("sfx_hover", "sfx_press")]
+layout_mode = 0
+offset_left = 1393.0
+offset_top = 929.0
+offset_right = 1874.0
+offset_bottom = 1028.0
+text = "REGRESAR AL MENU"
+script = SubResource("GDScript_ikp1a")
+sfx_hover = NodePath("../Hover")
+sfx_press = NodePath("../Press")
+
+[node name="Press" type="AudioStreamPlayer" parent="." unique_id=1341051994]
+stream = ExtResource("7_rgb2h")
+bus = &"bus_sfx"
+
+[node name="Hover" type="AudioStreamPlayer" parent="." unique_id=956800254]
+stream = ExtResource("8_ntw51")
+bus = &"bus_sfx"
+
+[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=772729780]
+stream = ExtResource("9_rgb2h")
+bus = &"bus_musica"
+
+[connection signal="mouse_entered" from="Btn_Menu" to="Btn_Menu" method="_on_mouse_entered"]

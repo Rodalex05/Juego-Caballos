@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://b6ehk2bpxxlhv"]
+
+[ext_resource type="Script" uid="uid://bolmnl35qxsx6" path="res://EscenasJ1/Menu_Ganador/Script/ganador.gd" id="1_ln0rj"]
+[ext_resource type="Texture2D" uid="uid://cmg51fyr8cmu1" path="res://sprites/Ganador/Ganador_fondo.png" id="2_1divq"]
+[ext_resource type="Theme" uid="uid://cqiqo7algjucx" path="res://Temas/label_ganador.tres" id="3_2503n"]
+[ext_resource type="Script" uid="uid://d4eg02gc2dsbq" path="res://EscenasJ1/Menu_Ganador/Script/label_ganador.gd" id="4_oia4r"]
+[ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="5_c0ndy"]
+[ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="6_so0yk"]
+[ext_resource type="Texture2D" uid="uid://br6wegc6d6vha" path="res://sprites/Ganador/Confetti.png" id="8_ygpex"]
+[ext_resource type="PackedScene" uid="uid://chsf6uhqptjcc" path="res://EscenasJ1/Menu_Resultados/resultados.tscn" id="9_hmhlc"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rda78"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1000, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = 1.0728835e-05
+angle_max = 167.00002
+gravity = Vector3(0, 98, 0)
+scale_min = 0.01
+scale_max = 0.19999999
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ym412"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1000, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = 1.0728835e-05
+angle_max = 167.00002
+gravity = Vector3(0, 98, 0)
+scale_min = 0.01
+scale_max = 0.19999999
+
+[node name="Ganador" type="Control" unique_id=437828833]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ln0rj")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=32976540]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1divq")
+
+[node name="Label" type="Label" parent="." unique_id=958248619]
+layout_mode = 0
+offset_left = 691.0
+offset_top = 208.0
+offset_right = 1243.0
+offset_bottom = 451.0
+theme = ExtResource("3_2503n")
+text = "El Ganador es: 
+Jugador"
+horizontal_alignment = 1
+script = ExtResource("4_oia4r")
+
+[node name="AudioPasar" type="AudioStreamPlayer" parent="." unique_id=1552412211]
+stream = ExtResource("5_c0ndy")
+
+[node name="AudioPresionar" type="AudioStreamPlayer" parent="." unique_id=144112494]
+stream = ExtResource("6_so0yk")
+
+[node name="JugadorGanador" type="AnimatedSprite2D" parent="." unique_id=514450468]
+position = Vector2(975, 560)
+scale = Vector2(6.4071436, 6.4071426)
+animation = &""
+
+[node name="Confeti" type="Control" parent="." unique_id=1166525688]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -953.0
+offset_top = -68.0
+offset_right = 970.0
+offset_bottom = 76.0
+grow_horizontal = 2
+
+[node name="Rojo" type="GPUParticles2D" parent="Confeti" unique_id=1332048194]
+modulate = Color(1, 0.050000012, 0.050000012, 1)
+position = Vector2(971.5, 9)
+amount = 50
+texture = ExtResource("8_ygpex")
+lifetime = 5.0
+preprocess = 2.0
+process_material = SubResource("ParticleProcessMaterial_rda78")
+
+[node name="Verde" type="GPUParticles2D" parent="Confeti" unique_id=1708084438]
+modulate = Color(0.028000006, 0.56, 0.0723333, 1)
+position = Vector2(971.5, 9)
+amount = 50
+texture = ExtResource("8_ygpex")
+lifetime = 5.0
+preprocess = 2.0
+process_material = SubResource("ParticleProcessMaterial_ym412")
+
+[node name="Blanco" type="GPUParticles2D" parent="Confeti" unique_id=606641109]
+position = Vector2(971.5, 9)
+amount = 50
+texture = ExtResource("8_ygpex")
+lifetime = 5.0
+preprocess = 2.0
+process_material = SubResource("ParticleProcessMaterial_rda78")
+
+[node name="Resultados" parent="." unique_id=1218691444 instance=ExtResource("9_hmhlc")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -900.0
+offset_top = 1200.0
+offset_right = 900.0
+offset_bottom = 2000.0
+grow_vertical = 1

@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://ctgyv7o84bxvd" path="res://sprites/Ui_Preguntas/Normal/Bt4.png" id="11_06xdf"]
 [ext_resource type="Texture2D" uid="uid://c0wg0t1kao3ss" path="res://sprites/Ui_Preguntas/disabled/Bt3.png" id="13_v45st"]
 [ext_resource type="Texture2D" uid="uid://b8wblo1p1g677" path="res://sprites/Ui_Preguntas/disabled/Bt4.png" id="15_o8raf"]
+[ext_resource type="Theme" uid="uid://cnhy1x6dvhvtv" path="res://Temas/Botonesguia.tres" id="15_uf44k"]
 [ext_resource type="Texture2D" uid="uid://b6s6qcv0557cr" path="res://sprites/Ui_Preguntas/Curiosidad.png" id="15_v45st"]
 [ext_resource type="Script" uid="uid://c3a4kwpaj58ou" path="res://Escenas/Ui_Preguntas/Scripts/rect_curiosidad_2.gd" id="19_5altt"]
 
@@ -285,18 +286,18 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="GridControlesJ1" type="GridContainer" parent="." unique_id=1930853142]
-visible = false
 layout_mode = 0
-offset_left = 24.0
-offset_top = 63.0
-offset_right = 956.0
-offset_bottom = 307.0
+offset_left = -28.0
+offset_top = 110.0
+offset_right = 907.0
+offset_bottom = 384.0
 columns = 2
 
 [node name="Bt_1" type="Label" parent="GridControlesJ1" unique_id=130814670]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
+theme = ExtResource("15_uf44k")
 text = "Q"
 horizontal_alignment = 2
 
@@ -304,53 +305,59 @@ horizontal_alignment = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
+theme = ExtResource("15_uf44k")
 text = "W"
 horizontal_alignment = 2
 
 [node name="Bt_3" type="Label" parent="GridControlesJ1" unique_id=446216161]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("15_uf44k")
 text = "A"
 horizontal_alignment = 2
 
 [node name="Bt_4" type="Label" parent="GridControlesJ1" unique_id=343716292]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("15_uf44k")
 text = "S"
 horizontal_alignment = 2
 
-[node name="GridControlesJ2" type="GridContainer" parent="." unique_id=995605215]
-visible = false
+[node name="GridControlesJ2" type="GridContainer" parent="." unique_id=2067180292]
 layout_mode = 0
-offset_left = 965.0
-offset_top = 63.0
-offset_right = 1897.0
-offset_bottom = 307.0
+offset_left = 927.0
+offset_top = 110.0
+offset_right = 1862.0
+offset_bottom = 384.0
 columns = 2
 
-[node name="Bt_1" type="Label" parent="GridControlesJ2" unique_id=1550880343]
+[node name="Bt_1" type="Label" parent="GridControlesJ2" unique_id=1110851803]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
+theme = ExtResource("15_uf44k")
 text = "O"
 horizontal_alignment = 2
 
-[node name="Bt_2" type="Label" parent="GridControlesJ2" unique_id=1304115090]
+[node name="Bt_2" type="Label" parent="GridControlesJ2" unique_id=1562631737]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
+theme = ExtResource("15_uf44k")
 text = "P"
 horizontal_alignment = 2
 
-[node name="Bt_3" type="Label" parent="GridControlesJ2" unique_id=30331497]
+[node name="Bt_3" type="Label" parent="GridControlesJ2" unique_id=655279651]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("15_uf44k")
 text = "K"
 horizontal_alignment = 2
 
-[node name="Bt_4" type="Label" parent="GridControlesJ2" unique_id=26330067]
+[node name="Bt_4" type="Label" parent="GridControlesJ2" unique_id=2007830357]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("15_uf44k")
 text = "L"
 horizontal_alignment = 2
 

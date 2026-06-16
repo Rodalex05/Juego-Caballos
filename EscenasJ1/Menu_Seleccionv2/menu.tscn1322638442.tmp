@@ -1,0 +1,302 @@
+[gd_scene format=3 uid="uid://700coho1a6wi"]
+
+[ext_resource type="Texture2D" uid="uid://b17xx84hfvx4k" path="res://sprites/Fondos/Fondo_static.png" id="1_msqh8"]
+[ext_resource type="Texture2D" uid="uid://bpiosjnv0r8rl" path="res://sprites/Menu seleccion/Caballos/c1.png" id="2_22e25"]
+[ext_resource type="Texture2D" uid="uid://cc3ua7qklfmsx" path="res://sprites/Caballos/Caballo1.png" id="3_22e25"]
+[ext_resource type="Script" uid="uid://dqlwovpxdla7i" path="res://Escenas/Menu_Seleccionv2/Script/jugador_1.gd" id="3_udjnh"]
+[ext_resource type="Theme" uid="uid://cjx38561hocxb" path="res://Temas/Labels.tres" id="4_rh5i2"]
+[ext_resource type="Texture2D" uid="uid://c7nv2waytnqks" path="res://sprites/Menu seleccion/selectj1.png" id="5_ntw51"]
+[ext_resource type="Script" uid="uid://d0whbon1xqudr" path="res://Escenas/Menu_Seleccionv2/Script/jugador_1_selector.gd" id="5_rgb2h"]
+[ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="7_rgb2h"]
+[ext_resource type="Script" uid="uid://d2p20u8k8klr8" path="res://Escenas/Menu_Seleccionv2/Script/jugador_2.gd" id="8_ij6u2"]
+[ext_resource type="Script" uid="uid://dmatl3n1ax0ve" path="res://Escenas/Menu_Seleccionv2/Script/select.gd" id="8_ittlc"]
+[ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="8_ntw51"]
+[ext_resource type="Texture2D" uid="uid://bgts6lxqf7oit" path="res://sprites/Caballos/Caballo3.png" id="8_y7gmn"]
+[ext_resource type="Texture2D" uid="uid://cyv78y0y18a67" path="res://sprites/Menu seleccion/selectj2.png" id="9_lemqs"]
+[ext_resource type="AudioStream" uid="uid://4u7odasjebxh" path="res://Musica/Select_menu.mp3" id="9_rgb2h"]
+[ext_resource type="Script" uid="uid://v1vi7fqih3uf" path="res://Escenas/Menu_Seleccionv2/Script/jugador_2_selector.gd" id="10_y7gmn"]
+[ext_resource type="Texture2D" uid="uid://d2boydtctmxei" path="res://sprites/Menu seleccion/Botonmenu1.png" id="13_stb0g"]
+[ext_resource type="Texture2D" uid="uid://c5wf8taf11n5u" path="res://sprites/Menu seleccion/Botonmenu2.png" id="14_xfkut"]
+[ext_resource type="Texture2D" uid="uid://ccf8xujbs856e" path="res://sprites/Menu seleccion/Botonmenu3.png" id="15_yqbld"]
+[ext_resource type="Texture2D" uid="uid://bc80ka3shpihh" path="res://sprites/Menu seleccion/Botonsiguiente.png" id="19_gm4xu"]
+[ext_resource type="Texture2D" uid="uid://imlk83m80qkr" path="res://sprites/Menu seleccion/Botonsiguiente2.png" id="20_pknwe"]
+[ext_resource type="Texture2D" uid="uid://b1e6hxmtr37s7" path="res://sprites/Menu seleccion/Botonsiguiente3.png" id="21_tpdn6"]
+[ext_resource type="Theme" uid="uid://bods3lw78hjc3" path="res://Temas/LabelsTitulos.tres" id="22_pknwe"]
+[ext_resource type="Script" uid="uid://cpcdbmjtuq3i" path="res://Escenas/Menu_Seleccionv2/Script/btn_siguiente.gd" id="22_tpdn6"]
+
+[sub_resource type="GDScript" id="GDScript_ikp1a"]
+script/source = "extends TextureButton
+#Sonidos
+@export var sfx_hover : AudioStreamPlayer
+@export var sfx_press : AudioStreamPlayer
+#Funcion Ready
+func _ready() -> void:
+	#Detecta si se presiono
+	pressed.connect(_menu)
+	#Funcion que lleva al menu
+func _menu():
+	sfx_press.play()
+	#Esperar que se reproduzca el efecto
+	await get_tree().create_timer(0.2).timeout
+	#Ir al menu
+	get_tree().change_scene_to_file(\"res://Escenas/Menu_Principal/menu_principal.tscn\")
+func _on_mouse_entered() -> void:
+	sfx_hover.play()
+"
+
+[node name="Menu" type="Control" unique_id=1717183384]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=785227767]
+modulate = Color(0.41568628, 0.41568628, 0.41568628, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_msqh8")
+
+[node name="GridPersonajes" type="GridContainer" parent="." unique_id=1883479204]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -270.0
+offset_top = -900.0
+offset_right = 270.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
+
+[node name="P1" type="TextureRect" parent="GridPersonajes" unique_id=1790451141]
+layout_mode = 2
+texture = ExtResource("2_22e25")
+expand_mode = 2
+
+[node name="P2" type="TextureRect" parent="GridPersonajes" unique_id=504215026]
+layout_mode = 2
+texture = ExtResource("2_22e25")
+
+[node name="P3" type="TextureRect" parent="GridPersonajes" unique_id=872155077]
+layout_mode = 2
+texture = ExtResource("2_22e25")
+
+[node name="P4" type="TextureRect" parent="GridPersonajes" unique_id=574496270]
+layout_mode = 2
+texture = ExtResource("2_22e25")
+
+[node name="P5" type="TextureRect" parent="GridPersonajes" unique_id=717440055]
+layout_mode = 2
+texture = ExtResource("2_22e25")
+
+[node name="P6" type="TextureRect" parent="GridPersonajes" unique_id=684305985]
+layout_mode = 2
+texture = ExtResource("2_22e25")
+
+[node name="P7" type="TextureRect" parent="GridPersonajes" unique_id=1924378969]
+layout_mode = 2
+texture = ExtResource("2_22e25")
+
+[node name="P8" type="TextureRect" parent="GridPersonajes" unique_id=504235422]
+layout_mode = 2
+texture = ExtResource("2_22e25")
+
+[node name="P9" type="TextureRect" parent="GridPersonajes" unique_id=1221428712]
+layout_mode = 2
+texture = ExtResource("2_22e25")
+expand_mode = 2
+
+[node name="P10" type="TextureRect" parent="GridPersonajes" unique_id=1600893625]
+layout_mode = 2
+texture = ExtResource("2_22e25")
+
+[node name="P11" type="TextureRect" parent="GridPersonajes" unique_id=1198030097]
+layout_mode = 2
+texture = ExtResource("2_22e25")
+
+[node name="P12" type="TextureRect" parent="GridPersonajes" unique_id=1687622506]
+layout_mode = 2
+texture = ExtResource("2_22e25")
+
+[node name="Jugador1" type="TextureRect" parent="." unique_id=1168259610 node_paths=PackedStringArray("presionar")]
+custom_minimum_size = Vector2(400, 849)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 190.0
+offset_right = 600.0
+offset_bottom = -3.0
+grow_vertical = 2
+texture = ExtResource("3_22e25")
+expand_mode = 1
+stretch_mode = 3
+script = ExtResource("3_udjnh")
+presionar = NodePath("../Press")
+
+[node name="Label" type="Label" parent="Jugador1" unique_id=1520395786]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.5
+offset_right = 61.5
+offset_bottom = 36.0
+grow_horizontal = 2
+theme = ExtResource("4_rh5i2")
+text = "Jugador 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Seleccion" type="TextureRect" parent="Jugador1" unique_id=610044284]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 0
+offset_left = 685.0
+offset_top = -13.0
+offset_right = 875.0
+offset_bottom = 177.0
+texture = ExtResource("5_ntw51")
+script = ExtResource("5_rgb2h")
+
+[node name="Select" type="ColorRect" parent="Jugador1/Seleccion" unique_id=1424467833]
+visible = false
+modulate = Color(0.88235295, 0.078431375, 0.02745098, 0.38039216)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.0
+offset_top = -82.0
+offset_right = 82.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_ittlc")
+
+[node name="Jugador2" type="TextureRect" parent="." unique_id=1740031002 node_paths=PackedStringArray("presionar")]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -600.0
+offset_top = 193.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("8_y7gmn")
+expand_mode = 1
+stretch_mode = 3
+flip_h = true
+script = ExtResource("8_ij6u2")
+presionar = NodePath("../Press")
+
+[node name="Seleccion" type="TextureRect" parent="Jugador2" unique_id=1948788919]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 0
+offset_left = -275.0
+offset_top = -16.0
+offset_right = -85.0
+offset_bottom = 174.0
+texture = ExtResource("9_lemqs")
+expand_mode = 1
+stretch_mode = 3
+script = ExtResource("10_y7gmn")
+
+[node name="Label" type="Label" parent="Jugador2" unique_id=1826818905]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.5
+offset_right = 61.5
+offset_bottom = 36.0
+grow_horizontal = 2
+theme = ExtResource("4_rh5i2")
+text = "Jugador 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Select" type="ColorRect" parent="Jugador2" unique_id=1204374126]
+modulate = Color(0.02745098, 0.20784314, 0.9607843, 0.38039216)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -561.0
+offset_top = -448.5
+offset_right = -397.0
+offset_bottom = -284.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_ittlc")
+
+[node name="Press" type="AudioStreamPlayer" parent="." unique_id=1341051994]
+stream = ExtResource("7_rgb2h")
+bus = &"bus_sfx"
+
+[node name="Hover" type="AudioStreamPlayer" parent="." unique_id=956800254]
+stream = ExtResource("8_ntw51")
+bus = &"bus_sfx"
+
+[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=772729780]
+stream = ExtResource("9_rgb2h")
+autoplay = true
+bus = &"bus_musica"
+
+[node name="Btn_Menu" type="TextureButton" parent="." unique_id=1913929067 node_paths=PackedStringArray("sfx_hover", "sfx_press")]
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 954.0
+offset_right = 500.0
+offset_bottom = 1034.0
+texture_normal = ExtResource("13_stb0g")
+texture_pressed = ExtResource("14_xfkut")
+texture_hover = ExtResource("15_yqbld")
+script = SubResource("GDScript_ikp1a")
+sfx_hover = NodePath("../Hover")
+sfx_press = NodePath("../Press")
+
+[node name="Btn_Siguiente" type="TextureButton" parent="." unique_id=1451797975 node_paths=PackedStringArray("sfx_hover", "sfx_press")]
+layout_mode = 0
+offset_left = 1420.0
+offset_top = 954.0
+offset_right = 1820.0
+offset_bottom = 1034.0
+texture_normal = ExtResource("19_gm4xu")
+texture_pressed = ExtResource("20_pknwe")
+texture_hover = ExtResource("21_tpdn6")
+texture_disabled = ExtResource("20_pknwe")
+script = ExtResource("22_tpdn6")
+sfx_hover = NodePath("../Hover")
+sfx_press = NodePath("../Press")
+
+[node name="Escogetupsj" type="Label" parent="." unique_id=1424718803]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 49.0
+offset_bottom = 162.0
+grow_horizontal = 2
+theme = ExtResource("22_pknwe")
+text = "ESCOGE A TU PERSONAJE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="Btn_Menu" to="Btn_Menu" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Btn_Siguiente" to="Btn_Siguiente" method="_on_mouse_entered"]

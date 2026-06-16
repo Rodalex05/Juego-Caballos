@@ -1,0 +1,187 @@
+[gd_scene format=3 uid="uid://cmegukukc4oyn"]
+
+[ext_resource type="Texture2D" uid="uid://b17xx84hfvx4k" path="res://sprites/Fondos/Fondo_static.png" id="1_xvuag"]
+[ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="2_8j5ey"]
+[ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="3_pebht"]
+[ext_resource type="Texture2D" uid="uid://cmtgp1k5llx01" path="res://sprites/Menu_Instrucciones/flecha.png" id="4_y2xud"]
+[ext_resource type="Script" uid="uid://brbme4t0stebs" path="res://EscenasJ1/Instrucciones/Script/Instrucciones/flecha.gd" id="5_xbd1k"]
+[ext_resource type="Script" uid="uid://coxoit502sioj" path="res://EscenasJ1/Instrucciones/Script/Instrucciones/flecha_2.gd" id="6_mutl1"]
+[ext_resource type="Script" uid="uid://csx3qlu11hn8" path="res://EscenasJ1/Instrucciones/Script/grid_container.gd" id="7_abquu"]
+[ext_resource type="Script" uid="uid://dtu63cfvv8x37" path="res://EscenasJ1/Instrucciones/Script/Instrucciones/instruccion_1.gd" id="8_kbxau"]
+[ext_resource type="Texture2D" uid="uid://85cnhlarekc" path="res://sprites/Menu_Instrucciones/Instruccion1.png" id="9_yvsim"]
+[ext_resource type="Theme" uid="uid://cdh6k37iqttam" path="res://Temas/label_instrucciones.tres" id="10_uitre"]
+[ext_resource type="Script" uid="uid://d1ublgylb5qxa" path="res://EscenasJ1/Instrucciones/Script/Instrucciones/instruccion_2.gd" id="11_rglph"]
+[ext_resource type="Texture2D" uid="uid://dp3y432sl0ixv" path="res://sprites/Menu_Instrucciones/Instruccion2.png" id="12_272po"]
+[ext_resource type="Script" uid="uid://b52hphpimkaw7" path="res://EscenasJ1/Instrucciones/Script/Instrucciones/instruccion_3.gd" id="13_3lt18"]
+[ext_resource type="Texture2D" uid="uid://dgb03ggeq2ha8" path="res://sprites/Menu_Instrucciones/Instruccion3.png" id="14_7ew86"]
+[ext_resource type="Texture2D" uid="uid://bnl7ic2605s3q" path="res://sprites/UI/BtnNormal/Btn_jugar.png" id="15_sl4lp"]
+[ext_resource type="Texture2D" uid="uid://bhn8iev4f5xtk" path="res://sprites/UI/BtnPressed/Btn_jugar.png" id="16_e3vsa"]
+[ext_resource type="Texture2D" uid="uid://bjlyxw8xdj8cm" path="res://sprites/UI/Btn_Hover/Btn_jugar.png" id="17_l58go"]
+[ext_resource type="Script" uid="uid://d4ntk4w1ybw0i" path="res://EscenasJ1/Instrucciones/Script/BtnInstrucciones.gd" id="18_2peoh"]
+[ext_resource type="Texture2D" uid="uid://b4bfr5pbb1hm" path="res://sprites/UI/BtnNormal/Btn_regresar.png" id="19_tk8gp"]
+[ext_resource type="Texture2D" uid="uid://cta4eupqf0mjn" path="res://sprites/UI/BtnPressed/Btn_regresar.png" id="20_fw3gq"]
+[ext_resource type="Texture2D" uid="uid://csd0mk6n41ty" path="res://sprites/UI/Btn_Hover/Btn_regresar.png" id="21_cvt7h"]
+[ext_resource type="Script" uid="uid://ba1jtdgrogdex" path="res://EscenasJ1/Instrucciones/Script/btn_atras.gd" id="22_y51bm"]
+
+[node name="Ganador" type="Control" unique_id=437828833]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=32976540]
+modulate = Color(0.41568628, 0.41568628, 0.41568628, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -990.0
+offset_top = -545.5
+offset_right = 990.0
+offset_bottom = 545.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xvuag")
+
+[node name="AudioPasar" type="AudioStreamPlayer" parent="." unique_id=1552412211]
+stream = ExtResource("2_8j5ey")
+
+[node name="AudioPresionar" type="AudioStreamPlayer" parent="." unique_id=144112494]
+stream = ExtResource("3_pebht")
+
+[node name="Flecha" type="TextureRect" parent="." unique_id=1870549672]
+custom_minimum_size = Vector2(256, 216)
+layout_mode = 1
+offset_left = 502.0
+offset_top = 278.0
+offset_right = 758.0
+offset_bottom = 725.0
+texture = ExtResource("4_y2xud")
+stretch_mode = 3
+script = ExtResource("5_xbd1k")
+
+[node name="Flecha2" type="TextureRect" parent="." unique_id=888332637]
+custom_minimum_size = Vector2(256, 216)
+layout_mode = 0
+offset_left = 1167.0
+offset_top = 278.0
+offset_right = 1423.0
+offset_bottom = 725.0
+size_flags_horizontal = 4
+texture = ExtResource("4_y2xud")
+stretch_mode = 3
+script = ExtResource("6_mutl1")
+
+[node name="Hbox" type="HBoxContainer" parent="." unique_id=987999577]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -223.5
+offset_bottom = 223.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("7_abquu")
+
+[node name="Instruccion1" type="VBoxContainer" parent="Hbox" unique_id=1313235056]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("8_kbxau")
+
+[node name="Imagen1" type="TextureRect" parent="Hbox/Instruccion1" unique_id=853927631]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("9_yvsim")
+stretch_mode = 3
+
+[node name="Texto1" type="Label" parent="Hbox/Instruccion1" unique_id=1185235201]
+layout_mode = 2
+theme = ExtResource("10_uitre")
+text = "Responde 
+ preguntas.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Instruccion2" type="VBoxContainer" parent="Hbox" unique_id=538559733]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("11_rglph")
+
+[node name="Imagen2" type="TextureRect" parent="Hbox/Instruccion2" unique_id=841906959]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("12_272po")
+stretch_mode = 3
+
+[node name="Texto2" type="Label" parent="Hbox/Instruccion2" unique_id=1581292167]
+layout_mode = 2
+theme = ExtResource("10_uitre")
+text = "Cada respuesta correcta 
+hará avanzar tu caballo
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Instruccion3" type="VBoxContainer" parent="Hbox" unique_id=1971969422]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("13_3lt18")
+
+[node name="Imagen3" type="TextureRect" parent="Hbox/Instruccion3" unique_id=1636405696]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("14_7ew86")
+stretch_mode = 3
+
+[node name="Texto3" type="Label" parent="Hbox/Instruccion3" unique_id=2036028129]
+layout_mode = 2
+theme = ExtResource("10_uitre")
+text = "¡Llega a la meta antes 
+que tu rival para ganar!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Btn_Siguiente" type="TextureButton" parent="." unique_id=474707572 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+layout_mode = 1
+offset_left = 1420.0
+offset_top = 908.0
+offset_right = 1820.0
+offset_bottom = 988.0
+texture_normal = ExtResource("15_sl4lp")
+texture_pressed = ExtResource("16_e3vsa")
+texture_hover = ExtResource("17_l58go")
+texture_disabled = ExtResource("16_e3vsa")
+stretch_mode = 3
+script = ExtResource("18_2peoh")
+sfx_pasar = NodePath("../AudioPasar")
+sfx_select = NodePath("../AudioPresionar")
+
+[node name="Btn_Atras" type="TextureButton" parent="." unique_id=530860135 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+layout_mode = 1
+offset_left = 100.0
+offset_top = 908.0
+offset_right = 500.0
+offset_bottom = 988.0
+texture_normal = ExtResource("19_tk8gp")
+texture_pressed = ExtResource("20_fw3gq")
+texture_hover = ExtResource("21_cvt7h")
+stretch_mode = 3
+script = ExtResource("22_y51bm")
+sfx_pasar = NodePath("../AudioPasar")
+sfx_select = NodePath("../AudioPresionar")
+
+[connection signal="mouse_entered" from="Btn_Siguiente" to="Btn_Siguiente" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Btn_Atras" to="Btn_Atras" method="_on_mouse_entered"]

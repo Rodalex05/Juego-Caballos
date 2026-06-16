@@ -2,20 +2,24 @@
 El GRAN DERBY DEL NORTE
 ════════════════════
 UN JUEGO DE
-Team Spica
+Team Evangelion
 ════════════════════
 PROGRAMACIÓN
 Rodrigo Alejandro Villicaña Pérez
+Yael Molinero Hernandez
 ════════════════════
 ARTE
 Antonio López Arregoitia 
+Carlos Antonio Vargas Alcala
 ════════════════════
 ANIMACIÓN
 Rodrigo Pérez
 Antonio López Arregoitia
 ════════════════════
 MÚSICA
-Nombre del artista
+ Polka de Torreón a Lerdo - Coahuila 
+ Zacatecas - Cuadrillas De Valparaiso 
+ Durango - durango 
 Algunos recursos de audio se utilizan bajo sus respectivas licencias.
 ════════════════════
 EFECTOS DE SONIDO
@@ -45,4 +49,3 @@ Amigos y familiares
 GRACIAS POR JUGAR!
 FIN
 ════════════════════
-

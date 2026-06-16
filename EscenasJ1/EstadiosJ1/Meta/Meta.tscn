@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dw6h54gh1wu3b"]
+
+[ext_resource type="Script" uid="uid://b86dyr0elh28b" path="res://EscenasJ1/EstadiosJ1/Meta/meta.gd" id="1_wr6k1"]
+[ext_resource type="PackedScene" uid="uid://c1o0xv07kgyqi" path="res://Escenas/Menu_Ganador/ganador.tscn" id="2_krtv7"]
+[ext_resource type="Texture2D" uid="uid://c2ytx2n06ou8i" path="res://sprites/Meta.png" id="3_4xff0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dumte"]
+size = Vector2(253, 840)
+
+[node name="Area2D" type="Area2D" unique_id=887343028]
+collision_layer = 2
+script = ExtResource("1_wr6k1")
+ganaste = ExtResource("2_krtv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=637813231]
+texture = ExtResource("3_4xff0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1066081292]
+position = Vector2(-2.5, -166)
+shape = SubResource("RectangleShape2D_dumte")

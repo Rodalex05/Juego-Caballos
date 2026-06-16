@@ -31,8 +31,19 @@ func _ready():
 # =====================================================
 
 func cargar_preguntas():
-	var archivo = FileAccess.open(
+	var archivo=""
+	if Fondos.Fondo_jugar == 0:
+		archivo = FileAccess.open(
+	"res://Escenas/Ui_Preguntas/Preguntas/Preguntas_Zacatecas.csv",FileAccess.READ)
+		print("Zacatecas")
+	elif Fondos.Fondo_jugar == 1:
+		archivo = FileAccess.open(
 	"res://Escenas/Ui_Preguntas/Preguntas/Preguntas_Durango.csv",FileAccess.READ)
+		print("Durango")
+	if Fondos.Fondo_jugar == 2:
+		archivo = FileAccess.open(
+	"res://Escenas/Ui_Preguntas/Preguntas/Preguntas_Cohauila.csv",FileAccess.READ)
+		print("Coahuila")
 	# Saltar encabezado
 	archivo.get_csv_line()
 	while !archivo.eof_reached():
@@ -53,7 +64,9 @@ func cargar_preguntas():
 # NUEVA PREGUNTA J1
 # =====================================================
 func nueva_pregunta_j1():
+	
 	pregunta_actual_j1 = preguntas.pick_random()
+	GlobalPreguntas.GlobalPreguntasJ1.append(pregunta_actual_j1["pregunta"])
 	pregunta_j1.text = pregunta_actual_j1["pregunta"]
 	grid_p1.configurar_pregunta(pregunta_actual_j1)
 	curiosidadbox_j1()
@@ -62,6 +75,7 @@ func nueva_pregunta_j1():
 # =====================================================
 func nueva_pregunta_j2():
 	pregunta_actual_j2 = preguntas.pick_random()
+	GlobalPreguntas.GlobalPreguntasJ2.append(pregunta_actual_j2["pregunta"])
 	pregunta_j2.text = pregunta_actual_j2["pregunta"]
 	grid_p2.configurar_pregunta(pregunta_actual_j2)
 	curiosidadbox_j2()

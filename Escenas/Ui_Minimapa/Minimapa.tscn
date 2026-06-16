@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cx75g1ml85a3"]
+
+[ext_resource type="Texture2D" uid="uid://dx26o7qr7fh3t" path="res://sprites/Ui_Preguntas/Miniguia/Caballo2.png" id="1_3i0b7"]
+[ext_resource type="Script" uid="uid://fqv37qx7gbw2" path="res://Escenas/Ui_Minimapa/Script/minimapa.gd" id="1_oxtbu"]
+[ext_resource type="Texture2D" uid="uid://b00cgp4j048gn" path="res://sprites/Ui_Preguntas/Miniguia/Caballo1.png" id="2_oxtbu"]
+[ext_resource type="Texture2D" uid="uid://b6mgniscws83u" path="res://sprites/Ui_Preguntas/Miniguia/meta.png" id="4_xmxb7"]
+
+[node name="Minimapa" type="Control" unique_id=1281229057]
+custom_minimum_size = Vector2(1820, 20)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oxtbu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=312125303]
+custom_minimum_size = Vector2(1820, 7)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -910.0
+offset_top = 65.18
+offset_right = 910.0
+offset_bottom = 72.18001
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CabajoJ2" type="TextureRect" parent="ColorRect" unique_id=1609594213]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+texture = ExtResource("1_3i0b7")
+
+[node name="CabajoJ1" type="TextureRect" parent="ColorRect" unique_id=1685976206]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_vertical = 2
+texture = ExtResource("2_oxtbu")
+
+[node name="Meta" type="TextureRect" parent="ColorRect" unique_id=751241268]
+layout_mode = 0
+offset_left = 1786.0
+offset_top = -48.18
+offset_right = 1842.0
+offset_bottom = 7.8199997
+texture = ExtResource("4_xmxb7")
+expand_mode = 1

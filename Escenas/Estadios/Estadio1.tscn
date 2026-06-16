@@ -11,11 +11,19 @@
 [ext_resource type="Texture2D" uid="uid://dixbw5grbvnk4" path="res://icono.png" id="8_3l1ef"]
 [ext_resource type="AudioStream" uid="uid://dbfbcd1o2tss1" path="res://SFX/sfx_pistol_start.wav" id="8_8nbi1"]
 [ext_resource type="PackedScene" uid="uid://dg63xjklxprwv" path="res://Escenas/Estadios/confetti.tscn" id="10_bwi8r"]
+[ext_resource type="PackedScene" uid="uid://cx75g1ml85a3" path="res://Escenas/Ui_Minimapa/Minimapa.tscn" id="10_isi16"]
+[ext_resource type="Script" uid="uid://dgx0cgun05jce" path="res://Escenas/Estadios/Script/temporizador.gd" id="11_5mi51"]
+[ext_resource type="FontFile" uid="uid://wa8mpvql7hif" path="res://Fonts/Monocraft.ttc" id="11_j7nmm"]
 [ext_resource type="AudioStream" uid="uid://cdxue34mb16ej" path="res://SFX/timpaniroll.ogg" id="12_2sgx8"]
 [ext_resource type="AudioStream" uid="uid://bd1by07xyjlp2" path="res://SFX/fireworks1.ogg" id="13_bwi8r"]
+[ext_resource type="Script" uid="uid://c84x3k4kugdft" path="res://Escenas/Estadios/Script/musica.gd" id="17_26s3g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3l1ef"]
 size = Vector2(191.26563, 1005)
+
+[sub_resource type="Theme" id="Theme_26s3g"]
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("11_j7nmm")
 
 [node name="Carrera1" type="Node2D" unique_id=251591631]
 
@@ -33,18 +41,20 @@ texture = ExtResource("1_bwi8r")
 script = ExtResource("2_uhc3u")
 
 [node name="Meta" parent="Mundo" unique_id=887343028 node_paths=PackedStringArray("victoria") instance=ExtResource("5_u5wol")]
-position = Vector2(10607, 600.99994)
+position = Vector2(10600, 601)
 scale = Vector2(1.87, 1.87)
 victoria = NodePath("../../SFX/Confeti")
 
 [node name="Jugador1" parent="Mundo" unique_id=301942191 instance=ExtResource("2_ouwuo")]
 unique_name_in_owner = true
 position = Vector2(129, 372.755)
+scale = Vector2(1.5, 1.5)
 collision_mask = 0
 
 [node name="Jugador2" parent="Mundo" unique_id=564365846 instance=ExtResource("4_5lh6m")]
 unique_name_in_owner = true
-position = Vector2(129, 550)
+position = Vector2(129, 596.84)
+scale = Vector2(1.5, 1.5)
 
 [node name="Camera2D" type="Camera2D" parent="Mundo" unique_id=266131509 node_paths=PackedStringArray("Pistola")]
 anchor_mode = 0
@@ -54,14 +64,12 @@ yinicial = 10000
 tiempoinicial = 5
 
 [node name="BarraArriba" type="ColorRect" parent="Mundo/Camera2D" unique_id=1700116918]
-visible = false
 offset_left = -20.0
 offset_right = 1964.0
 offset_bottom = 106.0
 color = Color(0, 0, 0, 1)
 
 [node name="BarraAbajo" type="ColorRect" parent="Mundo/Camera2D" unique_id=1100671098]
-visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -96,6 +104,35 @@ anchor_top = 1.0
 offset_top = -408.0
 grow_vertical = 0
 size_flags_horizontal = 3
+
+[node name="Minimapa" parent="CanvasLayer" unique_id=1281229057 node_paths=PackedStringArray("jugador1", "jugador2") instance=ExtResource("10_isi16")]
+jugador1 = NodePath("../../Mundo/Jugador1")
+jugador2 = NodePath("../../Mundo/Jugador2")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1137946018]
+custom_minimum_size = Vector2(300, 60)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_right = 150.00037
+offset_bottom = 60.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+color = Color(0, 0, 0, 1)
+
+[node name="Temporizador" type="Label" parent="CanvasLayer/ColorRect" unique_id=2053810834]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_26s3g")
+text = "Tiempo: 0.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("11_5mi51")
 
 [node name="Confetti" parent="." unique_id=1537113107 instance=ExtResource("10_bwi8r")]
 offset_left = 12576.0
@@ -141,3 +178,7 @@ stream = ExtResource("12_2sgx8")
 
 [node name="Confeti" type="AudioStreamPlayer" parent="SFX" unique_id=1048047179]
 stream = ExtResource("13_bwi8r")
+
+[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=1256884523]
+bus = &"bus_musica"
+script = ExtResource("17_26s3g")

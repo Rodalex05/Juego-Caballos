@@ -47,14 +47,20 @@ func _movimiento_inicial():
 	await tween.finished
 	_barras()
 
+
 func _barras():
 	var tween = create_tween()
 	#barra superior
 	tween.tween_property(barra_arriba,"position:y",barra_arriba.position.y - 200,1.5).set_trans(tween.TRANS_QUAD)
 	#barra inferior
 	tween.parallel().tween_property(barra_abajo,"position:y",barra_abajo.position.y + 200,1.5).set_trans(tween.TRANS_CUBIC)
-	await get_tree().create_timer(0.5).timeout
+
+	await tween.finished
+	$"../../CanvasLayer/Minimapa".visible=true
 	Pistola.play()
+	$"../../CanvasLayer/ColorRect/Temporizador".iniciar_cronometro()
+	$"../../Musica".play()
+	
 	
 func _zoom():
 	Engine.time_scale = .5

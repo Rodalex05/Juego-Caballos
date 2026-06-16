@@ -4,13 +4,10 @@
 [ext_resource type="Script" uid="uid://pqeke8ogb1br" path="res://Escenas/Menu_Ganador/Script/ganador.gd" id="1_rda78"]
 [ext_resource type="Theme" uid="uid://cqiqo7algjucx" path="res://Temas/label_ganador.tres" id="2_jjhrf"]
 [ext_resource type="Script" uid="uid://b2b1my8ytpkg0" path="res://Escenas/Menu_Ganador/Script/label_ganador.gd" id="2_sg06g"]
-[ext_resource type="Script" uid="uid://dt7d6b32fiusw" path="res://Escenas/Menu_Ganador/Script/btn_regresar.gd" id="4_7f2gi"]
 [ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="5_sg06g"]
 [ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="6_sg4b7"]
-[ext_resource type="Texture2D" uid="uid://d2boydtctmxei" path="res://sprites/Menu seleccion/Botonmenu1.png" id="9_apfuw"]
-[ext_resource type="SpriteFrames" uid="uid://dfe68handxejs" path="res://Escenas/Jugadores/sf_skin1.tres" id="10_fuc76"]
-[ext_resource type="Texture2D" uid="uid://c5wf8taf11n5u" path="res://sprites/Menu seleccion/Botonmenu2.png" id="10_km0x5"]
-[ext_resource type="Texture2D" uid="uid://ccf8xujbs856e" path="res://sprites/Menu seleccion/Botonmenu3.png" id="11_aed8t"]
+[ext_resource type="PackedScene" uid="uid://copjirmgwyo4a" path="res://Escenas/Menu_Resultados/resultados.tscn" id="9_jjhrf"]
+[ext_resource type="SpriteFrames" uid="uid://dfe68handxejs" path="res://Escenas/Jugadores/Caballos_Movimiento/sf_skin1.tres" id="10_fuc76"]
 [ext_resource type="Texture2D" uid="uid://br6wegc6d6vha" path="res://sprites/Ganador/Confetti.png" id="11_ym412"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rda78"]
@@ -72,14 +69,14 @@ stream = ExtResource("5_sg06g")
 stream = ExtResource("6_sg4b7")
 
 [node name="JugadorGanador" type="AnimatedSprite2D" parent="." unique_id=514450468]
-position = Vector2(953.00006, 554)
-scale = Vector2(0.5859375, 0.5859375)
+position = Vector2(975, 560)
+scale = Vector2(6.4071436, 6.4071426)
 sprite_frames = ExtResource("10_fuc76")
 animation = &"correr"
 
 [node name="JugadorPerdedor" type="AnimatedSprite2D" parent="." unique_id=1085227831]
-position = Vector2(703.00006, 635)
-scale = Vector2(0.5859375, 0.5859375)
+position = Vector2(727, 647.00006)
+scale = Vector2(5.1786823, 5.1786823)
 sprite_frames = ExtResource("10_fuc76")
 animation = &"correr"
 
@@ -120,17 +117,14 @@ lifetime = 5.0
 preprocess = 2.0
 process_material = SubResource("ParticleProcessMaterial_rda78")
 
-[node name="Btn_Regresar" type="TextureButton" parent="." unique_id=77470475 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
-layout_mode = 0
-offset_left = 1472.0
-offset_top = 948.0
-offset_right = 1872.0
-offset_bottom = 1028.0
-texture_normal = ExtResource("9_apfuw")
-texture_pressed = ExtResource("10_km0x5")
-texture_hover = ExtResource("11_aed8t")
-script = ExtResource("4_7f2gi")
-sfx_pasar = NodePath("../AudioPasar")
-sfx_select = NodePath("../AudioPresionar")
-
-[connection signal="mouse_entered" from="Btn_Regresar" to="Btn_Regresar" method="_on_mouse_entered"]
+[node name="Resultados" parent="." unique_id=1218691444 instance=ExtResource("9_jjhrf")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -900.0
+offset_top = 1200.0
+offset_right = 900.0
+offset_bottom = 2000.0
+grow_vertical = 1

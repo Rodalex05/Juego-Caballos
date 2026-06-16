@@ -48,10 +48,6 @@ func configurar_pregunta(datos):
 			"correcto",
 			opciones[i] == respuesta_correcta_actual)
 		# Cambiar color del texto
-		if opciones[i] == respuesta_correcta_actual:
-			botonesT[i].modulate = Color.GREEN
-		else:
-			botonesT[i].modulate = Color.RED
 	if inicio==false:
 		inicio_con_delay()
 		inicio=true
@@ -101,26 +97,23 @@ func _process(delta):
 # =====================================================
 # PRESIONAR BOTÓN
 # =====================================================
-# =====================================================
-# PRESIONAR BOTÓN
-# =====================================================
 func _on_boton_pressed(boton):
-
+	print("J2 RESPUESTA")
 	if not puede_responder:
 		return
 
 	puede_responder = false
 
 	if boton.get_meta("correcto"):
-
 		emit_signal("respuesta_correcta2")
 		sfx_correcto.play()
-
+		GlobalPreguntas.GlobalCorrectaJ2.append(1)
+		
 	else:
-
 		emit_signal("respuesta_incorrecta2")
 		sfx_incorrecto.play()
-
+		GlobalPreguntas.GlobalCorrectaJ2.append(0) 
+	GlobalPreguntas.GlobalRespuestasJ2.append(respuesta_correcta_actual)
 	esperar_siguiente_pregunta()
 
 
