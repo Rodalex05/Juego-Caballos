@@ -105,9 +105,8 @@ offset_top = -408.0
 grow_vertical = 0
 size_flags_horizontal = 3
 
-[node name="Minimapa" parent="CanvasLayer" unique_id=1281229057 node_paths=PackedStringArray("jugador1", "jugador2") instance=ExtResource("10_isi16")]
+[node name="Minimapa" parent="CanvasLayer" unique_id=1281229057 node_paths=PackedStringArray("jugador1") instance=ExtResource("10_isi16")]
 jugador1 = NodePath("../../Mundo/Jugador1")
-jugador2 = NodePath("../../Mundo/Jugador2")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1137946018]
 custom_minimum_size = Vector2(300, 60)
