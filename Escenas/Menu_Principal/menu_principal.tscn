@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dpuc2jkraoxjb"]
 
 [ext_resource type="Texture2D" uid="uid://ck2k7r6fy8lk1" path="res://sprites/Fondos/Fondo1.jpg" id="1_2577a"]
+[ext_resource type="Script" uid="uid://o67uklqatdpl" path="res://Escenas/Menu_Principal/Scripts/menu_principal.gd" id="1_h7bsb"]
 [ext_resource type="Script" uid="uid://jkvvnedi4tbu" path="res://Escenas/Menu_Principal/fondo.gd" id="1_ik0cr"]
 [ext_resource type="Texture2D" uid="uid://c70atr5g3a2l5" path="res://sprites/Fondos/Fondo2.jpg" id="2_bg3vg"]
 [ext_resource type="Script" uid="uid://ewitpcuel5fk" path="res://Escenas/Menu_Principal/Scripts/v_box_container2.gd" id="2_ildlw"]
@@ -51,6 +52,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_h7bsb")
 
 [node name="Fondo" type="Control" parent="." unique_id=1409652572]
 anchors_preset = 0
@@ -180,12 +182,12 @@ script = ExtResource("35_jip0x")
 
 [node name="Label" type="Label" parent="." unique_id=1777509066]
 layout_mode = 0
-offset_left = 1673.0
-offset_top = 1010.0
-offset_right = 1901.0
-offset_bottom = 1080.0
+offset_left = 1637.0
+offset_top = 1013.0
+offset_right = 1904.0
+offset_bottom = 1083.0
 theme = ExtResource("11_x8ylp")
-text = "v.1.2.2"
+text = "Versión 1.2.5"
 
 [node name="Btn_Creditos" type="TextureButton" parent="." unique_id=1987494293 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 0

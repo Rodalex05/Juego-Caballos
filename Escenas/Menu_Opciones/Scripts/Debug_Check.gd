@@ -1,4 +1,5 @@
 extends CheckButton
+@export var sfx_toggle: AudioStreamPlayer2D
 func _on_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		print("Modo Debug Encendido")

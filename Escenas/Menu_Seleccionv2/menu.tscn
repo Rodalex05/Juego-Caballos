@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://c8fbv37jadiur" path="res://sprites/Menu seleccion/Caballos/c9.png" id="9_chqgw"]
 [ext_resource type="Texture2D" uid="uid://cyv78y0y18a67" path="res://sprites/Menu seleccion/selectj2.png" id="9_lemqs"]
 [ext_resource type="Texture2D" uid="uid://f2jgadw3dn4i" path="res://sprites/Menu seleccion/Caballos/c8.png" id="9_n63je"]
-[ext_resource type="AudioStream" uid="uid://4u7odasjebxh" path="res://Musica/Select_menu.mp3" id="9_rgb2h"]
 [ext_resource type="Script" uid="uid://v1vi7fqih3uf" path="res://Escenas/Menu_Seleccionv2/Script/jugador_2_selector.gd" id="10_y7gmn"]
 [ext_resource type="Texture2D" uid="uid://doq4c4l6vqxdh" path="res://sprites/Menu seleccion/Caballos/c10.png" id="11_04m3v"]
 [ext_resource type="Texture2D" uid="uid://chw2f42y2div1" path="res://sprites/Menu seleccion/Caballos/c11.png" id="12_2m4aj"]
@@ -305,11 +304,6 @@ bus = &"bus_sfx"
 [node name="Hover" type="AudioStreamPlayer" parent="." unique_id=956800254]
 stream = ExtResource("8_ntw51")
 bus = &"bus_sfx"
-
-[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=772729780]
-stream = ExtResource("9_rgb2h")
-autoplay = true
-bus = &"bus_musica"
 
 [node name="Btn_Menu" type="TextureButton" parent="." unique_id=1913929067 node_paths=PackedStringArray("sfx_hover", "sfx_press")]
 custom_minimum_size = Vector2(400, 80)

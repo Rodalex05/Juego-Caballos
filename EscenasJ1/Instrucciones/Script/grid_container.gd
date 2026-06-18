@@ -1,8 +1,8 @@
 extends HBoxContainer
 func _ready() -> void:
-	if PrimeraVez.instruccionesmulti==false:
+	if PrimeraVez.instruccionesmultiJ1==false:
 		_animacion()
-		PrimeraVez.instruccionesmulti=true
+		PrimeraVez.instruccionesmultiJ1=true
 	else:
 		_repetido()
 
