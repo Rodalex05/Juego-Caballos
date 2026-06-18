@@ -8,10 +8,10 @@
 [ext_resource type="Script" uid="uid://coxoit502sioj" path="res://EscenasJ1/Instrucciones/Script/Instrucciones/flecha_2.gd" id="6_mutl1"]
 [ext_resource type="Script" uid="uid://csx3qlu11hn8" path="res://EscenasJ1/Instrucciones/Script/grid_container.gd" id="7_abquu"]
 [ext_resource type="Script" uid="uid://dtu63cfvv8x37" path="res://EscenasJ1/Instrucciones/Script/Instrucciones/instruccion_1.gd" id="8_kbxau"]
-[ext_resource type="Texture2D" uid="uid://85cnhlarekc" path="res://sprites/Menu_Instrucciones/Instruccion1.png" id="9_yvsim"]
+[ext_resource type="Texture2D" uid="uid://ptp12hij3rmt" path="res://sprites/Menu_Instrucciones/Instruccion4.png" id="9_xvuag"]
 [ext_resource type="Theme" uid="uid://cdh6k37iqttam" path="res://Temas/label_instrucciones.tres" id="10_uitre"]
 [ext_resource type="Script" uid="uid://d1ublgylb5qxa" path="res://EscenasJ1/Instrucciones/Script/Instrucciones/instruccion_2.gd" id="11_rglph"]
-[ext_resource type="Texture2D" uid="uid://dp3y432sl0ixv" path="res://sprites/Menu_Instrucciones/Instruccion2.png" id="12_272po"]
+[ext_resource type="Texture2D" uid="uid://dvwsuy4byj7y2" path="res://sprites/Menu_Instrucciones/Instruccion5.png" id="12_8j5ey"]
 [ext_resource type="Script" uid="uid://b52hphpimkaw7" path="res://EscenasJ1/Instrucciones/Script/Instrucciones/instruccion_3.gd" id="13_3lt18"]
 [ext_resource type="Texture2D" uid="uid://dgb03ggeq2ha8" path="res://sprites/Menu_Instrucciones/Instruccion3.png" id="14_7ew86"]
 [ext_resource type="Texture2D" uid="uid://bnl7ic2605s3q" path="res://sprites/UI/BtnNormal/Btn_jugar.png" id="15_sl4lp"]
@@ -98,7 +98,7 @@ script = ExtResource("8_kbxau")
 custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("9_yvsim")
+texture = ExtResource("9_xvuag")
 stretch_mode = 3
 
 [node name="Texto1" type="Label" parent="Hbox/Instruccion1" unique_id=1185235201]
@@ -120,14 +120,13 @@ script = ExtResource("11_rglph")
 custom_minimum_size = Vector2(256, 256)
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("12_272po")
+texture = ExtResource("12_8j5ey")
 stretch_mode = 3
 
 [node name="Texto2" type="Label" parent="Hbox/Instruccion2" unique_id=1581292167]
 layout_mode = 2
 theme = ExtResource("10_uitre")
-text = "Cada respuesta correcta 
-hará avanzar tu caballo
+text = "¡Cada respuesta incorrecta te dara un strike!
 "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -148,8 +147,7 @@ stretch_mode = 3
 [node name="Texto3" type="Label" parent="Hbox/Instruccion3" unique_id=2036028129]
 layout_mode = 2
 theme = ExtResource("10_uitre")
-text = "¡Llega a la meta antes 
-que tu rival para ganar!"
+text = "¡Avanza todo lo que puedas antes de consegir 4 strikes!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

@@ -19,7 +19,6 @@ func _ready():
 	grid_j1.respuesta_correcta.connect(_on_respuesta_correcta)
 	grid_j1.respuesta_incorrecta.connect(_on_respuesta_incorrecta)
 	$Label.text=Nombres.nombrej1
-	$"../AreaFinal".acercamiento.connect(_acercamiento)
 # =====================================================
 # SEÑALES
 # =====================================================

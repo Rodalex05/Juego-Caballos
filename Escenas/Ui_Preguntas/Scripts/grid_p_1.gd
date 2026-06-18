@@ -71,7 +71,10 @@ func inicio_con_delay():
 		boton.disabled = true
 	await get_tree().create_timer(5).timeout
 	for boton in botones:
-		_textoencendido()
+		if GlobalPreguntas.Debug==false:
+			_textoencendido()
+		else:
+			_textodebug()
 		boton.disabled = false
 	puede_responder = true
 	$"../../TextureRect3".visible=false
@@ -83,11 +86,15 @@ func inicio_con_delay():
 func delay_entre_preguntas():
 	puede_responder = false
 	for boton in botones:
-		_textoapagado()
+		if GlobalPreguntas.Debug==false:
+			_textoapagado()
 		boton.disabled = true
 	await get_tree().create_timer(cooldown-4).timeout
 	for boton in botones:
-		_textoencendido()
+		if GlobalPreguntas.Debug==false:
+			_textoencendido()
+		else:
+			_textodebug()
 		boton.disabled = false
 	puede_responder = true
 
@@ -155,3 +162,10 @@ func _textoapagado():
 func _textoencendido():
 	for i in range(botones.size()):
 		botonesT[i].modulate = Color.WHITE
+		
+func _textodebug():
+	for i in range(botones.size()):
+		if botones[i].get_meta("correcto"):
+			botonesT[i].modulate = Color.GREEN
+		else:
+			botonesT[i].modulate = Color.RED

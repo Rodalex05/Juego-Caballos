@@ -10,7 +10,6 @@ extends Camera2D
 @export var offset_x := -200.0
 var zoom_final = false
 signal acercamiento
-signal acercamiento2
 signal final
 
 var y_fija := 0.0
@@ -23,9 +22,6 @@ func _ready():
 	await _movimiento_inicial()
 	# Ahora ya sigue jugadores
 	seguir_jugadores = true
-	$"../AreaFinal".acercamiento.connect(_zoom)
-	$"../AreaFinal".acercamiento2.connect(_zoom)
-	$"../Meta".final.connect(_final)
 func _process(delta):
 	# Mientras ocurre el paneo inicial no hace nada
 	if !seguir_jugadores:

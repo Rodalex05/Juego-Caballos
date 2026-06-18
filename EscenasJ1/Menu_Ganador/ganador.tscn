@@ -52,12 +52,11 @@ texture = ExtResource("2_1divq")
 [node name="Label" type="Label" parent="." unique_id=958248619]
 layout_mode = 0
 offset_left = 691.0
-offset_top = 208.0
+offset_top = 250.0
 offset_right = 1243.0
-offset_bottom = 451.0
+offset_bottom = 335.0
 theme = ExtResource("3_2503n")
-text = "El Ganador es: 
-Jugador"
+text = "META"
 horizontal_alignment = 1
 script = ExtResource("4_oia4r")
 

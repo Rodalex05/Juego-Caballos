@@ -5,6 +5,7 @@ extends TextureButton
 @export var sfx_select : AudioStreamPlayer2D
 #Si se presiona el boton
 func _ready() -> void:
+	GlobalPreguntas.Debug=false
 	pressed.connect(_jugar)
 	#Manda al siguiente menu
 func _jugar():

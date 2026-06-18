@@ -59,11 +59,18 @@ func configurar_pregunta(datos):
 func inicio_con_delay():
 	puede_responder = false
 	for boton in botones:
+		_textoapagado()
 		boton.disabled = true
 	await get_tree().create_timer(5).timeout
 	for boton in botones:
+		if GlobalPreguntas.Debug==false:
+			_textoencendido()
+		else:
+			_textodebug()
 		boton.disabled = false
 	puede_responder = true
+	$"../../TextureRect3".visible=false
+	$"../../TextureRect4".visible=false
 
 # =====================================================
 # DELAY ENTRE PREGUNTAS
@@ -71,11 +78,14 @@ func inicio_con_delay():
 func delay_entre_preguntas():
 	puede_responder = false
 	for boton in botones:
-		#_textoapagado()
+		_textoapagado()
 		boton.disabled = true
 	await get_tree().create_timer(cooldown-4).timeout
 	for boton in botones:
-		#_textoencendido()
+		if GlobalPreguntas.Debug==false:
+			_textoencendido()
+		else:
+			_textodebug()
 		boton.disabled = false
 	puede_responder = true
 # ============FUNCION PROCESS============
@@ -123,3 +133,20 @@ func esperar_siguiente_pregunta():
 		boton.disabled = true
 	await get_tree().create_timer(cooldown).timeout
 	$"../..".nueva_pregunta_j2()
+	
+	# =====================================================
+# TEXTOS ENCENDIOS O APAGADOS
+# =====================================================
+func _textoapagado():
+	for i in range(botones.size()):
+		botonesT[i].modulate = Color("00000043")
+func _textoencendido():
+	for i in range(botones.size()):
+		botonesT[i].modulate = Color.WHITE
+		
+func _textodebug():
+	for i in range(botones.size()):
+		if botones[i].get_meta("correcto"):
+			botonesT[i].modulate = Color.GREEN
+		else:
+			botonesT[i].modulate = Color.RED

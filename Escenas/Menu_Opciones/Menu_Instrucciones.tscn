@@ -16,7 +16,9 @@
 [ext_resource type="Script" uid="uid://q8m7grbv27tq" path="res://Escenas/Menu_Opciones/Scripts/btn_regresar.gd" id="13_22qk2"]
 [ext_resource type="Texture2D" uid="uid://b45whujuxy7ed" path="res://sprites/gui_opciones/Btn_regresar2.png" id="14_4wgf5"]
 [ext_resource type="Texture2D" uid="uid://qmybf1hg3pbq" path="res://sprites/gui_opciones/Btn_regresar3.png" id="15_ij4lo"]
+[ext_resource type="Script" uid="uid://bn3wu3vjcyop1" path="res://Escenas/Menu_Opciones/Scripts/Debug.gd" id="18_3jykw"]
 [ext_resource type="Texture2D" uid="uid://bkau4b7xlv037" path="res://sprites/gui_opciones/rectangulo.png" id="18_kd7wh"]
+[ext_resource type="Script" uid="uid://c7jup1fuqp6oj" path="res://Escenas/Menu_Opciones/Scripts/Debug_Check.gd" id="19_3jykw"]
 
 [node name="Control" type="Control" unique_id=1420720041]
 custom_minimum_size = Vector2(1800, 800)
@@ -176,9 +178,31 @@ script = ExtResource("13_22qk2")
 sfx_pasar = NodePath("../sfx_hover")
 sfx_select = NodePath("../sfx_select")
 
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect" unique_id=1152919715]
+custom_minimum_size = Vector2(392, 73)
+layout_mode = 0
+offset_left = 1397.0
+offset_top = 823.0
+offset_right = 1789.0
+offset_bottom = 983.0
+script = ExtResource("18_3jykw")
+
+[node name="Label" type="Label" parent="ColorRect/HBoxContainer" unique_id=873832474]
+layout_mode = 2
+theme = ExtResource("4_4wgf5")
+text = "Modo debug: "
+
+[node name="CheckButton" type="CheckButton" parent="ColorRect/HBoxContainer" unique_id=648462395]
+layout_mode = 2
+theme = ExtResource("6_ij4lo")
+script = ExtResource("19_3jykw")
+
 [connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/CheckButton" to="ColorRect/MarginContainer/VBoxContainer/CheckButton" method="_on_toggled"]
 [connection signal="item_selected" from="ColorRect/MarginContainer/VBoxContainer/OptionButton" to="ColorRect/MarginContainer/VBoxContainer/OptionButton" method="_on_item_selected"]
 [connection signal="value_changed" from="ColorRect/MarginContainer/VBoxContainer/HSlider" to="ColorRect/MarginContainer/VBoxContainer/HSlider" method="_on_value_changed"]
 [connection signal="value_changed" from="ColorRect/MarginContainer/VBoxContainer/HSlider2" to="ColorRect/MarginContainer/VBoxContainer/HSlider2" method="_on_value_changed"]
 [connection signal="value_changed" from="ColorRect/MarginContainer/VBoxContainer/HSlider3" to="ColorRect/MarginContainer/VBoxContainer/HSlider3" method="_on_value_changed"]
 [connection signal="mouse_entered" from="ColorRect/Btn_Regresar" to="ColorRect/Btn_Regresar" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="ColorRect/HBoxContainer" to="ColorRect/HBoxContainer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect/HBoxContainer" to="ColorRect/HBoxContainer" method="_on_mouse_exited"]
+[connection signal="toggled" from="ColorRect/HBoxContainer/CheckButton" to="ColorRect/HBoxContainer/CheckButton" method="_on_toggled"]

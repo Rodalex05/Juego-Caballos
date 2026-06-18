@@ -2,12 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dday2yvm75ypj" path="res://sprites/Fondos/Jugables/Zacatetas.jpeg" id="1_owtxv"]
 [ext_resource type="Script" uid="uid://jien8e1qnhj7" path="res://EscenasJ1/EstadiosJ1/Script/Fondo.gd" id="2_o0vbw"]
-[ext_resource type="PackedScene" uid="uid://dw6h54gh1wu3b" path="res://EscenasJ1/EstadiosJ1/Meta/Meta.tscn" id="3_3fe5f"]
-[ext_resource type="PackedScene" uid="uid://b6ehk2bpxxlhv" path="res://EscenasJ1/Menu_Ganador/ganador.tscn" id="4_5ep5l"]
 [ext_resource type="PackedScene" uid="uid://84hyh0ff402i" path="res://Escenas/Jugadores/jugador_1.tscn" id="4_hhbk6"]
 [ext_resource type="Script" uid="uid://cow81p6qdysiy" path="res://EscenasJ1/EstadiosJ1/Script/camera.gd" id="6_mch4o"]
-[ext_resource type="Script" uid="uid://cm7annqwyg0jc" path="res://EscenasJ1/EstadiosJ1/Script/area_final.gd" id="7_w3qi3"]
-[ext_resource type="Texture2D" uid="uid://dixbw5grbvnk4" path="res://icono.png" id="8_nrv3u"]
 [ext_resource type="PackedScene" uid="uid://bfuifbh2m1bka" path="res://EscenasJ1/Ui_Preguntas/Principal_Preguntas.tscn" id="9_5ep5l"]
 [ext_resource type="PackedScene" uid="uid://de4t3pn8ly68e" path="res://EscenasJ1/Ui_Minimapa/Minimapa.tscn" id="11_mo0xg"]
 [ext_resource type="FontFile" uid="uid://wa8mpvql7hif" path="res://Fonts/Monocraft.ttc" id="11_odvsk"]
@@ -17,9 +13,6 @@
 [ext_resource type="AudioStream" uid="uid://cdxue34mb16ej" path="res://SFX/timpaniroll.ogg" id="15_cperw"]
 [ext_resource type="AudioStream" uid="uid://bd1by07xyjlp2" path="res://SFX/fireworks1.ogg" id="16_inbj3"]
 [ext_resource type="Script" uid="uid://bomhw718mv2nw" path="res://EscenasJ1/EstadiosJ1/Script/musica.gd" id="17_tdo56"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3l1ef"]
-size = Vector2(191.26563, 1005)
 
 [sub_resource type="Theme" id="Theme_26s3g"]
 Label/font_sizes/font_size = 32
@@ -39,12 +32,6 @@ position = Vector2(1631.9453, 112.49995)
 scale = Vector2(1.7316366, 2.1599262)
 texture = ExtResource("1_owtxv")
 script = ExtResource("2_o0vbw")
-
-[node name="Meta" parent="Mundo" unique_id=887343028 node_paths=PackedStringArray("victoria") instance=ExtResource("3_3fe5f")]
-position = Vector2(10600, 601)
-scale = Vector2(1.87, 1.87)
-victoria = NodePath("../../SFX/Confeti")
-ganaste = ExtResource("4_5ep5l")
 
 [node name="Jugador1" parent="Mundo" unique_id=301942191 instance=ExtResource("4_hhbk6")]
 unique_name_in_owner = true
@@ -75,22 +62,6 @@ offset_right = 1962.0
 offset_bottom = 692.0
 grow_vertical = 0
 color = Color(0, 0, 0, 1)
-
-[node name="AreaFinal" type="Area2D" parent="Mundo" unique_id=1249637492 node_paths=PackedStringArray("drums")]
-script = ExtResource("7_w3qi3")
-drums = NodePath("../../SFX/Drumm")
-
-[node name="Colision" type="CollisionShape2D" parent="Mundo/AreaFinal" unique_id=1497257276]
-modulate = Color(0.047715947, 0.09408032, 0.18059465, 1)
-position = Vector2(10353, 303)
-shape = SubResource("RectangleShape2D_3l1ef")
-debug_color = Color(0.25529236, 0.62918115, 0.2544276, 0.41960785)
-
-[node name="Sprite2D" type="Sprite2D" parent="Mundo/AreaFinal" unique_id=1961022196]
-visible = false
-position = Vector2(3610.5, 375.5)
-scale = Vector2(1.3320315, 4.0898438)
-texture = ExtResource("8_nrv3u")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1280601229]
 
@@ -123,34 +94,47 @@ script = ExtResource("12_263dt")
 offset_top = 672.0
 offset_bottom = 672.0
 
-[node name="Minimapa2" parent="CanvasLayer" unique_id=1281229057 node_paths=PackedStringArray("jugador1") instance=ExtResource("11_mo0xg")]
-jugador1 = NodePath("../../Mundo/Jugador1")
+[node name="Minimapa2" parent="CanvasLayer" unique_id=1281229057 instance=ExtResource("11_mo0xg")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = 152.0
+offset_top = 140.0
+offset_right = 152.0
+offset_bottom = 140.0
+grow_vertical = 1
 
 [node name="Confetti" parent="." unique_id=1537113107 instance=ExtResource("13_1mj2a")]
+visible = false
 offset_left = 12576.0
 offset_top = 801.0
 offset_right = 13220.0
 offset_bottom = 1018.0
 
 [node name="Confetti2" parent="." unique_id=545676935 instance=ExtResource("13_1mj2a")]
+visible = false
 offset_left = 12115.0
 offset_top = 782.0
 offset_right = 12271.0
 offset_bottom = 869.0
 
 [node name="Confetti3" parent="." unique_id=1261340613 instance=ExtResource("13_1mj2a")]
+visible = false
 offset_left = 11349.0
 offset_top = 790.0
 offset_right = 11505.0
 offset_bottom = 877.0
 
 [node name="Confetti4" parent="." unique_id=652309948 instance=ExtResource("13_1mj2a")]
+visible = false
 offset_left = 13027.0
 offset_top = 790.0
 offset_right = 14377.0
 offset_bottom = 1008.0
 
 [node name="Confetti5" parent="." unique_id=362038036 instance=ExtResource("13_1mj2a")]
+visible = false
 offset_left = 11760.0
 offset_top = 785.0
 offset_right = 11916.0
