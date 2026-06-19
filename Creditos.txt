@@ -7,6 +7,7 @@ Team Evangelion
 PROGRAMACIÓN
 Rodrigo Alejandro Villicaña Pérez
 Yael Molinero Hernandez
+Carlos Abraham Torres Álvarez
 ════════════════════
 ARTE
 Antonio López Arregoitia 
@@ -17,9 +18,24 @@ Rodrigo Pérez
 Antonio López Arregoitia
 ════════════════════
 MÚSICA
- Polka de Torreón a Lerdo - Coahuila 
- Zacatecas - Cuadrillas De Valparaiso 
- Durango - durango 
+"Morning"
+Interpretada por Peer Gynt
+Compuesta por Edvard Grieg
+Dominio público.
+
+"Polka de Torreón a Lerdo"
+Interpretada por Mariachi De Isidro Chávez
+Compuesta por Pioquinto González
+
+"Cuadrilla Valparaíso"
+Interpretada por Estudiantina de la Escuela Normal de Zacatecas
+Autor desconocido
+Obras de dominio público
+
+"Pedacito de Montemorelos"
+Interpretada por Los Montañeses del Álamo
+Compuesta por Marroquín
+
 Algunos recursos de audio se utilizan bajo sus respectivas licencias.
 ════════════════════
 EFECTOS DE SONIDO

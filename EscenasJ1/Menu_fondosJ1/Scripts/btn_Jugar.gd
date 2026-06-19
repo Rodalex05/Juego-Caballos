@@ -21,3 +21,10 @@ func _aleatorio():
 	if Fondos.Fondo_jugar == 3:
 		Fondos.Fondo_jugar = randi_range(0, Fondos.fondos.size() - 1)
 		print(Fondos.Fondo_jugar)
+	if Fondos.Fondo_jugar == 3:
+		Fondos.Fondo_jugar = randi_range(0, Fondos.fondos.size() - 1)
+		print(Fondos.Fondo_jugar)
+		
+	if Fondos.Fondo_jugar == 3:
+		Fondos.Fondo_jugar = randi_range(0, Fondos.fondos.size() - 1)
+		print(Fondos.Fondo_jugar)

@@ -192,10 +192,11 @@ layout_mode = 2
 theme = ExtResource("4_4wgf5")
 text = "Modo debug: "
 
-[node name="CheckButton" type="CheckButton" parent="ColorRect/HBoxContainer" unique_id=648462395]
+[node name="CheckButton" type="CheckButton" parent="ColorRect/HBoxContainer" unique_id=648462395 node_paths=PackedStringArray("sfx_toggle")]
 layout_mode = 2
 theme = ExtResource("6_ij4lo")
 script = ExtResource("19_3jykw")
+sfx_toggle = NodePath("../../sfx_select")
 
 [connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/CheckButton" to="ColorRect/MarginContainer/VBoxContainer/CheckButton" method="_on_toggled"]
 [connection signal="item_selected" from="ColorRect/MarginContainer/VBoxContainer/OptionButton" to="ColorRect/MarginContainer/VBoxContainer/OptionButton" method="_on_item_selected"]

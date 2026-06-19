@@ -21,7 +21,6 @@
 [ext_resource type="Script" uid="uid://deiwxnfy0pe4e" path="res://EscenasJ1/Menu_Seleccionv2/Script/select.gd" id="19_1olja"]
 [ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="23_usq8x"]
 [ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="24_sod1w"]
-[ext_resource type="AudioStream" uid="uid://4u7odasjebxh" path="res://Musica/Select_menu.mp3" id="25_rbyh8"]
 [ext_resource type="Texture2D" uid="uid://d2boydtctmxei" path="res://sprites/Menu seleccion/Botonmenu1.png" id="26_nvkp1"]
 [ext_resource type="Texture2D" uid="uid://c5wf8taf11n5u" path="res://sprites/Menu seleccion/Botonmenu2.png" id="27_g6mfv"]
 [ext_resource type="Texture2D" uid="uid://ccf8xujbs856e" path="res://sprites/Menu seleccion/Botonmenu3.png" id="28_bce6g"]
@@ -222,11 +221,6 @@ bus = &"bus_sfx"
 [node name="Hover" type="AudioStreamPlayer" parent="." unique_id=956800254]
 stream = ExtResource("24_sod1w")
 bus = &"bus_sfx"
-
-[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=772729780]
-stream = ExtResource("25_rbyh8")
-autoplay = true
-bus = &"bus_musica"
 
 [node name="Btn_Menu" type="TextureButton" parent="." unique_id=1913929067 node_paths=PackedStringArray("sfx_hover", "sfx_press")]
 custom_minimum_size = Vector2(400, 80)

@@ -9,6 +9,7 @@ func _ready() -> void:
 	cambiar_fondo()
 
 
+
 func cambiar_fondo() -> void:
 	if Fondos.Fondo_jugar == 0:
 		$TextureRect.texture = fondos_ganador[0]
