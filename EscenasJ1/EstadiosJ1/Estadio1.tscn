@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://84hyh0ff402i" path="res://Escenas/Jugadores/jugador_1.tscn" id="4_hhbk6"]
 [ext_resource type="Script" uid="uid://cow81p6qdysiy" path="res://EscenasJ1/EstadiosJ1/Script/camera.gd" id="6_mch4o"]
 [ext_resource type="PackedScene" uid="uid://bfuifbh2m1bka" path="res://EscenasJ1/Ui_Preguntas/Principal_Preguntas.tscn" id="9_5ep5l"]
+[ext_resource type="PackedScene" uid="uid://y3t6jv0hy1ji" path="res://Escenas/Menu_Pausa/Menu_Instrucciones.tscn" id="9_7p5sq"]
 [ext_resource type="PackedScene" uid="uid://de4t3pn8ly68e" path="res://EscenasJ1/Ui_Minimapa/Minimapa.tscn" id="11_mo0xg"]
 [ext_resource type="FontFile" uid="uid://wa8mpvql7hif" path="res://Fonts/Monocraft.ttc" id="11_odvsk"]
 [ext_resource type="Script" uid="uid://cejk05luq2aok" path="res://EscenasJ1/EstadiosJ1/Script/temporizador.gd" id="12_263dt"]
@@ -104,6 +105,26 @@ offset_top = 140.0
 offset_right = 152.0
 offset_bottom = 140.0
 grow_vertical = 1
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=481813129]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4)
+
+[node name="Control" parent="CanvasLayer" unique_id=1420720041 instance=ExtResource("9_7p5sq")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -900.0
+offset_top = 600.0
+offset_right = 900.0
+offset_bottom = 1400.0
 
 [node name="Confetti" parent="." unique_id=1537113107 instance=ExtResource("13_1mj2a")]
 visible = false

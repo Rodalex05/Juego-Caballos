@@ -15,7 +15,7 @@ var posicion_inicial := Vector2()
 func _ready():
 	posicion_inicial = cursor.position
 	_actualizar_skin()
-	$Label.text=(Nombres.nombrej2)
+	$NombreJ2.text=(Nombres.nombrej2)
 	
 #================================================
 #FUNCION PROCESS

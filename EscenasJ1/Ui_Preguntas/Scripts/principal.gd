@@ -8,11 +8,13 @@ extends Control
 #Conectar Hbox
 @onready var grid_p1 = $HBoxContainer/Grid_J1
 
+
 # =====================================================
 # ARRAY DE PREGUNTAS
 # =====================================================
 var preguntas = []
 var pregunta_actual_j1 = {}
+var pregunta_actual_j2 ={}
 # =====================================================
 # FUNCION READY
 # =====================================================
@@ -59,14 +61,16 @@ func cargar_preguntas():
 # NUEVA PREGUNTA J1
 # =====================================================
 func nueva_pregunta_j1():
-	
+	if get_tree().paused:
+		return
 	pregunta_actual_j1 = preguntas.pick_random()
 	GlobalPreguntas.GlobalPreguntasJ1.append(pregunta_actual_j1["pregunta"])
 	pregunta_j1.text = pregunta_actual_j1["pregunta"]
 	grid_p1.configurar_pregunta(pregunta_actual_j1)
 	curiosidadbox_j1()
-	
-func curiosidadbox_j1():
-	curiosidad_j1.text = pregunta_actual_j1["curiosidad"]
 
 	
+func curiosidadbox_j1():
+	if get_tree().paused:
+		return
+	curiosidad_j1.text = pregunta_actual_j1["curiosidad"]

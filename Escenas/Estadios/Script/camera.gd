@@ -9,6 +9,7 @@ extends Camera2D
 @export var suavizado := 5.0
 @export var offset_x := -200.0
 var zoom_final = false
+#Conectar señales
 signal acercamiento
 signal acercamiento2
 signal final
@@ -23,6 +24,7 @@ func _ready():
 	await _movimiento_inicial()
 	# Ahora ya sigue jugadores
 	seguir_jugadores = true
+	#Conectar selañes para la meta
 	$"../AreaFinal".acercamiento.connect(_zoom)
 	$"../AreaFinal".acercamiento2.connect(_zoom)
 	$"../Meta".final.connect(_final)
@@ -36,7 +38,6 @@ func _process(delta):
 	else:
 		lider = j2
 	global_position.x = lerp(global_position.x,lider.global_position.x + offset_x,suavizado * delta)
-	#global_position.y = y_fija
 
 func _movimiento_inicial():
 	# Coloca la cámara más a la derecha
@@ -47,14 +48,13 @@ func _movimiento_inicial():
 	await tween.finished
 	_barras()
 
-
+#======FUNCIONES QUE SE EJECUTAN APENAS EMPIECE LA CARRERA======
 func _barras():
 	var tween = create_tween()
 	#barra superior
 	tween.tween_property(barra_arriba,"position:y",barra_arriba.position.y - 200,1.5).set_trans(tween.TRANS_QUAD)
 	#barra inferior
 	tween.parallel().tween_property(barra_abajo,"position:y",barra_abajo.position.y + 200,1.5).set_trans(tween.TRANS_CUBIC)
-
 	await tween.finished
 	$"../../CanvasLayer/Minimapa".visible=true
 	Pistola.play()

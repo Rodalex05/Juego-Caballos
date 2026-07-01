@@ -1,9 +1,13 @@
 extends Button
 @export var sfx_hover : AudioStreamPlayer
 @export var sfx_press : AudioStreamPlayer
-func _on_pressed() -> void:
-	var total = Fondos.fondosminiatura.size()
-	Fondos.Fondo_jugar = (Fondos.Fondo_jugar + 1) % total
+var total = Fondos.fondosminiatura.size()
+func _physics_process(delta):
+	if Input.is_action_just_pressed("Skin_J1_der"):
+		_derecha()
+
+func _derecha():
+	Fondos.Fondo_jugar = (Fondos.Fondo_jugar + 1 + total) % total
 	$"../../Parallax2D".cambiar_fondo(Fondos.Fondo_jugar)
 	$"..".actualizar_cinta()
 	if Fondos.Fondo_jugar == 0:
@@ -23,5 +27,7 @@ func _on_pressed() -> void:
 
 func _on_mouse_entered() -> void:
 	sfx_hover.play()
-func _on_focus_entered() -> void:
-	pass # Replace with function body.
+
+
+func _on_pressed() -> void:
+	_derecha()

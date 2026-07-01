@@ -31,7 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_848fc")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=321150752]
+[node name="borde" type="TextureRect" parent="." unique_id=321150752]
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
@@ -46,7 +46,7 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("2_s6ki7")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=500667]
+[node name="Fondonegro" type="ColorRect" parent="." unique_id=500667]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,15 +58,15 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.64705884)
 
-[node name="sfx_hover" type="AudioStreamPlayer2D" parent="ColorRect" unique_id=716597319]
+[node name="sfx_hover" type="AudioStreamPlayer2D" parent="Fondonegro" unique_id=716597319]
 stream = ExtResource("2_ajkly")
 bus = &"bus_sfx"
 
-[node name="sfx_select" type="AudioStreamPlayer2D" parent="ColorRect" unique_id=676755002]
+[node name="sfx_select" type="AudioStreamPlayer2D" parent="Fondonegro" unique_id=676755002]
 stream = ExtResource("3_p3a2v")
 bus = &"bus_sfx"
 
-[node name="Horizontal" type="HBoxContainer" parent="ColorRect" unique_id=201662730]
+[node name="HBox" type="HBoxContainer" parent="Fondonegro" unique_id=201662730]
 custom_minimum_size = Vector2(900, 400)
 layout_mode = 1
 anchors_preset = 15
@@ -78,23 +78,23 @@ offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxJ1" type="VBoxContainer" parent="ColorRect/Horizontal" unique_id=1946681557]
+[node name="VBoxJ1" type="VBoxContainer" parent="Fondonegro/HBox" unique_id=1946681557]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LB_TituloJ1" type="Label" parent="ColorRect/Horizontal/VBoxJ1" unique_id=418865176]
+[node name="LB_TituloJ1" type="Label" parent="Fondonegro/HBox/VBoxJ1" unique_id=418865176]
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("5_llhvw")
 text = "Jugador1"
 horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/Horizontal/VBoxJ1" unique_id=2020824390]
+[node name="ScrollContainer" type="ScrollContainer" parent="Fondonegro/HBox/VBoxJ1" unique_id=2020824390]
 custom_minimum_size = Vector2(875, 500)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="PreguntasJ1" type="RichTextLabel" parent="ColorRect/Horizontal/VBoxJ1/ScrollContainer" unique_id=975936005]
+[node name="PreguntasJ1" type="RichTextLabel" parent="Fondonegro/HBox/VBoxJ1/ScrollContainer" unique_id=975936005]
 custom_minimum_size = Vector2(875, 500)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -114,11 +114,11 @@ Pregunta 10:"
 autowrap_mode = 2
 script = ExtResource("6_f5eqr")
 
-[node name="VBoxJ2" type="VBoxContainer" parent="ColorRect/Horizontal" unique_id=232061371]
+[node name="VBoxJ2" type="VBoxContainer" parent="Fondonegro/HBox" unique_id=232061371]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LB_TituloJ2" type="Label" parent="ColorRect/Horizontal/VBoxJ2" unique_id=571977890]
+[node name="LB_TituloJ2" type="Label" parent="Fondonegro/HBox/VBoxJ2" unique_id=571977890]
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("5_llhvw")
@@ -126,12 +126,12 @@ text = "Jugador 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VScrollBar2" type="ScrollContainer" parent="ColorRect/Horizontal/VBoxJ2" unique_id=1449440892]
+[node name="VScrollBar2" type="ScrollContainer" parent="Fondonegro/HBox/VBoxJ2" unique_id=1449440892]
 custom_minimum_size = Vector2(875, 500)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="PreguntasJ2" type="RichTextLabel" parent="ColorRect/Horizontal/VBoxJ2/VScrollBar2" unique_id=1677291553]
+[node name="PreguntasJ2" type="RichTextLabel" parent="Fondonegro/HBox/VBoxJ2/VScrollBar2" unique_id=1677291553]
 custom_minimum_size = Vector2(875, 500)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -151,7 +151,7 @@ Pregunta 10:"
 autowrap_mode = 2
 script = ExtResource("7_kymgx")
 
-[node name="Btn_Regresar" type="TextureButton" parent="ColorRect" unique_id=1386921297 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+[node name="Btn_Regresar" type="TextureButton" parent="Fondonegro" unique_id=1386921297 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 0
 offset_left = 1418.0
 offset_top = 870.0
@@ -166,7 +166,7 @@ script = ExtResource("8_lvkj2")
 sfx_pasar = NodePath("../sfx_hover")
 sfx_select = NodePath("../sfx_select")
 
-[node name="Tiempo" type="Label" parent="ColorRect" unique_id=2085332817]
+[node name="Tiempo" type="Label" parent="Fondonegro" unique_id=2085332817]
 z_index = 1
 layout_mode = 1
 anchors_preset = 5
@@ -182,4 +182,4 @@ text = "Tiempo total: "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="mouse_entered" from="ColorRect/Btn_Regresar" to="ColorRect/Btn_Regresar" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Fondonegro/Btn_Regresar" to="Fondonegro/Btn_Regresar" method="_on_mouse_entered"]

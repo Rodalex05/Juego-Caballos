@@ -8,15 +8,18 @@ func _ready() -> void:
 
 #Funcion cuando un jugador toque la meta
 func _on_body_entered(body: Node2D) -> void:
+	#Detecta la entrada del jugador 1
 	if body.name == "Jugador1":
 		print("Entró J1")
 		emit_signal("acercamiento")
+		%Jugador1.ganador=true
 		drums.play()
 		Nombres.nombre_ganador=Nombres.nombrej1
 		SkinsGlobal.skin_1lugar =1
 	elif body.name == "Jugador2":
 		print("Entró J2")
 		emit_signal("acercamiento2")
+		%Jugador2.ganador=true
 		GlobalPreguntas.GlobalGanador=true
 		drums.play()
 		Nombres.nombre_ganador=Nombres.nombrej2

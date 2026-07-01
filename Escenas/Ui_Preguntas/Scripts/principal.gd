@@ -64,7 +64,8 @@ func cargar_preguntas():
 # NUEVA PREGUNTA J1
 # =====================================================
 func nueva_pregunta_j1():
-	
+	if get_tree().paused:
+		return
 	pregunta_actual_j1 = preguntas.pick_random()
 	GlobalPreguntas.GlobalPreguntasJ1.append(pregunta_actual_j1["pregunta"])
 	pregunta_j1.text = pregunta_actual_j1["pregunta"]
@@ -74,6 +75,8 @@ func nueva_pregunta_j1():
 # NUEVA PREGUNTA J2
 # =====================================================
 func nueva_pregunta_j2():
+	if get_tree().paused:
+		return
 	pregunta_actual_j2 = preguntas.pick_random()
 	GlobalPreguntas.GlobalPreguntasJ2.append(pregunta_actual_j2["pregunta"])
 	pregunta_j2.text = pregunta_actual_j2["pregunta"]
@@ -81,7 +84,10 @@ func nueva_pregunta_j2():
 	curiosidadbox_j2()
 	
 func curiosidadbox_j1():
+	if get_tree().paused:
+		return
 	curiosidad_j1.text = pregunta_actual_j1["curiosidad"]
 func curiosidadbox_j2():
+	if get_tree().paused:
+		return
 	curiosidad_j2.text = pregunta_actual_j2["curiosidad"]
-	

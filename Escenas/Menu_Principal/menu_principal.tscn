@@ -61,26 +61,35 @@ offset_bottom = 40.0
 script = ExtResource("1_ik0cr")
 velocidadtm = 0.15
 
-[node name="Parallax2D" type="Parallax2D" parent="Fondo" unique_id=1679886066]
+[node name="Fondo" type="Parallax2D" parent="Fondo" unique_id=1679886066]
 repeat_size = Vector2(4760, 0)
 autoscroll = Vector2(50, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Fondo/Parallax2D" unique_id=1210591762]
+[node name="Sprite" type="Sprite2D" parent="Fondo/Fondo" unique_id=1210591762]
 scale = Vector2(1.5288327, 1.5288326)
 texture = ExtResource("1_2577a")
 centered = false
 
-[node name="Parallax2D2" type="Parallax2D" parent="Fondo" unique_id=2107734193]
+[node name="Suelo" type="Parallax2D" parent="Fondo" unique_id=2107734193]
 repeat_size = Vector2(4760, 0)
 autoscroll = Vector2(75, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Fondo/Parallax2D2" unique_id=2083092888]
+[node name="Sprite" type="Sprite2D" parent="Fondo/Suelo" unique_id=2083092888]
 position = Vector2(-309, 727.99994)
 scale = Vector2(1.529, 1.5991381)
 texture = ExtResource("2_bg3vg")
 centered = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1222621503]
+[node name="Logo" type="TextureRect" parent="." unique_id=126355196]
+layout_mode = 0
+offset_left = 555.0
+offset_top = 21.0
+offset_right = 1338.7229
+offset_bottom = 386.0
+texture = ExtResource("25_bg3vg")
+expand_mode = 1
+
+[node name="VBC_Opciones1" type="VBoxContainer" parent="." unique_id=1222621503]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(1.405, 0)
 layout_mode = 1
@@ -98,7 +107,7 @@ grow_vertical = 2
 theme_override_constants/separation = 20
 script = ExtResource("2_tkyyf")
 
-[node name="Btn_Iniciar" type="TextureButton" parent="VBoxContainer" unique_id=1081020516 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+[node name="Btn_Iniciar" type="TextureButton" parent="VBC_Opciones1" unique_id=1081020516 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 2
 mouse_filter = 1
 texture_normal = ExtResource("6_ai5ji")
@@ -108,7 +117,7 @@ script = ExtResource("3_v6jxy")
 sfx_pasar = NodePath("../../SFX_Hover")
 sfx_select = NodePath("../../SFX_Select")
 
-[node name="Btn_Opciones" type="TextureButton" parent="VBoxContainer" unique_id=1504363468 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+[node name="Btn_Opciones" type="TextureButton" parent="VBC_Opciones1" unique_id=1504363468 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 2
 texture_normal = ExtResource("10_2577a")
 texture_pressed = ExtResource("11_bg3vg")
@@ -117,7 +126,7 @@ script = ExtResource("5_ciq5v")
 sfx_pasar = NodePath("../../SFX_Hover")
 sfx_select = NodePath("../../SFX_Select")
 
-[node name="Btn_Salir" type="TextureButton" parent="VBoxContainer" unique_id=1636300895 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+[node name="Btn_Salir" type="TextureButton" parent="VBC_Opciones1" unique_id=1636300895 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 2
 texture_normal = ExtResource("14_mpcx3")
 texture_pressed = ExtResource("15_vr3i4")
@@ -126,7 +135,7 @@ script = ExtResource("4_xfnao")
 sfx_pasar = NodePath("../../SFX_Hover")
 sfx_select = NodePath("../../SFX_Select")
 
-[node name="VBoxOp2" type="VBoxContainer" parent="." unique_id=332505580]
+[node name="VBC_Opciones2" type="VBoxContainer" parent="." unique_id=332505580]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(1.405, 0)
 layout_mode = 0
@@ -137,9 +146,10 @@ offset_bottom = 661.5
 theme_override_constants/separation = 20
 script = ExtResource("2_ildlw")
 
-[node name="Btn_UnJ1" type="TextureButton" parent="VBoxOp2" unique_id=11041072 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+[node name="Btn_UnJ1" type="TextureButton" parent="VBC_Opciones2" unique_id=11041072 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 2
 mouse_filter = 1
+disabled = true
 texture_normal = ExtResource("18_3y2cs")
 texture_pressed = ExtResource("20_kqcm3")
 texture_hover = ExtResource("20_jip0x")
@@ -148,8 +158,9 @@ escena_seleccion = ExtResource("22_jip0x")
 sfx_pasar = NodePath("../../SFX_Hover")
 sfx_select = NodePath("../../SFX_Select")
 
-[node name="Btn_Multijugador" type="TextureButton" parent="VBoxOp2" unique_id=139808615 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+[node name="Btn_Multijugador" type="TextureButton" parent="VBC_Opciones2" unique_id=139808615 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("24_i1ikw")
 texture_pressed = ExtResource("25_tve3h")
 texture_hover = ExtResource("26_wqihd")
@@ -158,36 +169,15 @@ escena_seleccion = ExtResource("4_ai5ji")
 sfx_pasar = NodePath("../../SFX_Hover")
 sfx_select = NodePath("../../SFX_Select")
 
-[node name="Btn_Regresar" type="TextureButton" parent="VBoxOp2" unique_id=1503971184 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+[node name="Btn_Regresar" type="TextureButton" parent="VBC_Opciones2" unique_id=1503971184 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 2
+disabled = true
 texture_normal = ExtResource("28_e415g")
 texture_pressed = ExtResource("29_hdwk8")
 texture_hover = ExtResource("30_gce56")
 script = ExtResource("6_pvxev")
 sfx_pasar = NodePath("../../SFX_Hover")
 sfx_select = NodePath("../../SFX_Select")
-
-[node name="SFX_Hover" type="AudioStreamPlayer2D" parent="." unique_id=342974015]
-stream = ExtResource("4_gkowq")
-bus = &"bus_sfx"
-
-[node name="SFX_Select" type="AudioStreamPlayer2D" parent="." unique_id=1108778765]
-stream = ExtResource("8_ciq5v")
-bus = &"bus_sfx"
-
-[node name="Musica" type="AudioStreamPlayer2D" parent="." unique_id=117939262]
-stream = ExtResource("34_jip0x")
-bus = &"bus_musica"
-script = ExtResource("35_jip0x")
-
-[node name="Label" type="Label" parent="." unique_id=1777509066]
-layout_mode = 0
-offset_left = 1637.0
-offset_top = 1013.0
-offset_right = 1904.0
-offset_bottom = 1083.0
-theme = ExtResource("11_x8ylp")
-text = "Versión 1.2.5"
 
 [node name="Btn_Creditos" type="TextureButton" parent="." unique_id=1987494293 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 0
@@ -203,16 +193,16 @@ escena_seleccion = ExtResource("39_gce56")
 sfx_pasar = NodePath("../SFX_Hover")
 sfx_select = NodePath("../SFX_Select")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=126355196]
+[node name="Lb_Version" type="Label" parent="." unique_id=1777509066]
 layout_mode = 0
-offset_left = 555.0
-offset_top = 21.0
-offset_right = 1338.7229
-offset_bottom = 386.0
-texture = ExtResource("25_bg3vg")
-expand_mode = 1
+offset_left = 965.0
+offset_top = 1023.0
+offset_right = 1908.0
+offset_bottom = 1093.0
+theme = ExtResource("11_x8ylp")
+text = "Versión 1.4.7. Todos los derechos reservados"
 
-[node name="Control" parent="." unique_id=1420720041 instance=ExtResource("7_cjwnn")]
+[node name="Opciones_Menu" parent="." unique_id=1420720041 instance=ExtResource("7_cjwnn")]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -225,10 +215,23 @@ offset_top = 560.0
 offset_right = 900.0
 offset_bottom = 1360.0
 
-[connection signal="mouse_entered" from="VBoxContainer/Btn_Iniciar" to="VBoxContainer/Btn_Iniciar" method="_on_mouse_entered"]
-[connection signal="mouse_entered" from="VBoxContainer/Btn_Opciones" to="VBoxContainer/Btn_Opciones" method="_on_mouse_entered"]
-[connection signal="mouse_entered" from="VBoxContainer/Btn_Salir" to="VBoxContainer/Btn_Salir" method="_on_mouse_entered"]
-[connection signal="mouse_entered" from="VBoxOp2/Btn_UnJ1" to="VBoxOp2/Btn_UnJ1" method="_on_mouse_entered"]
-[connection signal="mouse_entered" from="VBoxOp2/Btn_Multijugador" to="VBoxOp2/Btn_Multijugador" method="_on_mouse_entered"]
-[connection signal="mouse_entered" from="VBoxOp2/Btn_Regresar" to="VBoxOp2/Btn_Regresar" method="_on_mouse_entered"]
+[node name="Musica" type="AudioStreamPlayer2D" parent="." unique_id=117939262]
+stream = ExtResource("34_jip0x")
+bus = &"bus_musica"
+script = ExtResource("35_jip0x")
+
+[node name="SFX_Select" type="AudioStreamPlayer2D" parent="." unique_id=1108778765]
+stream = ExtResource("8_ciq5v")
+bus = &"bus_sfx"
+
+[node name="SFX_Hover" type="AudioStreamPlayer2D" parent="." unique_id=342974015]
+stream = ExtResource("4_gkowq")
+bus = &"bus_sfx"
+
+[connection signal="mouse_entered" from="VBC_Opciones1/Btn_Iniciar" to="VBC_Opciones1/Btn_Iniciar" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="VBC_Opciones1/Btn_Opciones" to="VBC_Opciones1/Btn_Opciones" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="VBC_Opciones1/Btn_Salir" to="VBC_Opciones1/Btn_Salir" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="VBC_Opciones2/Btn_UnJ1" to="VBC_Opciones2/Btn_UnJ1" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="VBC_Opciones2/Btn_Multijugador" to="VBC_Opciones2/Btn_Multijugador" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="VBC_Opciones2/Btn_Regresar" to="VBC_Opciones2/Btn_Regresar" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Btn_Creditos" to="Btn_Creditos" method="_on_mouse_entered"]

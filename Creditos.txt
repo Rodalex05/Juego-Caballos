@@ -1,7 +1,8 @@
 ════════════════════
-El GRAN DERBY DEL NORTE
+[font_size=50]El GRAN DERBY DEL NORTE[/font_size]
 ════════════════════
 UN JUEGO DE
+[img=400x400]res://logo.png[/img]
 Team Evangelion
 ════════════════════
 PROGRAMACIÓN
@@ -35,33 +36,44 @@ Obras de dominio público
 "Pedacito de Montemorelos"
 Interpretada por Los Montañeses del Álamo
 Compuesta por Marroquín
-
-Algunos recursos de audio se utilizan bajo sus respectivas licencias.
 ════════════════════
 EFECTOS DE SONIDO
-- SoundBible (https://soundbible.com/)
-- Freesound (https://freesound.org/)
+[url=https://soundbible.com/]- SoundBible (https://soundbible.com/)[/url]
+[url=https://freesound.org]- Freesound (https://freesound.org/)[/url]
+
 ════════════════════
 FUENTES
 - GrapeSoda - Jeti
-https://fontenddev.com/fonts/grape-soda/
+[url=https://fontenddev.com/fonts/grape-soda/]https://fontenddev.com/fonts/grape-soda/[/url]
 - M42 - Miffies
 - Monocraft - IdreesInc
 - Pixellari - Zacchary Dempsey-Plante
-Tipografías utilizadas bajo SIL Open Font License 1.1.
-y CC BY 4.0.
+
 ════════════════════
-DISEÑO DE NIVELES
-Rodrigo Pérez
-════════════════════
-HERRAMIENTAS
+HERRAMIENTAS UTILIZADAS
+[img=512x206]res://sprites/Logos/godot_logo.png[/img]
 Godot Engine
+
+[img=128x128]res://sprites/Logos/Piskela.png[/img]
 Piskel
+
+[img=512x116]res://sprites/Logos/GitHub_Loo.png[/img]
 GitHub
+
+[img=128x128]res://sprites/Logos/google-gemini.png[/img]
+Gemini
 ════════════════════
 TESTING
 Amigos y familiares
 ════════════════════
-GRACIAS POR JUGAR!
-FIN
+© 2026 EL GRAN DERBY DEL NORTE. Todos los derechos reservados.
+Los recursos de terceros utilizados en este proyecto pertenecen a sus respectivos autores y se emplean conforme a sus licencias correspondientes.
+Tipografías utilizadas bajo SIL Open Font License 1.1.
+y [url=https://creativecommons.org/licenses/by/4.0/deed.es]CC BY 4.0.[/url]
+[img=256x89]res://sprites/Logos/CC4.0.png[/img]
+
 ════════════════════
+GRACIAS POR JUGAR!
+════════════════════
+
+[font_size=50]FIN[/font_size]

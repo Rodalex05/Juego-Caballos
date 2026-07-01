@@ -41,7 +41,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rda78")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=32976540]
+[node name="Fondo" type="TextureRect" parent="." unique_id=32976540]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -50,7 +50,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_jjhrf")
 
-[node name="Label" type="Label" parent="." unique_id=958248619]
+[node name="LB_Ganador" type="Label" parent="." unique_id=958248619]
 layout_mode = 0
 offset_left = 691.0
 offset_top = 208.0
@@ -61,12 +61,6 @@ text = "El Ganador es:
 Jugador"
 horizontal_alignment = 1
 script = ExtResource("2_sg06g")
-
-[node name="AudioPasar" type="AudioStreamPlayer" parent="." unique_id=1552412211]
-stream = ExtResource("5_sg06g")
-
-[node name="AudioPresionar" type="AudioStreamPlayer" parent="." unique_id=144112494]
-stream = ExtResource("6_sg4b7")
 
 [node name="JugadorGanador" type="AnimatedSprite2D" parent="." unique_id=514450468]
 position = Vector2(975, 560)
@@ -128,3 +122,9 @@ offset_top = 1200.0
 offset_right = 900.0
 offset_bottom = 2000.0
 grow_vertical = 1
+
+[node name="AudioPresionar" type="AudioStreamPlayer" parent="." unique_id=144112494]
+stream = ExtResource("6_sg4b7")
+
+[node name="AudioPasar" type="AudioStreamPlayer" parent="." unique_id=1552412211]
+stream = ExtResource("5_sg06g")

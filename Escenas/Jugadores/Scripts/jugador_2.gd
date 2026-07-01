@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var velocidad = 300.0
 var mitad_y = 410.0
 signal acercamiento2
-var id_movimiento = 0
+var ganador=false
 # =====================================================
 # FUNCION READY
 # =====================================================
@@ -36,23 +36,21 @@ func _on_respuesta_incorrecta2():
 func _physics_process(delta: float) -> void:
 	move_and_slide()
 func correr():
-	id_movimiento += 1
-	var mi_id = id_movimiento
 	velocity.x = velocidad
 	$AnimatedSprite2D.play("correr")
-	await get_tree().create_timer(3.5).timeout
-	if mi_id == id_movimiento:
+	await get_tree().create_timer(3.5,false).timeout
+	if ganador==false:
 		detener()
+	else:
+		_acercamiento()
+	
 func detener():
 	velocity.x = 0
 	$AnimatedSprite2D.play("idle")
 	
 func _acercamiento():
-	id_movimiento += 1
-	var mi_id = id_movimiento
 	var tween = create_tween()
 	tween.tween_property(self, "position:y", mitad_y, 1.0)
 	velocity.x = velocidad
 	await get_tree().create_timer(4).timeout
-	if mi_id == id_movimiento:
-		detener()
+	detener()

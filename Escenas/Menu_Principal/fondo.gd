@@ -1,15 +1,12 @@
 extends Control
-
-var tiempo := 0.0
-@export var velocidadtm= 0.1
+#======DECLARACION DE VARIABLES CON LOS COLORES DE FONDO======
+var tiempo = 0.0
+@export var velocidadtm = 0.1
 var color_dia = Color.WHITE
 var color_atardecer = Color(1.0, 0.75, 0.45)
 var color_noche = Color(0.15, 0.15, 0.35)
 
-func cambiar_color(color):
-	$Parallax2D/Sprite2D.modulate = color
-	$Parallax2D2/Sprite2D.modulate = color
-
+#======FUNCION QUE HACE LA TRANSICION ENTRE LOS COLORES======
 func _process(delta):
 	tiempo += delta * velocidadtm
 	# Día → atardecer
@@ -30,3 +27,7 @@ func _process(delta):
 		cambiar_color(color_atardecer.lerp(color_dia, t))
 	else:
 		tiempo = 0.0
+#======FUNCION QUE LE VA CAMBIANDO EL COLOR AL FONDO======
+func cambiar_color(color):
+	$Fondo/Sprite.modulate = color
+	$Suelo/Sprite.modulate = color

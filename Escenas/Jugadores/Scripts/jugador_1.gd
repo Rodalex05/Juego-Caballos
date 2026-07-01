@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var velocidad = 300.0
 var mitad_y = 410
 signal acercamiento
-var id_movimiento = 0
+var ganador =false
 # =====================================================
 # FUNCION READY
 # =====================================================
@@ -19,6 +19,7 @@ func _ready():
 	grid_j1.respuesta_correcta.connect(_on_respuesta_correcta)
 	grid_j1.respuesta_incorrecta.connect(_on_respuesta_incorrecta)
 	$Label.text=Nombres.nombrej1
+
 # =====================================================
 # SEÑALES
 # =====================================================
@@ -32,26 +33,28 @@ func _on_respuesta_incorrecta():
 # =====================================================
 # PROCESS
 # =====================================================
+
 func _physics_process(delta: float) -> void:
+	#Funcion que habilita que el jugador se pueda mover
 	move_and_slide()
 func correr():
-	id_movimiento += 1
-	var mi_id = id_movimiento
 	velocity.x = velocidad
 	$AnimatedSprite2D.play("correr")
-	await get_tree().create_timer(3.5).timeout
-	if mi_id == id_movimiento:
+	await get_tree().create_timer(3.5,false).timeout
+	if ganador==false:
 		detener()
+	else:
+		_acercamiento()
+	
 func detener():
+	#Pone la velocidad en 0 frenando al caballo
 	velocity.x = 0
+	#Asigna al sprite de parado
 	$AnimatedSprite2D.play("idle")
 	
 func _acercamiento():
-	id_movimiento += 1
-	var mi_id = id_movimiento
 	var tween = create_tween()
 	tween.tween_property(self, "position:y", mitad_y, 1.0)
 	velocity.x = velocidad
 	await get_tree().create_timer(4).timeout
-	if mi_id == id_movimiento:
-		detener()
+	detener()

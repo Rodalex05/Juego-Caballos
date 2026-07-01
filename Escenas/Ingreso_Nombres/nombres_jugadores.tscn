@@ -34,7 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=188315142]
+[node name="Fondo" type="TextureRect" parent="." unique_id=188315142]
 modulate = Color(0.41568628, 0.41568628, 0.41568628, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -44,7 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_x6mgn")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=94214360]
+[node name="Pizarra" type="TextureRect" parent="." unique_id=94214360]
 custom_minimum_size = Vector2(1825, 814)
 layout_mode = 1
 anchors_preset = 8
@@ -60,7 +60,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_o2446")
 
-[node name="Label" type="Label" parent="TextureRect" unique_id=1720696250]
+[node name="Instruccion" type="Label" parent="Pizarra" unique_id=1720696250]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -74,7 +74,7 @@ theme = ExtResource("2_sdumd")
 text = "Ingresa tu nombre jugador 1
 "
 
-[node name="LineEdit" type="LineEdit" parent="TextureRect" unique_id=446247908]
+[node name="LineEdit" type="LineEdit" parent="Pizarra" unique_id=446247908]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -93,7 +93,7 @@ alignment = 1
 max_length = 10
 script = ExtResource("4_ae303")
 
-[node name="ColorRect" type="ColorRect" parent="TextureRect/LineEdit" unique_id=1576010332]
+[node name="ColorRect" type="ColorRect" parent="Pizarra/LineEdit" unique_id=1576010332]
 custom_minimum_size = Vector2(0, 5)
 layout_mode = 1
 anchors_preset = 12
@@ -103,7 +103,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="LabelError" type="Label" parent="TextureRect" unique_id=832349176]
+[node name="LabelError" type="Label" parent="Pizarra" unique_id=832349176]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -116,7 +116,7 @@ theme_override_fonts/font = ExtResource("6_b7afr")
 theme_override_font_sizes/font_size = 72
 horizontal_alignment = 1
 
-[node name="LabelMensaje" type="Label" parent="TextureRect" unique_id=22431052]
+[node name="LabelMensaje" type="Label" parent="Pizarra" unique_id=22431052]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -135,7 +135,7 @@ text = "Presiona \"Enter\" cuando finalices
 "
 horizontal_alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=1718288339 node_paths=PackedStringArray("sfx_hover", "sfx_press")]
+[node name="Btn_Menu" type="TextureButton" parent="." unique_id=1718288339 node_paths=PackedStringArray("sfx_hover", "sfx_press")]
 layout_mode = 0
 offset_left = 48.0
 offset_top = 968.0
@@ -156,4 +156,4 @@ bus = &"bus_sfx"
 stream = ExtResource("12_0cc87")
 bus = &"bus_sfx"
 
-[connection signal="mouse_entered" from="TextureButton" to="TextureButton" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Btn_Menu" to="Btn_Menu" method="_on_mouse_entered"]

@@ -8,13 +8,13 @@
 [ext_resource type="Script" uid="uid://cmth4eadoql07" path="res://Escenas/Estadios/Script/camera.gd" id="5_iai8o"]
 [ext_resource type="PackedScene" uid="uid://cuy8rkecrvu8j" path="res://Escenas/Estadios/Meta/Meta.tscn" id="5_u5wol"]
 [ext_resource type="Script" uid="uid://cmjrxmmbt4udy" path="res://Escenas/Estadios/Script/area_final.gd" id="7_0erib"]
-[ext_resource type="Texture2D" uid="uid://dixbw5grbvnk4" path="res://icono.png" id="8_3l1ef"]
 [ext_resource type="AudioStream" uid="uid://dbfbcd1o2tss1" path="res://SFX/sfx_pistol_start.wav" id="8_8nbi1"]
 [ext_resource type="PackedScene" uid="uid://dg63xjklxprwv" path="res://Escenas/Estadios/confetti.tscn" id="10_bwi8r"]
 [ext_resource type="PackedScene" uid="uid://cx75g1ml85a3" path="res://Escenas/Ui_Minimapa/Minimapa.tscn" id="10_isi16"]
 [ext_resource type="Script" uid="uid://dgx0cgun05jce" path="res://Escenas/Estadios/Script/temporizador.gd" id="11_5mi51"]
 [ext_resource type="FontFile" uid="uid://wa8mpvql7hif" path="res://Fonts/Monocraft.ttc" id="11_j7nmm"]
 [ext_resource type="AudioStream" uid="uid://cdxue34mb16ej" path="res://SFX/timpaniroll.ogg" id="12_2sgx8"]
+[ext_resource type="PackedScene" uid="uid://y3t6jv0hy1ji" path="res://Escenas/Menu_Pausa/Menu_Instrucciones.tscn" id="13_a2uqj"]
 [ext_resource type="AudioStream" uid="uid://bd1by07xyjlp2" path="res://SFX/fireworks1.ogg" id="13_bwi8r"]
 [ext_resource type="Script" uid="uid://c84x3k4kugdft" path="res://Escenas/Estadios/Script/musica.gd" id="17_26s3g"]
 
@@ -30,20 +30,15 @@ Label/fonts/font = ExtResource("11_j7nmm")
 [node name="Mundo" type="Node2D" parent="." unique_id=1609228695]
 unique_name_in_owner = true
 
-[node name="Parallax2D" type="Parallax2D" parent="Mundo" unique_id=1886960754]
+[node name="Fondo" type="Parallax2D" parent="Mundo" unique_id=1886960754]
 repeat_size = Vector2(6550, 0)
 repeat_times = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Mundo/Parallax2D" unique_id=1262831564]
+[node name="Sprite" type="Sprite2D" parent="Mundo/Fondo" unique_id=1262831564]
 position = Vector2(1631.9453, 112.49995)
 scale = Vector2(1.7316366, 2.1599262)
 texture = ExtResource("1_bwi8r")
 script = ExtResource("2_uhc3u")
-
-[node name="Meta" parent="Mundo" unique_id=887343028 node_paths=PackedStringArray("victoria") instance=ExtResource("5_u5wol")]
-position = Vector2(10600, 601)
-scale = Vector2(1.87, 1.87)
-victoria = NodePath("../../SFX/Confeti")
 
 [node name="Jugador1" parent="Mundo" unique_id=301942191 instance=ExtResource("2_ouwuo")]
 unique_name_in_owner = true
@@ -90,11 +85,10 @@ position = Vector2(10353, 303)
 shape = SubResource("RectangleShape2D_3l1ef")
 debug_color = Color(0.25529236, 0.62918115, 0.2544276, 0.41960785)
 
-[node name="Sprite2D" type="Sprite2D" parent="Mundo/AreaFinal" unique_id=1961022196]
-visible = false
-position = Vector2(3610.5, 375.5)
-scale = Vector2(1.3320315, 4.0898438)
-texture = ExtResource("8_3l1ef")
+[node name="Meta" parent="Mundo" unique_id=887343028 node_paths=PackedStringArray("victoria") instance=ExtResource("5_u5wol")]
+position = Vector2(10600, 601)
+scale = Vector2(1.87, 1.87)
+victoria = NodePath("../../SFX/Confeti")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1280601229]
 
@@ -106,6 +100,7 @@ grow_vertical = 0
 size_flags_horizontal = 3
 
 [node name="Minimapa" parent="CanvasLayer" unique_id=1281229057 node_paths=PackedStringArray("jugador1", "jugador2") instance=ExtResource("10_isi16")]
+visible = false
 jugador1 = NodePath("../../Mundo/Jugador1")
 jugador2 = NodePath("../../Mundo/Jugador2")
 
@@ -129,36 +124,67 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_26s3g")
-text = "Tiempo: 0.00"
+text = "00:00:000"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("11_5mi51")
 
-[node name="Confetti" parent="." unique_id=1537113107 instance=ExtResource("10_bwi8r")]
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=1874487925]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4)
+
+[node name="Menu_pausa" parent="CanvasLayer" unique_id=1420720041 instance=ExtResource("13_a2uqj")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -900.0
+offset_top = 600.0
+offset_right = 900.0
+offset_bottom = 1400.0
+
+[node name="Control_Confetti" type="Control" parent="." unique_id=992455293]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 934.0
+offset_bottom = 505.0
+
+[node name="Confetti" parent="Control_Confetti" unique_id=1537113107 instance=ExtResource("10_bwi8r")]
+layout_mode = 0
 offset_left = 12576.0
 offset_top = 801.0
 offset_right = 13220.0
 offset_bottom = 1018.0
 
-[node name="Confetti2" parent="." unique_id=545676935 instance=ExtResource("10_bwi8r")]
+[node name="Confetti2" parent="Control_Confetti" unique_id=545676935 instance=ExtResource("10_bwi8r")]
+layout_mode = 0
 offset_left = 12115.0
 offset_top = 782.0
 offset_right = 12271.0
 offset_bottom = 869.0
 
-[node name="Confetti3" parent="." unique_id=1261340613 instance=ExtResource("10_bwi8r")]
+[node name="Confetti3" parent="Control_Confetti" unique_id=1261340613 instance=ExtResource("10_bwi8r")]
+layout_mode = 0
 offset_left = 11349.0
 offset_top = 790.0
 offset_right = 11505.0
 offset_bottom = 877.0
 
-[node name="Confetti4" parent="." unique_id=652309948 instance=ExtResource("10_bwi8r")]
+[node name="Confetti4" parent="Control_Confetti" unique_id=652309948 instance=ExtResource("10_bwi8r")]
+layout_mode = 0
 offset_left = 13027.0
 offset_top = 790.0
 offset_right = 14377.0
 offset_bottom = 1008.0
 
-[node name="Confetti5" parent="." unique_id=362038036 instance=ExtResource("10_bwi8r")]
+[node name="Confetti5" parent="Control_Confetti" unique_id=362038036 instance=ExtResource("10_bwi8r")]
+layout_mode = 0
 offset_left = 11760.0
 offset_top = 785.0
 offset_right = 11916.0
@@ -172,9 +198,11 @@ offset_bottom = 40.0
 
 [node name="Pistola" type="AudioStreamPlayer" parent="SFX" unique_id=2000070361]
 stream = ExtResource("8_8nbi1")
+bus = &"bus_sfx"
 
 [node name="Drumm" type="AudioStreamPlayer" parent="SFX" unique_id=1225973271]
 stream = ExtResource("12_2sgx8")
+bus = &"bus_sfx"
 
 [node name="Confeti" type="AudioStreamPlayer" parent="SFX" unique_id=1048047179]
 stream = ExtResource("13_bwi8r")

@@ -11,8 +11,8 @@ func _ready() -> void:
 
 func cambiar_fondo() -> void:
 	if Fondos.Fondo_jugar == 0:
-		$TextureRect.texture = fondos_ganador[0]
+		$Fondo.texture = fondos_ganador[0]
 	elif Fondos.Fondo_jugar == 1:
-		$TextureRect.texture = fondos_ganador[1]
+		$Fondo.texture = fondos_ganador[1]
 	elif Fondos.Fondo_jugar == 2:
-		$TextureRect.texture = fondos_ganador[2]
+		$Fondo.texture = fondos_ganador[2]

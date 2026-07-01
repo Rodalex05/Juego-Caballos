@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://conh6y0ukxgkv"]
+
+[ext_resource type="Theme" uid="uid://cvshnhlprb4rk" path="res://Temas/Btn_Menu_principal.tres" id="1_gb4i6"]
+[ext_resource type="Script" uid="uid://q8m7grbv27tq" path="res://Escenas/Menu_Opciones/Scripts/btn_regresar.gd" id="2_fqxi1"]
+[ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="4_ew2ym"]
+[ext_resource type="Script" uid="uid://47sokhbhwitm" path="res://Escenas/Menu_Opciones/Scripts/check_button.gd" id="5_3qlyd"]
+[ext_resource type="Script" uid="uid://crh7nbxp0gcwh" path="res://Escenas/Menu_Opciones/Scripts/volumen_slider_sfx.gd" id="5_aacsk"]
+[ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="5_fc558"]
+[ext_resource type="Script" uid="uid://ch0wukqsqhodo" path="res://Escenas/Menu_Opciones/Scripts/volumen_slider_musica.gd" id="6_aacsk"]
+[ext_resource type="Script" uid="uid://bjwbaf104vtfh" path="res://Escenas/Menu_Opciones/Scripts/volumen_slider.gd" id="6_ew2ym"]
+[ext_resource type="Script" uid="uid://bi01daxy4fw50" path="res://Escenas/Menu_Opciones/Scripts/buttonprueba.gd" id="9_e385a"]
+[ext_resource type="AudioStream" uid="uid://ccg62esqn1l7o" path="res://SFX/bebe repeat after me_MixDown.wav" id="10_hrdg4"]
+
+[node name="Control" type="Control" unique_id=1420720041]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sfx_hover" type="AudioStreamPlayer2D" parent="." unique_id=704364680]
+stream = ExtResource("4_ew2ym")
+bus = &"bus_sfx"
+
+[node name="sfx_select" type="AudioStreamPlayer2D" parent="." unique_id=1927069161]
+stream = ExtResource("5_fc558")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=923657222]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1241040418]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer" unique_id=379944001 node_paths=PackedStringArray("sfx_toggle")]
+layout_mode = 2
+size_flags_vertical = 3
+action_mode = 0
+text = "PANTALLA COMPLETA"
+script = ExtResource("5_3qlyd")
+sfx_toggle = NodePath("../../../sfx_select")
+
+[node name="Volumen_Gral" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2055509660]
+layout_mode = 2
+text = "VOLUMEN GENERAL"
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer" unique_id=2103778880]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("6_ew2ym")
+bus_nombre = "Master"
+
+[node name="Volumen_SFX" type="Label" parent="MarginContainer/VBoxContainer" unique_id=900931639]
+layout_mode = 2
+text = "VOLUMEN EFECTOS DE SONIDO"
+
+[node name="HSlider2" type="HSlider" parent="MarginContainer/VBoxContainer" unique_id=1288488721]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("5_aacsk")
+bus_nombre = "bus_sfx"
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=297586439]
+layout_mode = 2
+text = "VOLUMEN MUSICA"
+
+[node name="HSlider3" type="HSlider" parent="MarginContainer/VBoxContainer" unique_id=1091816809]
+layout_mode = 2
+size_flags_vertical = 2
+value = 100.0
+script = ExtResource("6_aacsk")
+bus_nombre = null
+
+[node name="Btn_Regresar" type="Button" parent="." unique_id=39264072 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+layout_mode = 0
+offset_left = 836.0
+offset_top = 574.0
+offset_right = 1131.0
+offset_bottom = 633.0
+theme = ExtResource("1_gb4i6")
+text = "Regresar"
+script = ExtResource("2_fqxi1")
+sfx_pasar = NodePath("../sfx_hover")
+sfx_select = NodePath("../sfx_select")
+
+[node name="Button" type="Button" parent="." unique_id=225480354 node_paths=PackedStringArray("musica")]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 572.0
+offset_right = 398.0
+offset_bottom = 644.0
+script = ExtResource("9_e385a")
+musica = NodePath("../AudioStreamPlayer2D")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=1527575162]
+stream = ExtResource("10_hrdg4")
+bus = &"bus_musica"
+
+[connection signal="toggled" from="MarginContainer/VBoxContainer/CheckButton" to="MarginContainer/VBoxContainer/CheckButton" method="_on_toggled"]
+[connection signal="mouse_entered" from="Btn_Regresar" to="Btn_Regresar" method="_on_mouse_entered"]

@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bkau4b7xlv037" path="res://sprites/gui_opciones/rectangulo.png" id="18_kd7wh"]
 [ext_resource type="Script" uid="uid://c7jup1fuqp6oj" path="res://Escenas/Menu_Opciones/Scripts/Debug_Check.gd" id="19_3jykw"]
 
-[node name="Control" type="Control" unique_id=1420720041]
+[node name="Panel" type="Control" unique_id=1420720041]
 custom_minimum_size = Vector2(1800, 800)
 layout_mode = 3
 anchors_preset = 15
@@ -32,7 +32,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8m3j4")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=917322328]
+[node name="Margen" type="TextureRect" parent="." unique_id=917322328]
 z_index = 1
 layout_mode = 1
 anchors_preset = 15
@@ -45,7 +45,7 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("18_kd7wh")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1600585992]
+[node name="Fondonegro" type="ColorRect" parent="." unique_id=1600585992]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,15 +56,15 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.64705884)
 
-[node name="sfx_hover" type="AudioStreamPlayer2D" parent="ColorRect" unique_id=704364680]
+[node name="sfx_hover" type="AudioStreamPlayer2D" parent="Fondonegro" unique_id=704364680]
 stream = ExtResource("2_2n6rl")
 bus = &"bus_sfx"
 
-[node name="sfx_select" type="AudioStreamPlayer2D" parent="ColorRect" unique_id=1927069161]
+[node name="sfx_select" type="AudioStreamPlayer2D" parent="Fondonegro" unique_id=1927069161]
 stream = ExtResource("3_go26t")
 bus = &"bus_sfx"
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=923657222]
+[node name="Contenedor" type="MarginContainer" parent="Fondonegro" unique_id=923657222]
 custom_minimum_size = Vector2(900, 400)
 layout_mode = 1
 anchors_preset = 15
@@ -76,17 +76,17 @@ offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="GridContainer" parent="ColorRect/MarginContainer" unique_id=2083058417]
+[node name="VBoxContainer" type="GridContainer" parent="Fondonegro/Contenedor" unique_id=2083058417]
 layout_mode = 2
 size_flags_vertical = 4
 columns = 2
 
-[node name="LB_Pantalla" type="Label" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1274923502]
+[node name="LB_Pantalla" type="Label" parent="Fondonegro/Contenedor/VBoxContainer" unique_id=1274923502]
 layout_mode = 2
 theme = ExtResource("4_4wgf5")
 text = "Pantalla completa"
 
-[node name="CheckButton" type="CheckButton" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=379944001 node_paths=PackedStringArray("sfx_toggle")]
+[node name="Check_Pantalla" type="CheckButton" parent="Fondonegro/Contenedor/VBoxContainer" unique_id=379944001 node_paths=PackedStringArray("sfx_toggle")]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -95,13 +95,13 @@ action_mode = 0
 script = ExtResource("6_kd7wh")
 sfx_toggle = NodePath("../../../sfx_select")
 
-[node name="LB_Resolucion" type="Label" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1136188]
+[node name="LB_Resolucion" type="Label" parent="Fondonegro/Contenedor/VBoxContainer" unique_id=1136188]
 layout_mode = 2
 size_flags_vertical = 6
 theme = ExtResource("4_4wgf5")
 text = "Resolución "
 
-[node name="OptionButton" type="OptionButton" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1562423965]
+[node name="Opciones_Resolucion" type="OptionButton" parent="Fondonegro/Contenedor/VBoxContainer" unique_id=1562423965]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("7_4wgf5")
@@ -119,12 +119,12 @@ popup/item_4/text = "  800x600"
 popup/item_4/id = 4
 script = ExtResource("7_3jykw")
 
-[node name="Volumen_Gral" type="Label" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=2055509660]
+[node name="Volumen_Gral" type="Label" parent="Fondonegro/Contenedor/VBoxContainer" unique_id=2055509660]
 layout_mode = 2
 theme = ExtResource("4_4wgf5")
 text = "Volumen General"
 
-[node name="HSlider" type="HSlider" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=2103778880]
+[node name="Slider_Gral" type="HSlider" parent="Fondonegro/Contenedor/VBoxContainer" unique_id=2103778880]
 layout_mode = 2
 size_flags_horizontal = 9
 size_flags_vertical = 2
@@ -134,12 +134,12 @@ step = 0.001
 script = ExtResource("9_ivyg2")
 bus_nombre = "Master"
 
-[node name="Volumen_SFX" type="Label" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=900931639]
+[node name="Volumen_SFX" type="Label" parent="Fondonegro/Contenedor/VBoxContainer" unique_id=900931639]
 layout_mode = 2
 theme = ExtResource("4_4wgf5")
 text = "Volumen Efectos de sonido "
 
-[node name="HSlider2" type="HSlider" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1288488721]
+[node name="Slider_SFX" type="HSlider" parent="Fondonegro/Contenedor/VBoxContainer" unique_id=1288488721]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
@@ -150,12 +150,12 @@ value = 0.5
 script = ExtResource("10_1t8ee")
 bus_nombre = "bus_sfx"
 
-[node name="Volumen_Musica" type="Label" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=297586439]
+[node name="Volumen_Musica" type="Label" parent="Fondonegro/Contenedor/VBoxContainer" unique_id=297586439]
 layout_mode = 2
 theme = ExtResource("4_4wgf5")
 text = "Volumen Música"
 
-[node name="HSlider3" type="HSlider" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1091816809]
+[node name="Slider_Musica" type="HSlider" parent="Fondonegro/Contenedor/VBoxContainer" unique_id=1091816809]
 layout_mode = 2
 size_flags_vertical = 1
 theme = ExtResource("8_s0hg4")
@@ -165,7 +165,7 @@ value = 1.0
 script = ExtResource("11_ffvwx")
 bus_nombre = "bus_musica"
 
-[node name="Btn_Regresar" type="TextureButton" parent="ColorRect" unique_id=1848902115 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+[node name="Btn_Regresar" type="TextureButton" parent="Fondonegro" unique_id=1848902115 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 0
 offset_left = 1387.0
 offset_top = 703.0
@@ -178,7 +178,7 @@ script = ExtResource("13_22qk2")
 sfx_pasar = NodePath("../sfx_hover")
 sfx_select = NodePath("../sfx_select")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect" unique_id=1152919715]
+[node name="HBC_Debug" type="HBoxContainer" parent="Fondonegro" unique_id=1152919715]
 custom_minimum_size = Vector2(392, 73)
 layout_mode = 0
 offset_left = 1397.0
@@ -187,23 +187,25 @@ offset_right = 1789.0
 offset_bottom = 983.0
 script = ExtResource("18_3jykw")
 
-[node name="Label" type="Label" parent="ColorRect/HBoxContainer" unique_id=873832474]
+[node name="LB_Debug" type="Label" parent="Fondonegro/HBC_Debug" unique_id=873832474]
+visible = false
 layout_mode = 2
 theme = ExtResource("4_4wgf5")
 text = "Modo debug: "
 
-[node name="CheckButton" type="CheckButton" parent="ColorRect/HBoxContainer" unique_id=648462395 node_paths=PackedStringArray("sfx_toggle")]
+[node name="Check_Debug" type="CheckButton" parent="Fondonegro/HBC_Debug" unique_id=648462395 node_paths=PackedStringArray("sfx_toggle")]
+visible = false
 layout_mode = 2
 theme = ExtResource("6_ij4lo")
 script = ExtResource("19_3jykw")
 sfx_toggle = NodePath("../../sfx_select")
 
-[connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/CheckButton" to="ColorRect/MarginContainer/VBoxContainer/CheckButton" method="_on_toggled"]
-[connection signal="item_selected" from="ColorRect/MarginContainer/VBoxContainer/OptionButton" to="ColorRect/MarginContainer/VBoxContainer/OptionButton" method="_on_item_selected"]
-[connection signal="value_changed" from="ColorRect/MarginContainer/VBoxContainer/HSlider" to="ColorRect/MarginContainer/VBoxContainer/HSlider" method="_on_value_changed"]
-[connection signal="value_changed" from="ColorRect/MarginContainer/VBoxContainer/HSlider2" to="ColorRect/MarginContainer/VBoxContainer/HSlider2" method="_on_value_changed"]
-[connection signal="value_changed" from="ColorRect/MarginContainer/VBoxContainer/HSlider3" to="ColorRect/MarginContainer/VBoxContainer/HSlider3" method="_on_value_changed"]
-[connection signal="mouse_entered" from="ColorRect/Btn_Regresar" to="ColorRect/Btn_Regresar" method="_on_mouse_entered"]
-[connection signal="mouse_entered" from="ColorRect/HBoxContainer" to="ColorRect/HBoxContainer" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="ColorRect/HBoxContainer" to="ColorRect/HBoxContainer" method="_on_mouse_exited"]
-[connection signal="toggled" from="ColorRect/HBoxContainer/CheckButton" to="ColorRect/HBoxContainer/CheckButton" method="_on_toggled"]
+[connection signal="toggled" from="Fondonegro/Contenedor/VBoxContainer/Check_Pantalla" to="Fondonegro/Contenedor/VBoxContainer/Check_Pantalla" method="_on_toggled"]
+[connection signal="item_selected" from="Fondonegro/Contenedor/VBoxContainer/Opciones_Resolucion" to="Fondonegro/Contenedor/VBoxContainer/Opciones_Resolucion" method="_on_item_selected"]
+[connection signal="value_changed" from="Fondonegro/Contenedor/VBoxContainer/Slider_Gral" to="Fondonegro/Contenedor/VBoxContainer/Slider_Gral" method="_on_value_changed"]
+[connection signal="value_changed" from="Fondonegro/Contenedor/VBoxContainer/Slider_SFX" to="Fondonegro/Contenedor/VBoxContainer/Slider_SFX" method="_on_value_changed"]
+[connection signal="value_changed" from="Fondonegro/Contenedor/VBoxContainer/Slider_Musica" to="Fondonegro/Contenedor/VBoxContainer/Slider_Musica" method="_on_value_changed"]
+[connection signal="mouse_entered" from="Fondonegro/Btn_Regresar" to="Fondonegro/Btn_Regresar" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Fondonegro/HBC_Debug" to="Fondonegro/HBC_Debug" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Fondonegro/HBC_Debug" to="Fondonegro/HBC_Debug" method="_on_mouse_exited"]
+[connection signal="toggled" from="Fondonegro/HBC_Debug/Check_Debug" to="Fondonegro/HBC_Debug/Check_Debug" method="_on_toggled"]

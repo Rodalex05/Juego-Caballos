@@ -73,6 +73,21 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_msqh8")
 
+[node name="Encabezado" type="RichTextLabel" parent="." unique_id=941894061]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 174.0
+grow_horizontal = 2
+theme = ExtResource("22_pknwe")
+bbcode_enabled = true
+text = "
+[wave amp=60 freq=10]ESCOGE A TU PERSONAJE[/wave]
+"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+
 [node name="GridPersonajes" type="GridContainer" parent="." unique_id=1883479204]
 layout_mode = 1
 anchors_preset = 7
@@ -154,7 +169,7 @@ flip_h = true
 script = ExtResource("3_udjnh")
 presionar = NodePath("../Press")
 
-[node name="Label" type="Label" parent="Jugador1" unique_id=1520395786]
+[node name="NombreJ1" type="Label" parent="Jugador1" unique_id=1520395786]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -195,7 +210,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("8_ittlc")
 
-[node name="Label2" type="Label" parent="Jugador1" unique_id=1387007515]
+[node name="ControlesJ1" type="Label" parent="Jugador1" unique_id=1387007515]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -233,7 +248,7 @@ stretch_mode = 3
 script = ExtResource("8_ij6u2")
 presionar = NodePath("../Press")
 
-[node name="Label" type="Label" parent="Jugador2" unique_id=1826818905]
+[node name="NombreJ2" type="Label" parent="Jugador2" unique_id=1826818905]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -276,7 +291,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("8_ittlc")
 
-[node name="Label2" type="Label" parent="Jugador2" unique_id=1642091547]
+[node name="ControlesJ2" type="Label" parent="Jugador2" unique_id=1642091547]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -296,14 +311,6 @@ ENTER: Seleccionar
 BACKSPACE: Regresar"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Press" type="AudioStreamPlayer" parent="." unique_id=1341051994]
-stream = ExtResource("7_rgb2h")
-bus = &"bus_sfx"
-
-[node name="Hover" type="AudioStreamPlayer" parent="." unique_id=956800254]
-stream = ExtResource("8_ntw51")
-bus = &"bus_sfx"
 
 [node name="Btn_Menu" type="TextureButton" parent="." unique_id=1913929067 node_paths=PackedStringArray("sfx_hover", "sfx_press")]
 custom_minimum_size = Vector2(400, 80)
@@ -347,20 +354,13 @@ script = ExtResource("22_tpdn6")
 sfx_hover = NodePath("../Hover")
 sfx_press = NodePath("../Press")
 
-[node name="Escogetupsj" type="RichTextLabel" parent="." unique_id=941894061]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 174.0
-grow_horizontal = 2
-theme = ExtResource("22_pknwe")
-bbcode_enabled = true
-text = "
-[wave amp=60 freq=10]ESCOGE A TU PERSONAJE[/wave]
-"
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 1
+[node name="Press" type="AudioStreamPlayer" parent="." unique_id=1341051994]
+stream = ExtResource("7_rgb2h")
+bus = &"bus_sfx"
+
+[node name="Hover" type="AudioStreamPlayer" parent="." unique_id=956800254]
+stream = ExtResource("8_ntw51")
+bus = &"bus_sfx"
 
 [connection signal="mouse_entered" from="Btn_Menu" to="Btn_Menu" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Btn_Siguiente" to="Btn_Siguiente" method="_on_mouse_entered"]

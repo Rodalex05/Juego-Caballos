@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://gkfvqo41nwic"]
 
 [ext_resource type="Texture2D" uid="uid://b17xx84hfvx4k" path="res://sprites/Fondos/Fondo_static.png" id="1_c2t8g"]
-[ext_resource type="Texture2D" uid="uid://c7xpmybs8bmyt" path="res://sprites/Menu_Instrucciones/control.png" id="2_80cj3"]
+[ext_resource type="Texture2D" uid="uid://dwswr87yfianb" path="res://sprites/Menu_Instrucciones/control2.png" id="2_c2t8g"]
 [ext_resource type="Texture2D" uid="uid://b4bfr5pbb1hm" path="res://sprites/UI/BtnNormal/Btn_regresar.png" id="3_t0w8q"]
 [ext_resource type="Texture2D" uid="uid://cta4eupqf0mjn" path="res://sprites/UI/BtnPressed/Btn_regresar.png" id="4_oa0tb"]
 [ext_resource type="Texture2D" uid="uid://csd0mk6n41ty" path="res://sprites/UI/Btn_Hover/Btn_regresar.png" id="5_gsi72"]
@@ -42,7 +42,7 @@ offset_left = -990.0
 offset_right = 990.0
 offset_bottom = 1080.0
 grow_horizontal = 2
-texture = ExtResource("2_80cj3")
+texture = ExtResource("2_c2t8g")
 
 [node name="Btn_Atras" type="TextureButton" parent="." unique_id=2095067216 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
 layout_mode = 0

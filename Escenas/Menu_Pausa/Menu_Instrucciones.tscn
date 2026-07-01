@@ -1,0 +1,297 @@
+[gd_scene format=3 uid="uid://y3t6jv0hy1ji"]
+
+[ext_resource type="Script" uid="uid://cedbjib7xe7pd" path="res://Escenas/Menu_Pausa/Scripts/menu_instrucciones.gd" id="1_passg"]
+[ext_resource type="Texture2D" uid="uid://bkau4b7xlv037" path="res://sprites/gui_opciones/rectangulo.png" id="2_2c2a8"]
+[ext_resource type="AudioStream" uid="uid://4qyyf47663fv" path="res://SFX/sfx_hover_menu.wav" id="3_gg0jn"]
+[ext_resource type="AudioStream" uid="uid://3bceg5y8wyd2" path="res://SFX/sfx_Boton_pressed.wav" id="4_rn87s"]
+[ext_resource type="Theme" uid="uid://cjx38561hocxb" path="res://Temas/Labels.tres" id="5_773ll"]
+[ext_resource type="Theme" uid="uid://ssdyo8pirdx" path="res://Temas/CheckButton.tres" id="6_61s25"]
+[ext_resource type="Script" uid="uid://bpa5od3elkhpb" path="res://Escenas/Menu_Pausa/Scripts/check_button.gd" id="7_yyp83"]
+[ext_resource type="Theme" uid="uid://d1dpi2qgur7q8" path="res://Temas/Optionbutton.tres" id="8_gtl38"]
+[ext_resource type="Script" uid="uid://bfywusiwyx8qk" path="res://Escenas/Menu_Pausa/Scripts/option_button.gd" id="9_ovhic"]
+[ext_resource type="Theme" uid="uid://bbcybcf5miaia" path="res://Temas/HSlider.tres" id="10_ovt4e"]
+[ext_resource type="Script" uid="uid://bq5x136blgsni" path="res://Escenas/Menu_Pausa/Scripts/volumen_slider.gd" id="11_5qw7l"]
+[ext_resource type="Script" uid="uid://bsw6730jb1aok" path="res://Escenas/Menu_Pausa/Scripts/volumen_slider_sfx.gd" id="12_wddrc"]
+[ext_resource type="Texture2D" uid="uid://dedx6706nu4q7" path="res://sprites/Menu_pausa/Btn_Pausa1.png" id="14_773ll"]
+[ext_resource type="Texture2D" uid="uid://dkbqvw4ncsbyo" path="res://sprites/Menu_pausa/Btn_Pausa2.png" id="15_61s25"]
+[ext_resource type="Texture2D" uid="uid://bx3qswtx0gfc2" path="res://sprites/Menu_pausa/Btn_Pausa3.png" id="16_yyp83"]
+[ext_resource type="Script" uid="uid://cnn33pert3y1y" path="res://Escenas/Menu_Pausa/Scripts/btn_regresar.gd" id="17_p4rjd"]
+[ext_resource type="Texture2D" uid="uid://daa814lwaajbc" path="res://sprites/Menu_pausa/Btn_Menu1.png" id="18_773ll"]
+[ext_resource type="AudioStream" uid="uid://yna6ebjyku04" path="res://SFX/pause.wav" id="18_p4rjd"]
+[ext_resource type="Script" uid="uid://dh31sv0r7wgqw" path="res://Escenas/Menu_Pausa/Scripts/btn_menu.gd" id="18_passg"]
+[ext_resource type="FontFile" uid="uid://bhk87k7nt6qlh" path="res://Fonts/Pixellari.ttf" id="19_2c2a8"]
+[ext_resource type="Texture2D" uid="uid://c2k2g3156igl8" path="res://sprites/Menu_pausa/Btn_Menu2.png" id="19_61s25"]
+[ext_resource type="Texture2D" uid="uid://djqiowtuyp2yg" path="res://sprites/Menu_pausa/Btn_Menu3.png" id="20_yyp83"]
+[ext_resource type="Texture2D" uid="uid://02yxwgrvdpkk" path="res://sprites/Menu_pausa/Btn_Salir1.png" id="22_5qw7l"]
+[ext_resource type="Texture2D" uid="uid://cdcgu54mtp3j4" path="res://sprites/Menu_pausa/Btn_Salir2.png" id="23_wddrc"]
+[ext_resource type="Texture2D" uid="uid://bxoyj6kb0pxxm" path="res://sprites/Menu_pausa/Btn_Salir3.png" id="24_y3ono"]
+[ext_resource type="Script" uid="uid://dm4vus6nqikm4" path="res://Escenas/Menu_Pausa/Scripts/btn_salir.gd" id="25_r8f8p"]
+[ext_resource type="Texture2D" uid="uid://j6350324271h" path="res://sprites/Menu_pausa/Btn_Regresar.png" id="26_5qw7l"]
+[ext_resource type="Texture2D" uid="uid://b8i0c3ckigoep" path="res://sprites/Menu_pausa/Btn_Regresar2.png" id="27_wddrc"]
+[ext_resource type="Texture2D" uid="uid://c5koo62ax6gck" path="res://sprites/Menu_pausa/Btn_Regresar3.png" id="28_y3ono"]
+[ext_resource type="Script" uid="uid://bw7uyskvtomyg" path="res://Escenas/Menu_Pausa/Scripts/btn_regresar2.gd" id="29_wddrc"]
+
+[sub_resource type="GDScript" id="GDScript_wf51p"]
+script/source = "extends HSlider
+#Nombre del bus de sonido
+@export var bus_nombre: String
+var bus_index: int
+#Funcion ready
+func _ready() -> void:
+#Lee el nombre del bus
+	bus_index = AudioServer.get_bus_index(bus_nombre)
+	value_changed.connect(_on_value_changed)
+	value = db_to_linear(AudioServer.get_bus_volume_db(bus_index))
+	
+#aplica el volumen seleccionado
+func _on_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(bus_index,linear_to_db(value))
+"
+
+[node name="Control" type="Control" unique_id=1420720041 node_paths=PackedStringArray("sfx_pausa")]
+process_mode = 3
+custom_minimum_size = Vector2(1800, 800)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -111.52661
+offset_bottom = -271.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_passg")
+sfx_pausa = NodePath("sfx_pausa")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=917322328]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 16.526611
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_2c2a8")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1600585992]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 16.526611
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.64705884)
+
+[node name="sfx_hover" type="AudioStreamPlayer" parent="ColorRect" unique_id=470088]
+stream = ExtResource("3_gg0jn")
+bus = &"bus_sfx"
+
+[node name="sfx_select" type="AudioStreamPlayer" parent="ColorRect" unique_id=1621982542]
+stream = ExtResource("4_rn87s")
+bus = &"bus_sfx"
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=923657222]
+custom_minimum_size = Vector2(900, 400)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 71.0
+offset_right = -145.47339
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="GridContainer" parent="ColorRect/MarginContainer" unique_id=2083058417]
+layout_mode = 2
+size_flags_vertical = 4
+columns = 2
+
+[node name="LB_Pantalla" type="Label" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1274923502]
+layout_mode = 2
+theme = ExtResource("5_773ll")
+text = "Pantalla completa"
+
+[node name="Check_Pantalla" type="CheckButton" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=379944001 node_paths=PackedStringArray("sfx_toggle")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme = ExtResource("6_61s25")
+action_mode = 0
+script = ExtResource("7_yyp83")
+sfx_toggle = NodePath("../../../sfx_select")
+
+[node name="LB_Resolucion" type="Label" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1136188]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("5_773ll")
+text = "Resolución "
+
+[node name="Opciones_Resolucion" type="OptionButton" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1562423965]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("8_gtl38")
+selected = 0
+item_count = 5
+popup/item_0/text = "  1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "  1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "  1280x720"
+popup/item_2/id = 2
+popup/item_3/text = "  1024x768"
+popup/item_3/id = 3
+popup/item_4/text = "  800x600"
+popup/item_4/id = 4
+script = ExtResource("9_ovhic")
+
+[node name="Volumen_Gral" type="Label" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=2055509660]
+layout_mode = 2
+theme = ExtResource("5_773ll")
+text = "Volumen General"
+
+[node name="HSlider" type="HSlider" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=2103778880]
+layout_mode = 2
+size_flags_horizontal = 9
+size_flags_vertical = 2
+theme = ExtResource("10_ovt4e")
+max_value = 1.0
+step = 0.001
+script = ExtResource("11_5qw7l")
+bus_nombre = "Master"
+
+[node name="Volumen_SFX" type="Label" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=900931639]
+layout_mode = 2
+theme = ExtResource("5_773ll")
+text = "Volumen Efectos de sonido "
+
+[node name="HSlider2" type="HSlider" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1288488721]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme = ExtResource("10_ovt4e")
+max_value = 1.0
+step = 0.001
+value = 0.5
+script = ExtResource("12_wddrc")
+bus_nombre = "bus_sfx"
+
+[node name="Volumen_Musica" type="Label" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=297586439]
+layout_mode = 2
+theme = ExtResource("5_773ll")
+text = "Volumen Música"
+
+[node name="HSlider3" type="HSlider" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1091816809]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("10_ovt4e")
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = SubResource("GDScript_wf51p")
+bus_nombre = "bus_musica"
+
+[node name="Btn_Continuar" type="TextureButton" parent="." unique_id=966247765 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+layout_mode = 0
+offset_left = 1387.0
+offset_top = 703.0
+offset_right = 1787.0
+offset_bottom = 783.0
+texture_normal = ExtResource("14_773ll")
+texture_pressed = ExtResource("15_61s25")
+texture_hover = ExtResource("16_yyp83")
+script = ExtResource("17_p4rjd")
+sfx_pasar = NodePath("../ColorRect/sfx_hover")
+sfx_select = NodePath("../ColorRect/sfx_select")
+
+[node name="Btn_Volver" type="TextureButton" parent="." unique_id=332490832 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 703.0
+offset_right = 436.0
+offset_bottom = 783.0
+texture_normal = ExtResource("18_773ll")
+texture_pressed = ExtResource("19_61s25")
+texture_hover = ExtResource("20_yyp83")
+script = ExtResource("18_passg")
+sfx_pasar = NodePath("../ColorRect/sfx_hover")
+sfx_select = NodePath("../ColorRect/sfx_select")
+
+[node name="Salir" type="ColorRect" parent="." unique_id=1558394419]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 1088.0
+offset_right = -11.473389
+offset_bottom = 974.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.64705884)
+
+[node name="MarginContainer" type="MarginContainer" parent="Salir" unique_id=868394739]
+custom_minimum_size = Vector2(900, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -808.0
+offset_top = -332.5
+offset_right = 808.0
+offset_bottom = 67.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LB_Pantalla" type="Label" parent="Salir/MarginContainer" unique_id=825152141]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_fonts/font = ExtResource("19_2c2a8")
+theme_override_font_sizes/font_size = 64
+text = "¿Seguro que quieres salir? Todo el progreso se perderá"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Salir/MarginContainer" unique_id=660216616]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="Btn_Salir" type="TextureButton" parent="Salir/MarginContainer/HBoxContainer" unique_id=396795053 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+layout_mode = 2
+texture_normal = ExtResource("22_5qw7l")
+texture_pressed = ExtResource("23_wddrc")
+texture_hover = ExtResource("24_y3ono")
+script = ExtResource("25_r8f8p")
+sfx_pasar = NodePath("../../../../ColorRect/sfx_hover")
+sfx_select = NodePath("../../../../ColorRect/sfx_select")
+
+[node name="Btn_Regresar" type="TextureButton" parent="Salir/MarginContainer/HBoxContainer" unique_id=350601406 node_paths=PackedStringArray("sfx_pasar", "sfx_select")]
+layout_mode = 2
+texture_normal = ExtResource("26_5qw7l")
+texture_pressed = ExtResource("27_wddrc")
+texture_hover = ExtResource("28_y3ono")
+script = ExtResource("29_wddrc")
+sfx_pasar = NodePath("../../../../ColorRect/sfx_hover")
+sfx_select = NodePath("../../../../ColorRect/sfx_select")
+
+[node name="sfx_pausa" type="AudioStreamPlayer" parent="." unique_id=1671372963]
+stream = ExtResource("18_p4rjd")
+bus = &"bus_sfx"
+
+[connection signal="toggled" from="ColorRect/MarginContainer/VBoxContainer/Check_Pantalla" to="ColorRect/MarginContainer/VBoxContainer/Check_Pantalla" method="_on_toggled"]
+[connection signal="item_selected" from="ColorRect/MarginContainer/VBoxContainer/Opciones_Resolucion" to="ColorRect/MarginContainer/VBoxContainer/Opciones_Resolucion" method="_on_item_selected"]
+[connection signal="value_changed" from="ColorRect/MarginContainer/VBoxContainer/HSlider" to="ColorRect/MarginContainer/VBoxContainer/HSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="ColorRect/MarginContainer/VBoxContainer/HSlider2" to="ColorRect/MarginContainer/VBoxContainer/HSlider2" method="_on_value_changed"]
+[connection signal="value_changed" from="ColorRect/MarginContainer/VBoxContainer/HSlider3" to="ColorRect/MarginContainer/VBoxContainer/HSlider3" method="_on_value_changed"]
+[connection signal="mouse_entered" from="Btn_Continuar" to="Btn_Continuar" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Btn_Volver" to="Btn_Volver" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Salir/MarginContainer/HBoxContainer/Btn_Salir" to="Salir/MarginContainer/HBoxContainer/Btn_Salir" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Salir/MarginContainer/HBoxContainer/Btn_Regresar" to="Salir/MarginContainer/HBoxContainer/Btn_Regresar" method="_on_mouse_entered"]

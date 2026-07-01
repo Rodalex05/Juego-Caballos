@@ -1,8 +1,8 @@
 extends VBoxContainer
-
+#======CREDITOS DEL JUEGO======
 func _ready():
-	self.position.y=2600
-	var creditostxt = FileAccess.open("res://Creditos.txt", FileAccess.READ)
-	$Creditos.text=creditostxt.get_as_text()
+	#Pone los creditos por debajo de la escena 
+	self.position.y=1100
 func _process(delta):
+	#Mueve los creditos hacia arriba lentamente
 	position.y -= 100 * delta

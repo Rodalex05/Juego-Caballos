@@ -31,7 +31,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=32976540]
+[node name="Fondo" type="TextureRect" parent="." unique_id=32976540]
 modulate = Color(0.41568628, 0.41568628, 0.41568628, 1)
 layout_mode = 1
 anchors_preset = 8
@@ -46,12 +46,6 @@ offset_bottom = 545.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_x5i8v")
-
-[node name="AudioPasar" type="AudioStreamPlayer" parent="." unique_id=1552412211]
-stream = ExtResource("5_honvs")
-
-[node name="AudioPresionar" type="AudioStreamPlayer" parent="." unique_id=144112494]
-stream = ExtResource("6_xil8v")
 
 [node name="Flecha" type="TextureRect" parent="." unique_id=1870549672]
 custom_minimum_size = Vector2(256, 216)
@@ -90,6 +84,7 @@ alignment = 1
 script = ExtResource("13_8abtl")
 
 [node name="Instruccion1" type="VBoxContainer" parent="Hbox" unique_id=1313235056]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("14_2qfqc")
@@ -112,6 +107,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Instruccion2" type="VBoxContainer" parent="Hbox" unique_id=538559733]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("18_oxiug")
@@ -134,6 +130,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Instruccion3" type="VBoxContainer" parent="Hbox" unique_id=1971969422]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("9_ji8g1")
@@ -182,6 +179,12 @@ stretch_mode = 3
 script = ExtResource("11_im36n")
 sfx_pasar = NodePath("../AudioPasar")
 sfx_select = NodePath("../AudioPresionar")
+
+[node name="AudioPasar" type="AudioStreamPlayer" parent="." unique_id=1552412211]
+stream = ExtResource("5_honvs")
+
+[node name="AudioPresionar" type="AudioStreamPlayer" parent="." unique_id=144112494]
+stream = ExtResource("6_xil8v")
 
 [connection signal="mouse_entered" from="Btn_Siguiente" to="Btn_Siguiente" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Btn_Atras" to="Btn_Atras" method="_on_mouse_entered"]

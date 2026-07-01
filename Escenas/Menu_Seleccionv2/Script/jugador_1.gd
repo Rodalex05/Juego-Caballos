@@ -1,5 +1,6 @@
 extends TextureRect
 @export var presionar : AudioStreamPlayer
+#Variable que detecta cuando se elecciono un personaje
 var bloqueado = false
 # 3 columnas
 var horizontal = 0
@@ -15,7 +16,7 @@ var posicion_inicial := Vector2()
 func _ready():
 	posicion_inicial = cursor.position
 	_actualizar_skin()
-	$Label.text=(Nombres.nombrej1)
+	$NombreJ1.text=(Nombres.nombrej1)
 	
 #================================================
 #FUNCION PROCESS
@@ -23,14 +24,17 @@ func _ready():
 func _process(delta):
 # CONFIRMAR
 	if Input.is_action_just_pressed("Select_J1"):
+		#Funcion que guarda los datos de la skin seleccionada
 		_seleccionar_skin()
+		#Bloquear la seleccion
 		bloqueado = true
 		return
 # CANCELAR SELECCIÓN
 	if Input.is_action_just_pressed("RegresarJ1"):
+		#Cancelar la seleccion de la skin
 		_cancelar_seleccion()
 		return
-
+	#Bloquea controles mientras se mueve el selector
 	if bloqueado:
 		return
 	if Input.is_action_just_pressed("Skin_J1_der"):
@@ -53,18 +57,21 @@ func _process(delta):
 #================================================
 #FUNCIONES SKINS
 #================================================
+#======CAMBIAR LA SKIN======
 func _actualizar_skin():
 	# 3 columnas
 	var indice = vertical * 3 + horizontal
 	if indice >= 0 and indice < SkinsGlobal.skins.size():
 		preview_skin.texture = SkinsGlobal.skins[indice]
 
+#======CONFIRMAR LA SELECCION DE PERSONAJES======
 func _seleccionar_skin():
 	var indice = vertical * 3 + horizontal
 	if indice >= 0 and indice < SkinsGlobal.skins_animadas.size():
 		SkinsGlobal.skin_j1 = indice
 		$Seleccion/Select._seleccionado()
 		
+#======CANELAR LA SELECCION DE PERSONAJES======
 func _cancelar_seleccion():
 	# borra selección global
 	Nombres.jugador1_skin = null
@@ -73,7 +80,7 @@ func _cancelar_seleccion():
 	bloqueado = false
 
 #================================================
-#CONTROLES
+#DEFINIR LIMITES DEL GRID DE PERSONAJES
 #================================================
 func mover_izquierda():
 	if horizontal <= 0:

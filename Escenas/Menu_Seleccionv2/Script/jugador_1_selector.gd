@@ -1,9 +1,10 @@
 extends TextureRect
-
+#Movimientos a todos los sentidos del selector
 func _movimientoizq():
 	var tween: Tween = create_tween()
 	tween.tween_property(self,"position:x",position.x-180,.1).set_trans(tween.TRANS_CUBIC)
 	await tween.finished
+	#Se desbloquea el movimiento del selector
 	$"..".bloqueado = false
 
 func _movimientoder():

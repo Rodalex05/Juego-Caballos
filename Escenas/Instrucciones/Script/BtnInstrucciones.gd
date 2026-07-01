@@ -11,4 +11,5 @@ func _menu():
 	get_tree().change_scene_to_file("res://Escenas/Ingreso_Nombres/nombres_jugadores.tscn")
 #Sonar si se pasa el mouse encima
 func _on_mouse_entered() -> void:
-	sfx_pasar.play()
+	if disabled==false:
+		sfx_pasar.play()
